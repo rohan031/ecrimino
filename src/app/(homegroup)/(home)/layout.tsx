@@ -1,4 +1,3 @@
-import Footer from "@/components/footer/Footer";
 import Navigation from "@/components/navigation/Navigation";
 import Nav from "./components/Nav";
 
@@ -12,7 +11,6 @@ function HomeLayout({ children }: HomeLayoutProps) {
 			<Nav />
 			<Navigation />
 			{children}
-			<Footer />
 		</>
 	);
 }

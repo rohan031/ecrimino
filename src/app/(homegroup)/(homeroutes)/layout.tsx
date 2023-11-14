@@ -1,17 +1,15 @@
 import Navigation from "@/components/navigation/Navigation";
-import Footer from "@/components/footer/Footer";
 import React from "react";
 
-interface HomeLayoutProps {
+interface HomeRoutesLayoutProps {
 	children: React.ReactNode;
 }
 
-export default function HomeLayout({ children }: HomeLayoutProps) {
+export default function HomeRoutesLayout({ children }: HomeRoutesLayoutProps) {
 	return (
 		<>
 			<Navigation />
 			{children}
-			<Footer />
 		</>
 	);
 }

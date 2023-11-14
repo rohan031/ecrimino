@@ -8,9 +8,9 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import Translations from "./Translations";
-import Icons from "../../../components/icons/Icons";
-import { contacts } from "../../../data/contact";
-import { socialLinks } from "../../../data/socialLinks";
+import Icons from "../../../../components/icons/Icons";
+import { contacts } from "../../../../data/contact";
+import { socialLinks } from "../../../../data/socialLinks";
 
 export default function Nav() {
 	return (
