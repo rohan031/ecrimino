@@ -7,13 +7,12 @@ type Data = string[];
 type APIRes = { items: { id: { videoId: string } }[] };
 
 export default function Videos() {
-	let CHANNEL_ID = "UC4514FwdRy5gI6CdC9GPb0w";
 	const [data, setData] = useState<Data>();
 	const [err, setErr] = useState(false);
 
 	useEffect(() => {
 		fetch(
-			`https://www.googleapis.com/youtube/v3/search?part=id&channelId=${CHANNEL_ID}&order=date&maxResults=3&type=video&key=${process.env.NEXT_PUBLIC_YOUTUBE_API_KEY}`
+			`https://www.googleapis.com/youtube/v3/search?part=id&channelId=${process.env.NEXT_PUBLIC_CHANNEL_ID}&order=date&maxResults=3&type=video&key=${process.env.NEXT_PUBLIC_YOUTUBE_API_KEY}`
 		)
 			.then((res) => {
 				if (!res.ok) {
