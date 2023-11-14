@@ -1,3 +1,16 @@
 {
-	"greeting": "bonjour comment allez-vous"
+	"greeting": "bonjour comment allez-vous",
+	"banner1Head": "CRÉATION",
+	"banner1Content": "L’École de criminologie de l’Unversté de Kinshasa a été créée par Arrêté du Ministre de l’Enseignement supérieur et Universitaire du 30 octobre 2018, modifié et complété par l’Arrêté du 24 février 2021. Elle absorbe l’actuel Centre de criminologie et de pathologie sociale (CCPS), rattaché jadis à la faculté de droit.",
+
+	"banner2Head": "CRÉATION",
+	"banner2Content": "L’École de criminologie de l’Unversté de Kinshasa a été créée par Arrêté du Ministre de l’Enseignement supérieur et Universitaire du 30 octobre 2018, modifié et complété par l’Arrêté du 24 février 2021. Elle absorbe l’actuel Centre de criminologie et de pathologie sociale (CCPS), rattaché jadis à la faculté de droit.",
+
+	"banner3Head": "CRÉATION",
+	"banner3Content": "L’École de criminologie de l’Unversté de Kinshasa a été créée par Arrêté du Ministre de l’Enseignement supérieur et Universitaire du 30 octobre 2018, modifié et complété par l’Arrêté du 24 février 2021. Elle absorbe l’actuel Centre de criminologie et de pathologie sociale (CCPS), rattaché jadis à la faculté de droit.",
+
+	"banner4Head": "CRÉATION",
+	"banner4Content": "L’École de criminologie de l’Unversté de Kinshasa a été créée par Arrêté du Ministre de l’Enseignement supérieur et Universitaire du 30 octobre 2018, modifié et complété par l’Arrêté du 24 février 2021. Elle absorbe l’actuel Centre de criminologie et de pathologie sociale (CCPS), rattaché jadis à la faculté de droit.",
+
+	"address": "L’École de criminologie est située à l’Université de Kinshasa, entre l’ERAIFT et le CNPP (en diagonale du Centre hospitalier du Mont-Amba)."
 }

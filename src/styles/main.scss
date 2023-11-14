@@ -4,3 +4,23 @@
 body {
 	font-family: "Helvetica", sans-serif;
 }
+
+.icon {
+	width: clamp(1.2em, 6vw, 2rem);
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
+	background-color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	svg {
+		color: ab.$blue2;
+		font-size: clamp(0.9rem, 3vw, 1.2rem);
+	}
+}
+
+.container {
+	width: min(96%, 130rem);
+	margin-inline: auto;
+}
