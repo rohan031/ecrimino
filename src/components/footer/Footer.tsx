@@ -14,11 +14,19 @@ import { socialLinks } from "@/data/socialLinks";
 
 export default function Footer() {
 	const contactPhone = contacts.phone.map((item) => {
-		return <a href={`tel:${item.number}`}>{item.display}</a>;
+		return (
+			<a key={item.number} href={`tel:${item.number}`}>
+				{item.display}
+			</a>
+		);
 	});
 
 	const contactEmail = contacts.email.map((item) => {
-		return <a href={`mailto:${item}`}>{item}</a>;
+		return (
+			<a key={item} href={`mailto:${item}`}>
+				{item}
+			</a>
+		);
 	});
 
 	return (

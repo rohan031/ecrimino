@@ -9,7 +9,7 @@ export default function Translations() {
 
 	useEffect(() => {
 		i18n.changeLanguage(lang);
-	}, [lang]);
+	}, [lang, i18n]);
 
 	const handleLangChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
 		setLang(e.target.value);

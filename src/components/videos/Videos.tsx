@@ -9,14 +9,16 @@ export default async function Videos() {
 
 	if (!response.ok) {
 		return (
-			<p>Can't fetch youtube videos!! Visist our channel on Youtube.</p>
+			<p>
+				Can&apos;t fetch youtube videos!! Visist our channel on Youtube.
+			</p>
 		);
 	}
 	const data: { items: { id: { videoId: string } }[] } =
 		await response.json();
 
 	const videos = data.items.map((item) => {
-		return <VideoItem videoId={item.id.videoId} />;
+		return <VideoItem key={item.id.videoId} videoId={item.id.videoId} />;
 	});
 
 	return <div className="videos">{videos}</div>;
