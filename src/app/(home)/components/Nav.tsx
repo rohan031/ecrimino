@@ -8,69 +8,48 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import Translations from "./Translations";
-import Icons from "./Icons";
+import Icons from "../../../components/icons/Icons";
+import { contacts } from "../../../data/contact";
+import { socialLinks } from "../../../data/socialLinks";
 
 export default function Nav() {
 	return (
-		<div className="container">
-			<div className="contact-nav">
+		<div className="contact-nav">
+			<div className="container contact-nav__items">
 				<div>
 					<div className="icon-parent">
-						<a
-							href="tel:+243813-657-483"
-							className="contact-nav__icon"
-						>
-							<Icons icon={faPhoneVolume} />
-						</a>
-						<p>(+243) 813 657 483</p>
+						<Icons
+							link={`tel:${contacts.phone[0].number}`}
+							icon={faPhoneVolume}
+						/>
+
+						<p>{contacts.phone[0].display}</p>
 					</div>
 					<div className="icon-parent">
-						<a
-							href="mailto:ecole.criminologie@unikin.ac.cd"
-							className="contact-nav__icon"
-						>
-							<Icons icon={faEnvelope} />
-						</a>
-						<p>ecole.criminologie@unikin.ac.cd</p>
+						<Icons
+							link={`mailto:${contacts.email[0]}`}
+							icon={faEnvelope}
+						/>
+
+						<p>{contacts.email[0]}</p>
 					</div>
 				</div>
 
 				<div>
-					<a
-						href="https://facebook.com"
-						target="_blank"
-						className="contact-nav__icon"
-					>
-						<Icons icon={faFacebookF} />
-					</a>
-					<a
-						href="https://twitter.com"
-						target="_blank"
-						className="contact-nav__icon"
-					>
-						<Icons icon={faTwitter} />
-					</a>
-					<a
-						href="https://whatsapp.com"
-						target="_blank"
-						className="contact-nav__icon"
-					>
-						<Icons icon={faWhatsapp} />
-					</a>
-					<a
-						href="https://linkedin.com"
-						target="_blank"
-						className="contact-nav__icon"
-					>
-						<Icons icon={faLinkedinIn} />
-					</a>
+					<Icons link={socialLinks.facebook} icon={faFacebookF} />
 
-					<div className="contact-nav__functions">
-						<div className="contact-nav__functions-item">
+					<Icons link={socialLinks.twitter} icon={faTwitter} />
+
+					<Icons link={socialLinks.whatsapp} icon={faWhatsapp} />
+
+					<Icons link={socialLinks.linkedin} icon={faLinkedinIn} />
+
+					<div className="contact-nav__items-functions">
+						<div className="contact-nav__items-functions-item">
 							<Translations />
 						</div>
 
-						<div className="contact-nav__functions-item">
+						<div className="contact-nav__items-functions-item">
 							<Link href={"/login"}> Login </Link>
 						</div>
 					</div>

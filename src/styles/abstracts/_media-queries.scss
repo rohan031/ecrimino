@@ -3,3 +3,9 @@
 		@content;
 	}
 }
+
+@mixin screen-70 {
+	@media (min-width: 70em) {
+		@content;
+	}
+}

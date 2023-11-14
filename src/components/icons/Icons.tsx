@@ -6,8 +6,13 @@ import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 
 interface IconsProps {
 	icon: IconDefinition;
+	link: string;
 }
 
-export default function Icons({ icon }: IconsProps) {
-	return <FontAwesomeIcon icon={icon} />;
+export default function Icons({ icon, link }: IconsProps) {
+	return (
+		<a href={link} target="_blank" className="icon">
+			<FontAwesomeIcon icon={icon} />
+		</a>
+	);
 }
