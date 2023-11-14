@@ -1,8 +1,22 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Dropdown from "./Dropdown";
+import { usePathname } from "next/navigation";
 
 export default function Navigation() {
+	const [navOpen, setNavOpen] = useState<boolean>(false);
+	const pathname = usePathname();
+
+	useEffect(() => {
+		setNavOpen(false);
+	}, [pathname]);
+
+	const handleChange = () => {
+		setNavOpen((prev) => !prev);
+	};
+
 	return (
 		<nav className="nav">
 			<Link href="/" className="nav-logo">
@@ -12,7 +26,12 @@ export default function Navigation() {
 
 			<div className="nav-items">
 				<>
-					<input id="nav-toggle" type="checkbox" />
+					<input
+						id="nav-toggle"
+						type="checkbox"
+						checked={navOpen}
+						onChange={handleChange}
+					/>
 					<label htmlFor="nav-toggle" tabIndex={0}>
 						<span></span>
 						<span></span>

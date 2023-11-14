@@ -1,7 +1,4 @@
-"use client";
-
-import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
 import { faPhoneVolume, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
 	faFacebookF,
@@ -10,15 +7,10 @@ import {
 	faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
-import { useTranslation } from "react-i18next";
+import Translations from "./Translations";
+import Icons from "./Icons";
 
 export default function Nav() {
-	const { t, i18n } = useTranslation("translation");
-
-	const handleLangChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-		i18n.changeLanguage(e.target.value);
-	};
-
 	return (
 		<div className="container">
 			<div className="contact-nav">
@@ -28,7 +20,7 @@ export default function Nav() {
 							href="tel:+243813-657-483"
 							className="contact-nav__icon"
 						>
-							<FontAwesomeIcon icon={faPhoneVolume} />
+							<Icons icon={faPhoneVolume} />
 						</a>
 						<p>(+243) 813 657 483</p>
 					</div>
@@ -37,7 +29,7 @@ export default function Nav() {
 							href="mailto:ecole.criminologie@unikin.ac.cd"
 							className="contact-nav__icon"
 						>
-							<FontAwesomeIcon icon={faEnvelope} />
+							<Icons icon={faEnvelope} />
 						</a>
 						<p>ecole.criminologie@unikin.ac.cd</p>
 					</div>
@@ -49,36 +41,33 @@ export default function Nav() {
 						target="_blank"
 						className="contact-nav__icon"
 					>
-						<FontAwesomeIcon icon={faFacebookF} />
+						<Icons icon={faFacebookF} />
 					</a>
 					<a
 						href="https://twitter.com"
 						target="_blank"
 						className="contact-nav__icon"
 					>
-						<FontAwesomeIcon icon={faTwitter} />
+						<Icons icon={faTwitter} />
 					</a>
 					<a
 						href="https://whatsapp.com"
 						target="_blank"
 						className="contact-nav__icon"
 					>
-						<FontAwesomeIcon icon={faWhatsapp} />
+						<Icons icon={faWhatsapp} />
 					</a>
 					<a
 						href="https://linkedin.com"
 						target="_blank"
 						className="contact-nav__icon"
 					>
-						<FontAwesomeIcon icon={faLinkedinIn} />
+						<Icons icon={faLinkedinIn} />
 					</a>
 
 					<div className="contact-nav__functions">
 						<div className="contact-nav__functions-item">
-							<select name="language" onChange={handleLangChange}>
-								<option value="en">🇬🇧</option>
-								<option value="fr">🇫🇷</option>
-							</select>
+							<Translations />
 						</div>
 
 						<div className="contact-nav__functions-item">
