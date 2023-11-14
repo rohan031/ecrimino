@@ -8,9 +8,11 @@ export default async function Videos() {
 	);
 
 	if (!response.ok) {
+		const data = await response.json();
+		console.log(data);
 		return (
 			<p>
-				Can&apos;t fetch youtube videos!! Visist our channel on Youtube.
+				Can&apos;t fetch youtube videos!! Visit our channel on Youtube.
 			</p>
 		);
 	}
