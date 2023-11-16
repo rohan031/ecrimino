@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import Provider from "./providers";
+import { Inter } from "next/font/google";
 import "../styles/main.scss";
+
+const inter = Inter({
+	subsets: ["latin"],
+	display: "swap",
+});
 
 export const metadata: Metadata = {
 	title: "Ecole de Criminologie",
@@ -13,13 +19,7 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
 	return (
-		<html lang="en">
-			<head>
-				<link
-					href="https://fonts.cdnfonts.com/css/helvetica-255"
-					rel="stylesheet"
-				/>
-			</head>
+		<html lang="en" className={inter.className}>
 			<body>
 				<Provider>{children}</Provider>
 			</body>

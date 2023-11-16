@@ -2,7 +2,7 @@
 @use "./components";
 
 body {
-	font-family: "Helvetica", sans-serif;
+	font-family: "Inter", sans-serif;
 }
 
 .icon {
@@ -17,6 +17,20 @@ body {
 	svg {
 		color: ab.$blue2;
 		font-size: clamp(0.9rem, 3vw, 1.2rem);
+	}
+
+	&-text {
+		display: none;
+		color: white;
+		text-decoration-color: transparent;
+
+		&:hover {
+			text-decoration-color: white;
+		}
+
+		@include ab.screen-50 {
+			display: block;
+		}
 	}
 }
 

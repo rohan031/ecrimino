@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { useTranslation } from "react-i18next";
 import Icons from "../icons/Icons";
 import {
 	faFacebookF,
@@ -8,11 +11,12 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import Videos from "../videos/Videos";
-import Address from "./Address";
 import { contacts } from "@/data/contact";
 import { socialLinks } from "@/data/socialLinks";
 
 export default function Footer() {
+	const { t } = useTranslation("translation");
+
 	const contactPhone = contacts.phone.map((item) => {
 		return (
 			<a key={item.number} href={`tel:${item.number}`}>
@@ -34,18 +38,26 @@ export default function Footer() {
 			<div className="container footer">
 				<div className="footer-item">
 					<div className="location">
-						<h2 className="footer-item__head">Get in Touch</h2>
-						<Address />
+						<h2 className="footer-item__head">
+							{t("footer.addressHead")}
+						</h2>
+						<p className="footer-item__text">
+							{t("footer.address")}
+						</p>
 					</div>
 
 					<div className="contacts">
 						<div className="contacts-item">
-							<h2 className="footer-item__head">Phone</h2>
+							<h2 className="footer-item__head">
+								{t("footer.phone")}
+							</h2>
 
 							<div className="items">{contactPhone}</div>
 						</div>
 						<div className="contacts-item">
-							<h2 className="footer-item__head">E-mail</h2>
+							<h2 className="footer-item__head">
+								{t("footer.email")}
+							</h2>
 
 							<div className="items">{contactEmail}</div>
 						</div>
@@ -68,26 +80,42 @@ export default function Footer() {
 				<div className="footer-item">
 					<div className="link-group">
 						<div className="footer-item__container">
-							<h2 className="footer-item__head">Useful Links</h2>
+							<h2 className="footer-item__head">
+								{t("footer.linksHead")}
+							</h2>
 
 							<div className="links">
-								<Link href="/research">Research</Link>
-
-								<Link href="/feedback">Feedback</Link>
-
-								<Link href="/alumini">Alumini</Link>
-
-								<Link href="/admissions">Admissions</Link>
-
-								<Link href="/certifications">
-									Certifications
+								<Link href="/research">
+									{t("footer.research")}
 								</Link>
 
-								<Link href="/document">Document</Link>
+								<Link href="/feedback">
+									{t("footer.feedback")}
+								</Link>
 
-								<Link href="/contactus">Contact Us</Link>
+								<Link href="/alumini">
+									{t("footer.alumini")}
+								</Link>
 
-								<Link href="/masters">Masters</Link>
+								<Link href="/admissions">
+									{t("footer.admissions")}
+								</Link>
+
+								<Link href="/certifications">
+									{t("footer.certifications")}
+								</Link>
+
+								<Link href="/document">
+									{t("footer.document")}
+								</Link>
+
+								<Link href="/contactus">
+									{t("footer.contactUs")}
+								</Link>
+
+								<Link href="/masters">
+									{t("footer.masters")}
+								</Link>
 							</div>
 						</div>
 
@@ -95,13 +123,13 @@ export default function Footer() {
 							className="library footer-item__head"
 							href="/library"
 						>
-							Access library
+							{t("footer.libraryHead")}
 						</Link>
 					</div>
 
 					<div className="youtube-container">
 						<h2 className="footer-item__head">
-							Our Youtube Channel
+							{t("footer.youtubeHead")}
 						</h2>
 
 						<Videos />

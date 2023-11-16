@@ -23,14 +23,6 @@
 				display: flex;
 				gap: 0.5em;
 				align-items: center;
-
-				p {
-					display: none;
-
-					@include ab.screen-50 {
-						display: block;
-					}
-				}
 			}
 		}
 

@@ -1,0 +1,22 @@
+{
+	"addressHead": "Get in Touch",
+	"address": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultricies, risus quis rutrum suscipit, ligula enim ultricies enim, at dictum lorem leo sed tortor. ",
+
+	"linksHead": "Useful Links",
+	"research": "Research",
+	"feedback": "Feedback",
+	"alumini": "Alumini",
+	"admissions": "Admissions",
+	"certifications": "Certifications",
+	"document": "Document",
+	"contactUs": "Contact Us",
+	"masters": "Masters",
+
+	"youtubeHead": "Our Youtube Channel",
+	"youtubeError": "Can't fetch youtube videos!! Visit our channel on Youtube.",
+
+	"libraryHead": "Access Library",
+
+	"phone": "Phone",
+	"email": "E-mail"
+}
