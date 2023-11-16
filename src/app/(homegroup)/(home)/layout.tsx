@@ -1,5 +1,5 @@
 import Navigation from "@/components/navigation/Navigation";
-import Nav from "./components/Nav";
+import Nav from "./components/nav/Nav";
 
 interface HomeLayoutProps {
 	children: React.ReactNode;

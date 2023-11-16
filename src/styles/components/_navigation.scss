@@ -51,6 +51,17 @@ nav {
 	background-color: white;
 	margin-block: 0 1em;
 
+	position: sticky;
+	top: 0;
+	background-color: white;
+	z-index: 2;
+
+	transition: translate 300ms;
+
+	&.hide {
+		translate: 0 -100%;
+	}
+
 	.nav {
 		display: flex;
 		justify-content: space-between;
@@ -101,10 +112,10 @@ nav {
 			}
 
 			label {
-				position: relative;
-				z-index: 2;
+				z-index: 3;
 				display: grid;
 				gap: 0.3em;
+				position: relative;
 
 				@include ab.screen-50 {
 					display: none;
@@ -131,7 +142,7 @@ nav {
 				display: flex;
 				gap: 1em;
 				flex-direction: column;
-				position: absolute;
+				position: fixed;
 
 				top: -1em;
 				bottom: -1em;
@@ -139,6 +150,7 @@ nav {
 				right: 0;
 
 				clip-path: inset(0 0 0 100vw);
+				z-index: 2;
 
 				transition: clip-path 300ms;
 

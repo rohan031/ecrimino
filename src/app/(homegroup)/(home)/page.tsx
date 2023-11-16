@@ -1,9 +1,9 @@
-"use client";
-
-import { useTranslation } from "react-i18next";
+import Banner from "./components/banner/Banner";
 
 export default function Home() {
-	const { t, i18n } = useTranslation("translation");
-
-	return <div>Ecole de criminology</div>;
+	return (
+		<>
+			<Banner />
+		</>
+	);
 }
