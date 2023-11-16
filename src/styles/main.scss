@@ -3,6 +3,7 @@
 
 body {
 	font-family: "Inter", sans-serif;
+	color: white;
 }
 
 .icon {
@@ -23,6 +24,7 @@ body {
 		display: none;
 		color: white;
 		text-decoration-color: transparent;
+		font-size: 0.9rem;
 
 		&:hover {
 			text-decoration-color: white;

@@ -8,17 +8,46 @@ import { usePathname } from "next/navigation";
 export default function Navigation() {
 	const [navOpen, setNavOpen] = useState<boolean>(false);
 	const pathname = usePathname();
+	const [show, setShow] = useState(true);
+	const [lastScrollY, setLastScrollY] = useState(0);
+
+	const controlNavbar = () => {
+		if (typeof window !== "undefined") {
+			let scrollY = window.scrollY;
+			if (scrollY > lastScrollY && scrollY > 168) {
+				// if scroll down hide the navbar
+				setShow(false);
+			} else {
+				// if scroll up show the navbar
+				setShow(true);
+			}
+
+			// remember current page location to use in the next move
+			setLastScrollY(scrollY);
+		}
+	};
 
 	useEffect(() => {
 		setNavOpen(false);
 	}, [pathname]);
+
+	useEffect(() => {
+		if (typeof window !== "undefined") {
+			window.addEventListener("scroll", controlNavbar);
+
+			// cleanup function
+			return () => {
+				window.removeEventListener("scroll", controlNavbar);
+			};
+		}
+	}, [lastScrollY]);
 
 	const handleChange = () => {
 		setNavOpen((prev) => !prev);
 	};
 
 	return (
-		<nav>
+		<nav className={`${!show && !navOpen && "hide"}`}>
 			<div className="container nav">
 				<Link href="/" className="nav-logo">
 					<img src="./logo.png" alt="Ecole de Criminology" />
