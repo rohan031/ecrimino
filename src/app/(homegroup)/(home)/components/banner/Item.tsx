@@ -13,9 +13,9 @@ export default function Item({ content, heading, id }: ItemProps) {
 				return <img src="/banner1.jpg" />;
 
 			case 2:
-				return <img src="/banner2.png" />;
+				return <img src="/banner2.jpg" />;
 			case 3:
-				return <img src="banner3.png" />;
+				return <img src="banner3.jpg" />;
 			case 4:
 				return <img src="banner4.jpg" />;
 		}
