@@ -21,6 +21,7 @@ export default function Academics() {
 				image={`/academics${i}.jpg`}
 				text={t(`academics.card${i}`)}
 				sub={t(`academics.card${i}sub`)}
+				link="academics"
 			/>
 		);
 	}

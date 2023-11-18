@@ -8,9 +8,10 @@ interface CardProps {
 	text: string;
 	image: string;
 	sub: string;
+	link: string;
 }
 
-export default function Card({ id, text, image, sub }: CardProps) {
+export default function Card({ id, text, image, sub, link }: CardProps) {
 	const { t } = useTranslation();
 
 	return (
@@ -24,7 +25,7 @@ export default function Card({ id, text, image, sub }: CardProps) {
 
 				<p>{sub}</p>
 
-				<a href={`/academics/${id}`}>{t("common.knowMore")}</a>
+				<a href={`/${link}/${id}`}>{t("common.knowMore")}</a>
 			</div>
 		</div>
 	);

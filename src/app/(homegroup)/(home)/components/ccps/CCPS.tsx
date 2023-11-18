@@ -21,6 +21,7 @@ export default function CCPS() {
 				image={`/ccps${i}.jpg`}
 				text={t(`ccps.card${i}`)}
 				sub={t(`ccps.card${i}sub`)}
+				link="ccps"
 			/>
 		);
 	}
