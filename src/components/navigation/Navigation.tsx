@@ -50,7 +50,7 @@ export default function Navigation() {
 		<nav className={`${!show && !navOpen && "hide"}`}>
 			<div className="container nav">
 				<Link href="/" className="nav-logo">
-					<img src="./logo.png" alt="Ecole de Criminology" />
+					<img src="/logo.png" alt="Ecole de Criminology" />
 					<h2>Ecole de Criminologie</h2>
 				</Link>
 
