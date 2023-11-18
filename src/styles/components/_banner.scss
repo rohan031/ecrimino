@@ -40,19 +40,6 @@
 	}
 }
 
-// carousel
-.embla {
-	overflow: hidden;
-
-	&__container {
-		display: flex;
-	}
-	&__slide {
-		flex: 0 0 100%;
-		min-width: 0;
-	}
-}
-
 .banners {
 	&-item {
 		padding: clamp(3.8em, 9vw, 4.8em) 1em;
@@ -64,14 +51,6 @@
 		}
 
 		.banner-item {
-			@include ab.screen-40 {
-				width: 90%;
-			}
-
-			@include ab.screen-50 {
-				width: min(96%, 130rem);
-			}
-
 			display: grid;
 			gap: 2.2em;
 

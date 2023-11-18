@@ -15,7 +15,7 @@ type Banners = React.JSX.Element[];
 
 export default function Banner() {
 	const { t } = useTranslation();
-	const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+	const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()]);
 
 	const scrollPrev = useCallback(() => {
 		if (emblaApi) emblaApi.scrollPrev();

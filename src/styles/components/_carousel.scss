@@ -1,0 +1,29 @@
+// banners carousel
+.banners.embla {
+	overflow: hidden;
+
+	.embla__container {
+		display: flex;
+	}
+
+	.embla__slide {
+		flex: 0 0 100%;
+		min-width: 0;
+	}
+}
+
+// info card carousel
+.info-cards.embla {
+	overflow: hidden;
+
+	.embla__container {
+		display: flex;
+		gap: 2em;
+	}
+
+	.embla__slide {
+		flex: 0 0 min(100%, 25em);
+		// flex: 0 0 100%;
+		min-width: 0;
+	}
+}
