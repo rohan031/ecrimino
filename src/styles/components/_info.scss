@@ -36,31 +36,34 @@
 			border-radius: 0.6em;
 			background-color: ab.$red;
 			overflow: hidden;
+			color: white;
+
+			display: grid;
+			grid-template-rows: subgrid;
+			grid-row: span 4;
+			gap: 0;
 
 			&-container {
-				color: white;
-
 				&:nth-child(2) {
 					padding: 1em 1.5em 2em;
-					container-type: inline-size;
+					display: grid;
+					grid-template-rows: subgrid;
+					grid-row: span 3;
+					gap: 0;
 				}
 
 				h3 {
-					font-size: 1.2rem;
-
-					@include ab.container-30 {
-						font-size: 1.5rem;
-					}
+					font-size: 1.3rem;
 				}
 
 				p {
-					margin-block: 0.6em 1.2em;
 					font-size: 0.9rem;
 				}
 
 				a {
 					color: white;
 					font-weight: 600;
+					margin-block-start: 1em;
 				}
 			}
 		}

@@ -17,13 +17,9 @@
 	overflow: hidden;
 
 	.embla__container {
-		display: flex;
+		display: grid;
+		grid-auto-flow: column;
+		grid-auto-columns: min(100%, 25em);
 		gap: 2em;
-	}
-
-	.embla__slide {
-		flex: 0 0 min(100%, 25em);
-		// flex: 0 0 100%;
-		min-width: 0;
 	}
 }
