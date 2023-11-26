@@ -11,7 +11,7 @@ footer {
 		grid-template-columns: repeat(2, 1fr);
 		gap: 1em;
 
-		@include ab.screen-70 {
+		@include ab.screen-80 {
 			grid-template-columns: 40% 60%;
 		}
 
@@ -26,13 +26,13 @@ footer {
 				flex-wrap: wrap;
 				gap: clamp(1em, 5.5vw, 3em);
 
-				@include ab.screen-50 {
+				@include ab.screen-48 {
 					gap: 2.6em; //
 				}
 
 				.items {
 					a {
-						font-size: clamp(0.8rem, 1.8vw, 1rem);
+						font-size: clamp(0.8rem, 1.9vw, 1rem);
 						color: white;
 						text-decoration: underline transparent;
 						display: block;
@@ -129,7 +129,7 @@ footer {
 			}
 
 			&__text {
-				font-size: clamp(0.8rem, 1.8vw, 1rem);
+				font-size: clamp(0.8rem, 1.9vw, 1rem);
 				width: min(100%, 15rem);
 			}
 		}

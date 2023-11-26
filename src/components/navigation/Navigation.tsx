@@ -51,7 +51,6 @@ export default function Navigation() {
 			<div className="container nav">
 				<Link href="/" className="nav-logo">
 					<img src="/logo.png" alt="Ecole de Criminology" />
-					<h2>Ecole de Criminologie</h2>
 				</Link>
 
 				<div className="nav-items">
@@ -102,7 +101,6 @@ export default function Navigation() {
 
 						<div className="nav-items__elements-logo">
 							<img src="./logo.png" alt="Ecole de Criminology" />
-							<h2>Ecole de Criminologie</h2>
 						</div>
 					</ul>
 				</div>

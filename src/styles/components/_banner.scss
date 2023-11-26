@@ -59,11 +59,11 @@
 					display: grid;
 					gap: 2em;
 
-					@include ab.screen-50 {
+					@include ab.screen-48 {
 						grid-template-columns: 5fr 6fr;
 					}
 
-					@include ab.screen-70 {
+					@include ab.screen-64 {
 						grid-template-columns: 7fr 5fr;
 					}
 				}

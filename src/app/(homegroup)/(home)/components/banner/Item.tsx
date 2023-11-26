@@ -10,14 +10,14 @@ export default function Item({ content, heading, id }: ItemProps) {
 	const image = () => {
 		switch (id) {
 			case 1:
-				return <img src="/banner1.jpg" />;
+				return <img src="/banner/banner1.jpg" alt="banner image" />;
 
 			case 2:
-				return <img src="/banner2.jpg" />;
+				return <img src="/banner/banner2.jpg" alt="banner image" />;
 			case 3:
-				return <img src="banner3.jpg" />;
+				return <img src="/banner/banner3.jpg" alt="banner image" />;
 			case 4:
-				return <img src="banner4.jpg" />;
+				return <img src="/banner/banner4.jpg" alt="banner image" />;
 		}
 	};
 

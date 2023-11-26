@@ -7,31 +7,42 @@ body {
 }
 
 .icon {
-	width: clamp(1.2em, 6vw, 2rem);
-	aspect-ratio: 1 / 1;
-	border-radius: 50%;
-	background-color: white;
 	display: flex;
+	gap: 0.5em;
 	align-items: center;
-	justify-content: center;
+	text-decoration: none;
 
-	svg {
-		color: ab.$blue2;
-		font-size: clamp(0.9rem, 3vw, 1.2rem);
+	&-image {
+		aspect-ratio: 1 / 1;
+		width: clamp(1.2em, 6vw, 2em);
+		background-color: white;
+		border-radius: 50%;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+
+		svg {
+			color: ab.$blue2;
+			font-size: clamp(0.9rem, 3vw, 1.2rem);
+		}
 	}
 
 	&-text {
 		display: none;
 		color: white;
-		text-decoration-color: transparent;
-		font-size: 0.9rem;
+		text-decoration: underline transparent;
+		font-size: 0.85rem;
 
 		&:hover {
 			text-decoration-color: white;
 		}
 
-		@include ab.screen-50 {
+		@include ab.screen-48 {
 			display: block;
+		}
+
+		@include ab.screen-64 {
+			font-size: 0.9rem;
 		}
 	}
 }

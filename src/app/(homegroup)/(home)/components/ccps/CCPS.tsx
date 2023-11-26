@@ -18,7 +18,7 @@ export default function CCPS() {
 			<Card
 				key={i}
 				id={i}
-				image={`/ccps${i}.jpg`}
+				image={`/ccps/ccps${i}.jpg`}
 				text={t(`ccps.card${i}`)}
 				sub={t(`ccps.card${i}sub`)}
 				link="ccps"

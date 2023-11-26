@@ -14,13 +14,17 @@ export default function Icons({ icon, link, children }: IconsProps) {
 	return (
 		<>
 			<a href={link} target="_blank" className="icon">
-				<FontAwesomeIcon icon={icon} />
+				<span className="icon-image">
+					<FontAwesomeIcon icon={icon} />
+				</span>
+
+				{children && <span className="icon-text">{children}</span>}
 			</a>
-			{children && (
+			{/* {children && (
 				<a href={link} target="_blank" className="icon-text">
 					{children}
 				</a>
-			)}
+			)} */}
 		</>
 	);
 }

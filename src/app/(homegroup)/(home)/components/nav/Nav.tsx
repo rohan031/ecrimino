@@ -17,22 +17,18 @@ export default function Nav() {
 		<div className="contact-nav">
 			<div className="container contact-nav__items">
 				<div>
-					<div className="icon-parent">
-						<Icons
-							link={`tel:${contacts.phone[0].number}`}
-							icon={faPhoneVolume}
-						>
-							{contacts.phone[0].display}
-						</Icons>
-					</div>
-					<div className="icon-parent">
-						<Icons
-							link={`mailto:${contacts.email[0]}`}
-							icon={faEnvelope}
-						>
-							{contacts.email[0]}
-						</Icons>
-					</div>
+					<Icons
+						link={`tel:${contacts.phone[0].number}`}
+						icon={faPhoneVolume}
+					>
+						{contacts.phone[0].display}
+					</Icons>
+					<Icons
+						link={`mailto:${contacts.email[0]}`}
+						icon={faEnvelope}
+					>
+						{contacts.email[0]}
+					</Icons>
 				</div>
 
 				<div>
