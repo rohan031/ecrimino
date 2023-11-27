@@ -87,7 +87,9 @@ export default function Navigation() {
 							<Dropdown />
 						</li>
 						<li className="nav-items__elements-child">
-							<Link href="/events">Events</Link>
+							<Link href="/#events" onClick={handleChange}>
+								Events
+							</Link>
 						</li>
 						<li className="nav-items__elements-child">
 							<Link href="/gallery">Gallery</Link>

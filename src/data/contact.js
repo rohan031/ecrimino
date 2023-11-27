@@ -4,7 +4,7 @@ export const contacts = {
 		{ number: "+243841-307-051", display: "(+243) 841 307 051" },
 	],
 	email: [
-		"ecole.criminologie@unikin.ac.cd",
-		"ccps.criminologie@unikin.ac.cd",
+		"contact@ecrimino.com",
+		// "ccps.criminologie@unikin.ac.cd",
 	],
 };

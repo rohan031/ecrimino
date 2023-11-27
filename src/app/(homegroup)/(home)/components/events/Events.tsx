@@ -33,7 +33,7 @@ export default function Events() {
 	});
 
 	return (
-		<div className="events">
+		<div className="events" id="events">
 			<div className="container">
 				<h2 className="events-head">Events</h2>
 

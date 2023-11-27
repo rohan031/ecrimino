@@ -105,7 +105,7 @@ export default function Footer() {
 									{t("footer.certifications")}
 								</Link>
 
-								<Link href="/document">
+								<Link href="/documents">
 									{t("footer.document")}
 								</Link>
 
@@ -113,7 +113,7 @@ export default function Footer() {
 									{t("footer.contactUs")}
 								</Link>
 
-								<Link href="/masters">
+								<Link href="/faculty">
 									{t("footer.masters")}
 								</Link>
 							</div>

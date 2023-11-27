@@ -1,0 +1,77 @@
+@use "../abstracts" as ab;
+
+.info-page__heading {
+	background-color: ab.$blue4;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	height: 20em;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	@include ab.screen-48 {
+		height: 30em;
+	}
+
+	@include ab.screen-96 {
+		height: 35em;
+	}
+
+	&.doc {
+		background-image: linear-gradient(
+				rgba(0, 0, 0, 0.8),
+				rgba(0, 0, 0, 0.4)
+			),
+			url("../../../public/documents/document.jpg");
+	}
+
+	&.faculty {
+		background-image: linear-gradient(
+				rgba(0, 0, 0, 0.8),
+				rgba(0, 0, 0, 0.4)
+			),
+			url("../../../public/faculty/faculty.png");
+
+		background-position: 25% 50%;
+	}
+}
+
+.info-page__container {
+	margin-block: 3em;
+	display: grid;
+	gap: 2em;
+	grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
+
+	&.doc {
+		.doc-item {
+			&__image {
+				background-color: ab.$pink;
+				padding-block: 2em;
+				border-radius: 0.8em;
+				box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+				img {
+					margin-inline: auto;
+					width: 6em;
+				}
+			}
+
+			&__title {
+				color: black;
+				display: inline-block;
+				margin-block-start: 1.2em;
+
+				text-decoration-color: transparent;
+				font-size: 1.1rem;
+
+				transition: text-decoration-color 200ms;
+
+				&:hover {
+					text-decoration-color: black;
+				}
+			}
+		}
+	}
+}

@@ -15,6 +15,9 @@ import frAcademics from "./languages/fr/home/academics.json";
 import enCCPS from "./languages/en/home/ccps.json";
 import frCCPS from "./languages/fr/home/ccps.json";
 
+import enFaculty from "./languages/en/faculty/lang.json";
+import frFaculty from "./languages/fr/faculty/lang.json";
+
 i18n.init({
 	debug: true,
 	fallbackLng: "en",
@@ -30,6 +33,7 @@ i18n.init({
 				footer: enFooter,
 				academics: enAcademics,
 				ccps: enCCPS,
+				faculty: enFaculty,
 			},
 		},
 		fr: {
@@ -39,6 +43,7 @@ i18n.init({
 				footer: frFooter,
 				academics: frAcademics,
 				ccps: frCCPS,
+				faculty: frFaculty,
 			},
 		},
 	},
