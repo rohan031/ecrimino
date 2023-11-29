@@ -10,6 +10,14 @@ export const faculties = [
 		salutation: "Prof. Dr.",
 	},
 	{
+		name: "MABWILO KABUYA JEAN RENE",
+		qualification: "DOCTEUR EN PHILOSOPHIE ET MASTER EN CRIMINOLGIE",
+		areaOfStudy: "SECURITE INTERIEURE",
+		departmentName: "ECOLE DE CRIMINOLOGIE DE L'UNIVERSITE DE KINSHASA",
+		image: "/faculty/JeanRenéMabwilo.jpg",
+		salutation: "Mr.",
+	},
+	{
 		name: "Mbokolo Ntikala Albert",
 		qualification: "Diplômé d'études supérieures",
 		areaOfStudy: "Droit pénal et criminologie",
@@ -25,14 +33,7 @@ export const faculties = [
 		image: "/faculty/HarrisTatyMantima.jpg",
 		salutation: "Mr.",
 	},
-	{
-		name: "MABWILO KABUYA JEAN RENE",
-		qualification: "DOCTEUR EN PHILOSOPHIE ET MASTER EN CRIMINOLGIE",
-		areaOfStudy: "SECURITE INTERIEURE",
-		departmentName: "ECOLE DE CRIMINOLOGIE DE L'UNIVERSITE DE KINSHASA",
-		image: "/faculty/JeanRenéMabwilo.jpg",
-		salutation: "Mr.",
-	},
+
 	{
 		name: "Mambiko Nyabita Catherine",
 		qualification: "Licence",

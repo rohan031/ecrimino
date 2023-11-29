@@ -27,16 +27,13 @@
 	&-container {
 		display: grid;
 		gap: 1.5em;
-		grid-template-rows: repeat(3, 1fr);
 
 		@include ab.screen-48 {
 			grid-template-columns: 1fr 1fr;
-			grid-template-rows: repeat(2, 1fr);
 		}
 
 		@include ab.screen-75 {
 			grid-template-columns: 3fr 2fr;
-			grid-template-rows: repeat(3, 1fr);
 		}
 
 		&__item {

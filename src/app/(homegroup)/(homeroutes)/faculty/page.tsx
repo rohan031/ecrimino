@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { faculties } from "@/data/faculty";
 import Cards from "./Cards";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 interface Items {
 	name: string;
@@ -52,12 +54,18 @@ export default function Faculty() {
 			</div>
 
 			<div className="faculty-search">
-				<input
-					type="text"
-					placeholder="name..."
-					onChange={(e) => setSearch(e.target.value)}
-					value={search}
-				/>
+				<div className="container">
+					<div className="faculty-search__cont">
+						<input
+							type="text"
+							placeholder="Search across all Faculty profiles..."
+							onChange={(e) => setSearch(e.target.value)}
+							value={search}
+						/>
+
+						<FontAwesomeIcon icon={faMagnifyingGlass} />
+					</div>
+				</div>
 			</div>
 
 			<div className="container">
