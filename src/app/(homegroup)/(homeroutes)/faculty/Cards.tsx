@@ -26,16 +26,16 @@ export default function Cards({
 			</div>
 
 			<div className="faculty-item__info">
-				<h3>{salutation + " " + name}</h3>
+				<h3>{salutation.toLowerCase() + " " + name.toLowerCase()}</h3>
 
-				<p title={departmentName}>{departmentName}</p>
+				<p title={qualification}>{qualification.toLowerCase()}</p>
 
 				<p title={areaOfStudy}>
-					{displayAreaOfStudy +
+					{displayAreaOfStudy.toLowerCase() +
 						`${displayAreaOfStudy === areaOfStudy ? "" : "..."}`}
 				</p>
 
-				<p title={qualification}>{qualification}</p>
+				<p title={departmentName}>{departmentName.toLowerCase()}</p>
 			</div>
 		</div>
 	);
