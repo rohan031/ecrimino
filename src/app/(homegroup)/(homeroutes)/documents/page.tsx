@@ -8,7 +8,6 @@ interface Items {
 	id: string;
 	title: string;
 	link: string;
-	type: string;
 }
 
 export default function Documents() {
@@ -19,14 +18,7 @@ export default function Documents() {
 	}, []);
 
 	const cards = items?.map((item) => {
-		return (
-			<Cards
-				key={item.id}
-				title={item.title}
-				link={item.link}
-				type={item.type}
-			/>
-		);
+		return <Cards key={item.id} title={item.title} link={item.link} />;
 	});
 
 	return (

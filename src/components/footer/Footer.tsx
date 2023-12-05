@@ -85,17 +85,17 @@ export default function Footer() {
 							</h2>
 
 							<div className="links">
-								<Link href="/research">
-									{t("footer.research")}
+								<Link href="/academics/masters">
+									{t("footer.masters")}
 								</Link>
 
-								<Link href="/feedback">
-									{t("footer.feedback")}
+								<Link href="/gallery">
+									{t("footer.gallery")}
 								</Link>
 
-								<Link href="/alumini">
+								{/* <Link href="/alumini">
 									{t("footer.alumini")}
-								</Link>
+								</Link> */}
 
 								<Link href="/admissions">
 									{t("footer.admissions")}
@@ -114,14 +114,15 @@ export default function Footer() {
 								</Link>
 
 								<Link href="/faculty">
-									{t("footer.masters")}
+									{t("footer.faculty")}
 								</Link>
 							</div>
 						</div>
 
 						<Link
 							className="library footer-item__head"
-							href="/library"
+							target="_blank"
+							href="https://uclouvain.be/fr/instituts-recherche/juri/cridep/archives.html"
 						>
 							{t("footer.libraryHead")}
 						</Link>

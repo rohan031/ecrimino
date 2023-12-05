@@ -1,9 +1,13 @@
 @use "./abstracts" as ab;
 @use "./components";
+@use "./pages";
 
 body {
 	font-family: "Inter", sans-serif;
-	color: white;
+	color: ab.$white;
+	scroll-behavior: smooth;
+	background-color: ab.$white;
+	// color: black;
 }
 
 .icon {
@@ -15,7 +19,7 @@ body {
 	&-image {
 		aspect-ratio: 1 / 1;
 		width: clamp(1.2em, 6vw, 2em);
-		background-color: white;
+		background-color: ab.$white;
 		border-radius: 50%;
 		display: inline-flex;
 		align-items: center;
@@ -29,12 +33,12 @@ body {
 
 	&-text {
 		display: none;
-		color: white;
+		color: ab.$white;
 		text-decoration: underline transparent;
 		font-size: 0.85rem;
 
 		&:hover {
-			text-decoration-color: white;
+			text-decoration-color: ab.$white;
 		}
 
 		@include ab.screen-48 {

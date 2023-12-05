@@ -2,11 +2,13 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import Dropdown from "./Dropdown";
 import { usePathname } from "next/navigation";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
 export default function Navigation() {
 	const [navOpen, setNavOpen] = useState<boolean>(false);
+	const [subOpen, setSubOpen] = useState(0);
 	const pathname = usePathname();
 	const [show, setShow] = useState(true);
 	const [lastScrollY, setLastScrollY] = useState(0);
@@ -46,6 +48,19 @@ export default function Navigation() {
 		setNavOpen((prev) => !prev);
 	};
 
+	let one = subOpen === 1;
+	let two = subOpen === 2;
+	let three = subOpen === 3;
+
+	const handleSubOpen = (val: number) => {
+		if (subOpen === val) {
+			setSubOpen(0);
+			return;
+		}
+
+		setSubOpen(val);
+	};
+
 	return (
 		<nav className={`${!show && !navOpen && "hide"}`}>
 			<div className="container nav">
@@ -69,12 +84,38 @@ export default function Navigation() {
 					</>
 
 					<ul className="nav-items__elements">
-						<li
-							className="hover nav-items__elements-child"
-							tabIndex={0}
-						>
-							Academics
-							<Dropdown />
+						<li className="nav-items__elements-child" tabIndex={0}>
+							<input
+								type="checkbox"
+								checked={one}
+								onChange={() => {}}
+							/>
+
+							<div
+								className="nav-hover"
+								onClick={() => handleSubOpen(1)}
+							>
+								<span>
+									Academics
+									<FontAwesomeIcon icon={faAngleDown} />
+								</span>
+
+								<ul className="nav-links__sub">
+									<li>
+										<Link href="/academics/masters">
+											Masters
+										</Link>
+									</li>
+									<li>
+										<Link href="/academics/phd">Phd</Link>
+									</li>
+									<li>
+										<Link href="/academics/certifications">
+											Certifications
+										</Link>
+									</li>
+								</ul>
+							</div>
 						</li>
 						<li className="nav-items__elements-child">
 							Admissions
@@ -83,19 +124,81 @@ export default function Navigation() {
 							className="hover nav-items__elements-child"
 							tabIndex={0}
 						>
-							CCPS
-							<Dropdown />
+							<input
+								type="checkbox"
+								checked={two}
+								onChange={() => {}}
+							/>
+
+							<div
+								className="nav-hover"
+								onClick={() => handleSubOpen(2)}
+							>
+								<span>
+									CCPS
+									<FontAwesomeIcon icon={faAngleDown} />
+								</span>
+
+								<ul className="nav-links__sub">
+									<li>
+										<Link href="/ccps/aboutus">
+											About Us
+										</Link>
+									</li>
+									<li>
+										<Link href="/ccps/trainings">
+											Trainings
+										</Link>
+									</li>
+									<li>
+										<Link href="/ccps/cherguyhouchol">
+											Cher guy houchol
+										</Link>
+									</li>
+									<li>
+										<Link href="/ccps/partners">
+											Partners
+										</Link>
+									</li>
+								</ul>
+							</div>
 						</li>
-						<li className="nav-items__elements-child">
+						{/* <li className="nav-items__elements-child">
 							<Link href="/#events" onClick={handleChange}>
 								Events
 							</Link>
-						</li>
+						</li> */}
 						<li className="nav-items__elements-child">
 							<Link href="/gallery">Gallery</Link>
 						</li>
 						<li className="nav-items__elements-child">
-							<Link href="/aboutus">About Us</Link>
+							<input
+								type="checkbox"
+								checked={three}
+								onChange={() => {}}
+							/>
+
+							<div
+								className="nav-hover"
+								onClick={() => handleSubOpen(3)}
+							>
+								<span>
+									About Us
+									<FontAwesomeIcon icon={faAngleDown} />
+								</span>
+
+								<ul className="nav-links__sub">
+									<li>
+										<Link href="/history">History</Link>
+									</li>
+									<li>
+										<Link href="/faculty">Faculty</Link>
+									</li>
+									<li>
+										<Link href="/documents">Documents</Link>
+									</li>
+								</ul>
+							</div>
 						</li>
 						<li className="nav-items__elements-child">
 							Contact Us

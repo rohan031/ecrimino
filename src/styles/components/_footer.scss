@@ -2,7 +2,7 @@
 
 footer {
 	background-color: ab.$dark1;
-	color: white;
+	color: ab.$white;
 	padding-inline: clamp(0.5em, 1vw, 1.3em);
 
 	.footer {
@@ -33,13 +33,13 @@ footer {
 				.items {
 					a {
 						font-size: clamp(0.8rem, 1.9vw, 1rem);
-						color: white;
+						color: ab.$white;
 						text-decoration: underline transparent;
 						display: block;
 						word-break: break-all;
 
 						&:hover {
-							text-decoration-color: white;
+							text-decoration-color: ab.$white;
 						}
 					}
 				}
@@ -72,11 +72,11 @@ footer {
 				width: min(100%, 20rem);
 
 				a {
-					color: white;
+					color: ab.$white;
 					text-decoration: underline transparent;
 
 					&:hover {
-						text-decoration-color: white;
+						text-decoration-color: ab.$white;
 					}
 				}
 			}

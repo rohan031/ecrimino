@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 
 export default function Translations() {
 	const { t, i18n } = useTranslation("translation");
-	const [lang, setLang] = useState<string>("en");
+	const [lang, setLang] = useState<string>("fr");
 
 	useEffect(() => {
 		i18n.changeLanguage(lang);
