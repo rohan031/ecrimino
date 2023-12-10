@@ -15,7 +15,7 @@ export const faculties = [
 		areaOfStudy: "SECURITE INTERIEURE",
 		departmentName: "ECOLE DE CRIMINOLOGIE DE L'UNIVERSITE DE KINSHASA",
 		image: "/faculty/JeanRenéMabwilo.jpg",
-		salutation: "Mr.",
+		salutation: "Dr.",
 	},
 	{
 		name: "Mbokolo Ntikala Albert",
