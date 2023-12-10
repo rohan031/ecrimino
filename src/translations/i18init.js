@@ -18,6 +18,9 @@ import frCCPS from "./languages/fr/home/ccps.json";
 import enFaculty from "./languages/en/faculty/lang.json";
 import frFaculty from "./languages/fr/faculty/lang.json";
 
+import enNav from "./languages/en/home/nav.json";
+import frNav from "./languages/fr/home/nav.json";
+
 i18n.init({
 	debug: true,
 	lng: "fr",
@@ -35,6 +38,7 @@ i18n.init({
 				academics: enAcademics,
 				ccps: enCCPS,
 				faculty: enFaculty,
+				nav: enNav,
 			},
 		},
 		fr: {
@@ -45,6 +49,7 @@ i18n.init({
 				academics: frAcademics,
 				ccps: frCCPS,
 				faculty: frFaculty,
+				nav: frNav,
 			},
 		},
 	},

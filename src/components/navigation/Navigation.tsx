@@ -5,8 +5,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { useTranslation } from "react-i18next";
 
 export default function Navigation() {
+	const { t } = useTranslation();
 	const [navOpen, setNavOpen] = useState<boolean>(false);
 	const [subOpen, setSubOpen] = useState(0);
 	const pathname = usePathname();
@@ -96,29 +98,31 @@ export default function Navigation() {
 								onClick={() => handleSubOpen(1)}
 							>
 								<span>
-									Academics
+									{t("nav.academics")}
 									<FontAwesomeIcon icon={faAngleDown} />
 								</span>
 
 								<ul className="nav-links__sub">
 									<li>
 										<Link href="/academics/masters">
-											Masters
+											{t("nav.masters")}
 										</Link>
 									</li>
 									<li>
-										<Link href="/academics/phd">Phd</Link>
+										<Link href="/academics/phd">
+											{t("nav.phd")}
+										</Link>
 									</li>
 									<li>
 										<Link href="/academics/certifications">
-											Certifications
+											{t("nav.certifications")}
 										</Link>
 									</li>
 								</ul>
 							</div>
 						</li>
 						<li className="nav-items__elements-child">
-							Admissions
+							{t("nav.admissions")}
 						</li>
 						<li
 							className="hover nav-items__elements-child"
@@ -135,29 +139,29 @@ export default function Navigation() {
 								onClick={() => handleSubOpen(2)}
 							>
 								<span>
-									CCPS
+									{t("nav.ccps")}
 									<FontAwesomeIcon icon={faAngleDown} />
 								</span>
 
 								<ul className="nav-links__sub">
 									<li>
 										<Link href="/ccps/aboutus">
-											About Us
+											{t("nav.ccpsaboutus")}
 										</Link>
 									</li>
 									<li>
 										<Link href="/ccps/trainings">
-											Trainings
+											{t("nav.trainings")}
 										</Link>
 									</li>
 									<li>
 										<Link href="/ccps/cherguyhouchol">
-											Cher guy houchol
+											{t("nav.cherguy")}
 										</Link>
 									</li>
 									<li>
 										<Link href="/ccps/partners">
-											Partners
+											{t("nav.partners")}
 										</Link>
 									</li>
 								</ul>
@@ -169,7 +173,7 @@ export default function Navigation() {
 							</Link>
 						</li> */}
 						<li className="nav-items__elements-child">
-							<Link href="/gallery">Gallery</Link>
+							<Link href="/gallery">{t("nav.gallery")}</Link>
 						</li>
 						<li className="nav-items__elements-child">
 							<input
@@ -183,25 +187,31 @@ export default function Navigation() {
 								onClick={() => handleSubOpen(3)}
 							>
 								<span>
-									About Us
+									{t("nav.aboutus")}
 									<FontAwesomeIcon icon={faAngleDown} />
 								</span>
 
 								<ul className="nav-links__sub">
 									<li>
-										<Link href="/history">History</Link>
+										<Link href="/history">
+											{t("nav.history")}
+										</Link>
 									</li>
 									<li>
-										<Link href="/faculty">Faculty</Link>
+										<Link href="/faculty">
+											{t("nav.faculty")}
+										</Link>
 									</li>
 									<li>
-										<Link href="/documents">Documents</Link>
+										<Link href="/documents">
+											{t("nav.docs")}
+										</Link>
 									</li>
 								</ul>
 							</div>
 						</li>
 						<li className="nav-items__elements-child">
-							Contact Us
+							{t("nav.contactus")}
 						</li>
 
 						<div className="nav-items__elements-logo">
