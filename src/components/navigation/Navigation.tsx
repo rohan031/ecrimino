@@ -151,7 +151,7 @@ export default function Navigation() {
 										</Link>
 									</li>
 									<li>
-										<Link href="/ccps/cherguyhouchol">
+										<Link href="https://uclouvain.be/fr/instituts-recherche/juri/cridep/fonds-d-archives-guy-houchon.html">
 											Cher guy houchol
 										</Link>
 									</li>
