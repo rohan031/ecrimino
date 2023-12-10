@@ -202,11 +202,11 @@ export default function Navigation() {
 											{t("nav.faculty")}
 										</Link>
 									</li>
-									<li>
+									{/* <li>
 										<Link href="/documents">
 											{t("nav.docs")}
 										</Link>
-									</li>
+									</li> */}
 								</ul>
 							</div>
 						</li>
