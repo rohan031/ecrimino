@@ -1,0 +1,5 @@
+@mixin container-30 {
+	@container (min-width: 30em) {
+		@content;
+	}
+}

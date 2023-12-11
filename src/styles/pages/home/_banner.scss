@@ -1,0 +1,109 @@
+@use "../../abstracts" as ab;
+
+.embla-parent {
+	position: relative;
+
+	&__button {
+		position: absolute;
+		top: 50%;
+		translate: 0 -50%;
+
+		bottom: 1em;
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+
+		transition: scale 150ms, opacity 200ms;
+		opacity: 0;
+
+		@include ab.screen-40 {
+			opacity: 0.5;
+		}
+
+		&:hover {
+			scale: 1.2;
+			opacity: 1;
+		}
+
+		svg {
+			font-size: 2rem;
+			color: ab.$white;
+		}
+	}
+
+	.button-prev {
+		left: clamp(0em, 0.5vw, 0.6em);
+	}
+
+	.button-next {
+		right: clamp(0em, 0.5vw, 0.6em);
+	}
+}
+
+.banners {
+	&-item {
+		padding: clamp(3.8em, 9vw, 4.8em) 1em;
+
+		@for $i from 1 to 5 {
+			&:nth-child(#{$i}) {
+				background-image: map-get(ab.$bannerGradient, $i);
+			}
+		}
+
+		.banner-item {
+			display: grid;
+			gap: 2.2em;
+
+			&__child {
+				&:nth-child(2) {
+					display: grid;
+					gap: 2em;
+
+					@include ab.screen-48 {
+						grid-template-columns: 5fr 6fr;
+					}
+
+					@include ab.screen-64 {
+						grid-template-columns: 7fr 5fr;
+					}
+				}
+
+				&-head {
+					font-weight: 700;
+					font-size: clamp(1.3rem, 6vw, 1.8rem);
+					text-decoration: underline;
+				}
+
+				&-text {
+					container-type: inline-size;
+					padding-block-start: 1.2em;
+
+					p {
+						font-size: clamp(1rem, 2vw, 1.2rem);
+
+						@include ab.container-30 {
+							font-size: clamp(1.1rem, 3vw, 1.3rem);
+						}
+					}
+				}
+
+				&-image {
+					img {
+						width: 100%;
+						object-fit: cover;
+						border-radius: 0.6em;
+						max-height: 18em;
+						margin-inline: auto;
+						object-position: 0 12%;
+					}
+				}
+			}
+		}
+
+		&:nth-child(4) {
+			img {
+				object-position: center calc(50% - 2em);
+			}
+		}
+	}
+}

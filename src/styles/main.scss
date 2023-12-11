@@ -1,0 +1,57 @@
+@use "./abstracts" as ab;
+@use "./components";
+@use "./pages";
+
+body {
+	font-family: "Inter", sans-serif;
+	color: ab.$white;
+	scroll-behavior: smooth;
+	background-color: ab.$white;
+	// color: black;
+}
+
+.icon {
+	display: flex;
+	gap: 0.5em;
+	align-items: center;
+	text-decoration: none;
+
+	&-image {
+		aspect-ratio: 1 / 1;
+		width: clamp(1.2em, 6vw, 2em);
+		background-color: ab.$white;
+		border-radius: 50%;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+
+		svg {
+			color: ab.$blue2;
+			font-size: clamp(0.9rem, 3vw, 1.2rem);
+		}
+	}
+
+	&-text {
+		display: none;
+		color: ab.$white;
+		text-decoration: underline transparent;
+		font-size: 0.85rem;
+
+		&:hover {
+			text-decoration-color: ab.$white;
+		}
+
+		@include ab.screen-48 {
+			display: block;
+		}
+
+		@include ab.screen-64 {
+			font-size: 0.9rem;
+		}
+	}
+}
+
+.container {
+	width: min(96%, 120rem);
+	margin-inline: auto;
+}

@@ -1,24 +1,36 @@
 {
-  "name": "ecrimino",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.0.2"
-  },
-  "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.0.2"
-  }
+	"name": "ecrimino",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "node .next/standalone/server.js",
+		"lint": "next lint",
+		"postbuild": "node .cyclic/pre-deploy.js"
+	},
+	"dependencies": {
+		"@fortawesome/fontawesome-svg-core": "^6.4.2",
+		"@fortawesome/free-brands-svg-icons": "^6.4.2",
+		"@fortawesome/free-solid-svg-icons": "^6.4.2",
+		"@fortawesome/react-fontawesome": "^0.2.0",
+		"embla-carousel-autoplay": "^8.0.0-rc14",
+		"embla-carousel-react": "^8.0.0-rc14",
+		"firebase": "^10.7.0",
+		"i18next": "^23.7.6",
+		"next": "14.0.2",
+		"react": "^18",
+		"react-dom": "^18",
+		"react-i18next": "^13.4.1"
+	},
+	"devDependencies": {
+		"@types/node": "^20",
+		"@types/react": "^18",
+		"@types/react-dom": "^18",
+		"eslint": "^8",
+		"eslint-config-next": "14.0.2",
+		"fs-extra": "^11.1.1",
+		"sass": "^1.69.5",
+		"typescript": "^5"
+	}
 }

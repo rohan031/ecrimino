@@ -1,0 +1,27 @@
+$blue1: #000080;
+$blue2: #25408f;
+$blue3: #def4ff;
+$blue4: #79ccf4;
+
+$grey1: #e5e5e588;
+$grey2: #e3e3e3;
+$grey3: #f1f1f1;
+
+$dark1: #101010;
+
+$red: #a32525;
+$white: #fff;
+$white1: #fbfcf8;
+$pink: #ffeaea;
+
+$banner1: linear-gradient(267.82deg, #5c0048 -16.4%, #a32525 142.29%);
+$banner2: linear-gradient(270deg, #101010 -20.64%, #000080 145.97%);
+$banner3: linear-gradient(267.82deg, #5c0048 -16.4%, #a32525 142.29%);
+$banner4: linear-gradient(270deg, #101010 -20.64%, #000080 145.97%);
+
+$bannerGradient: (
+	1: $banner1,
+	2: $banner2,
+	3: $banner3,
+	4: $banner4,
+);

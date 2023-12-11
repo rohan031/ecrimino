@@ -1,0 +1,40 @@
+// sm
+@mixin screen-40 {
+	@media (min-width: 40em) {
+		@content;
+	}
+}
+
+// md
+@mixin screen-48 {
+	@media (min-width: 48em) {
+		@content;
+	}
+}
+
+// lg
+@mixin screen-64 {
+	@media (min-width: 64em) {
+		@content;
+	}
+}
+
+// xl
+@mixin screen-80 {
+	@media (min-width: 80em) {
+		@content;
+	}
+}
+
+// 2xl
+@mixin screen-96 {
+	@media (min-width: 96em) {
+		@content;
+	}
+}
+
+@mixin screen-75 {
+	@media (min-width: 75em) {
+		@content;
+	}
+}
