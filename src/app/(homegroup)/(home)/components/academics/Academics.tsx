@@ -18,7 +18,7 @@ export default function Academics() {
 			<Card
 				key={i}
 				id={i}
-				image={`/academics/academics${i}.jpg`}
+				image={`/academics/academics${i}.WebP`}
 				text={t(`academics.card${i}`)}
 				sub={t(`academics.card${i}sub`)}
 				link="academics"

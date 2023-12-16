@@ -1,10 +1,10 @@
 import React from "react";
 import Image from "next/image";
 
-import banner1 from "@/../public/banner/banner1.jpg";
-import banner2 from "@/../public/banner/banner2.jpg";
-import banner3 from "@/../public/banner/banner3.jpg";
-import banner4 from "@/../public/banner/banner4.jpg";
+import banner1 from "@/../public/banner/banner1.WebP";
+import banner2 from "@/../public/banner/banner2.WebP";
+import banner3 from "@/../public/banner/banner3.WebP";
+import banner4 from "@/../public/banner/banner4.WebP";
 
 interface ItemProps {
 	content: string;

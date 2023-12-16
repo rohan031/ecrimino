@@ -1,6 +1,6 @@
 export const events = [
 	{
-		img: "/events/events1.jpg",
+		img: "/events/events1.WebP",
 		heading:
 			"École de criminologie de l’UNIKIN: Remise des certificats en intervention criminologique, 3ème édition du..",
 		date: "9 November, 2023",
@@ -8,21 +8,21 @@ export const events = [
 		link: "https://www.facebook.com/Newscd15/videos/1394396691287362/?mibextid=rS40aB7S9Ucbxw6v",
 	},
 	{
-		img: "/events/events2.jpg",
+		img: "/events/events2.WebP",
 		heading: "Présentation des résultats de l’approche...",
 		date: "4 September, 2023",
 		text: "Présentation des résultats de l’approche AHPER pour...",
 		link: "https://www.facebook.com/Newscd15/videos/1394396691287362/?mibextid=rS40aB7S9Ucbxw6v",
 	},
 	{
-		img: "/events/events3.jpg",
+		img: "/events/events3.WebP",
 		heading: "Présentation des résultats de l’approche.....",
 		date: "27 November, 2023",
 		text: "Présentation des résultats de l’approche AHPER pour....",
 		link: "https://www.facebook.com/Newscd15/videos/1394396691287362/?mibextid=rS40aB7S9Ucbxw6v",
 	},
 	{
-		img: "/events/events4.jpg",
+		img: "/events/events4.WebP",
 		heading: "Présentation des résultats de l’approche....",
 		date: "27 November, 2023",
 		text: "Présentation des résultats de l’approche AHPER pour..",

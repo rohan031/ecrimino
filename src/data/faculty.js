@@ -6,7 +6,7 @@ export const faculties = [
 		areaOfStudy:
 			"Criminologie (thème de régulation sociale) - Justice pénale (droit pénal, procédure pénale et pénologie ou droit pénitentiaire) - violence et criminalité urbaines – Réformes institutionnelles du secteur de la justice et de la sécurité,- Justice des mineurs et droits de l’enfant – délinquance juvénile (Droit de la Protection de l’enfant); - Méthodologie de recherche en sciences sociales (recherche qualitative et Méthode d’analyse en groupe - MAG) et méthodologie juridique",
 		departmentName: "Ecole de criminologie de l'Université de Kinshasa",
-		image: "/faculty/RaoulKIENGE-KIENGEIntudi.jpg",
+		image: "/faculty/RaoulKIENGE-KIENGEIntudi.WebP",
 		salutation: "Prof. Dr.",
 	},
 	{
@@ -14,7 +14,7 @@ export const faculties = [
 		qualification: "DOCTEUR EN PHILOSOPHIE ET MASTER EN CRIMINOLGIE",
 		areaOfStudy: "SECURITE INTERIEURE",
 		departmentName: "ECOLE DE CRIMINOLOGIE DE L'UNIVERSITE DE KINSHASA",
-		image: "/faculty/JeanRenéMabwilo.jpg",
+		image: "/faculty/JeanRenéMabwilo.WebP",
 		salutation: "Dr.",
 	},
 	{
@@ -22,7 +22,7 @@ export const faculties = [
 		qualification: "Diplômé d'études supérieures",
 		areaOfStudy: "Droit pénal et criminologie",
 		departmentName: "Faculté de droit",
-		image: "/faculty/AlbertMbokolo.jpg",
+		image: "/faculty/AlbertMbokolo.WebP",
 		salutation: "Mr.",
 	},
 	{
@@ -30,7 +30,7 @@ export const faculties = [
 		qualification: "Diplômé d'études supérieures en Droit",
 		areaOfStudy: "Droit et Criminologie",
 		departmentName: "École de criminologie",
-		image: "/faculty/HarrisTatyMantima.jpg",
+		image: "/faculty/HarrisTatyMantima.WebP",
 		salutation: "Mr.",
 	},
 
@@ -39,7 +39,7 @@ export const faculties = [
 		qualification: "Licence",
 		areaOfStudy: "Psychologie clinique et criminologie",
 		departmentName: "École de criminologie",
-		image: "/faculty/JeanSalumu.jpg",
+		image: "/faculty/JeanSalumu.WebP",
 		salutation: "Mrs.",
 	},
 	{
@@ -48,7 +48,7 @@ export const faculties = [
 		areaOfStudy:
 			"Criminologie, Protection de l'enfant, Justice pénale, Prison, Violence urbaine, Sécurité",
 		departmentName: "École de criminologie",
-		image: "/faculty/BienvenuMalanda.jpg",
+		image: "/faculty/BienvenuMalanda.WebP",
 		salutation: "Mr.",
 	},
 	{
@@ -56,7 +56,7 @@ export const faculties = [
 		qualification: "Master en communication",
 		areaOfStudy: "Communication et criminologie",
 		departmentName: "École de criminologie",
-		image: "/faculty/JoelNzampungu.jpg",
+		image: "/faculty/JoelNzampungu.WebP",
 		salutation: "Mr.",
 	},
 
@@ -65,7 +65,7 @@ export const faculties = [
 		qualification: "Diplômé d'études supérieures",
 		areaOfStudy: "Droit (Innovation, science et technologie)",
 		departmentName: "Ecole de criminologie",
-		image: "/faculty/FélicienKAYOMBO.JPG",
+		image: "/faculty/FélicienKAYOMBO.WebP",
 		salutation: "Mr.",
 	},
 ];
