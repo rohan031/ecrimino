@@ -25,53 +25,53 @@ export default function Page() {
 		// 	})
 		// 	.catch((err) => console.log(err.message));
 
-		const { result, error } = await signIn(email, password);
-		if (error) {
-			return console.log(error);
-		}
-
-		if (result) {
-			const user = result.user;
-
-			if (!user.emailVerified) {
-				await resendEmailVerification();
-				alert("sent email verification mail");
-			} else {
-				// const users = [
-				// 	{
-				// 		email: "rohanverma3892@gmail.com",
-				// 		name: "Rohan Verma",
-				// 		course: "m2",
-				// 	},
-				// ];
-				// let isFaculty = false;
-				// addAdminRole({ users, isFaculty })
-				// 	.then((res) => {
-				// 		console.log(res);
-				// 	})
-				// 	.catch((err: Error) => {
-				// 		console.log(err);
-				// 	});
-				const result = await user.getIdTokenResult();
-				console.log(result);
-
-				if (
-					!result.claims.isSuperAdmin &&
-					result.claims.role === "admin"
-				) {
-					await signoutUser();
-					alert("you are not authorized to access this dashboard");
-				}
-			}
-		}
-
-		// const { result, error } = await signoutUser();
-
+		// const { result, error } = await signIn(email, password);
 		// if (error) {
-		// 	console.log(error);
-		// } else {
-		// 	console.log(result);
+		// 	return console.log(error);
 		// }
+
+		// if (result) {
+		// 	const user = result.user;
+
+		// 	if (!user.emailVerified) {
+		// 		await resendEmailVerification();
+		// 		alert("sent email verification mail");
+		// 	} else {
+		// 		// const users = [
+		// 		// 	{
+		// 		// 		email: "rohanverma3892@gmail.com",
+		// 		// 		name: "Rohan Verma",
+		// 		// 		course: "m2",
+		// 		// 	},
+		// 		// ];
+		// 		// let isFaculty = false;
+		// 		// addAdminRole({ users, isFaculty })
+		// 		// 	.then((res) => {
+		// 		// 		console.log(res);
+		// 		// 	})
+		// 		// 	.catch((err: Error) => {
+		// 		// 		console.log(err);
+		// 		// 	});
+		// 		const result = await user.getIdTokenResult();
+		// 		console.log(result);
+
+		// 		if (
+		// 			!result.claims.isSuperAdmin &&
+		// 			result.claims.role === "admin"
+		// 		) {
+		// 			await signoutUser();
+		// 			alert("you are not authorized to access this dashboard");
+		// 		}
+		// 	}
+		// }
+
+		// // const { result, error } = await signoutUser();
+
+		// // if (error) {
+		// // 	console.log(error);
+		// // } else {
+		// // 	console.log(result);
+		// // }
 	};
 
 	const handleAdminLogin = () => {
