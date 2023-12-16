@@ -16,7 +16,7 @@ export default function Cards({ img, heading, date, text, link }: CardsProps) {
 	return (
 		<div className="events-container__item">
 			<div className="events-container__item-img">
-				<img src={img} alt="heading" />
+				<img src={img} alt="heading" loading="lazy" />
 			</div>
 
 			<div className="events-container__item-info">

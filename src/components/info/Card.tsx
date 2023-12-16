@@ -17,7 +17,7 @@ export default function Card({ id, text, image, sub, link }: CardProps) {
 	return (
 		<div className="info-items__child embla__slide">
 			<div className="info-items__child-container">
-				<img src={image} alt={text} />
+				<img src={image} alt={text} loading="lazy" />
 			</div>
 
 			<div className="info-items__child-container">

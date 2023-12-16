@@ -1,4 +1,10 @@
 import React from "react";
+import Image from "next/image";
+
+import banner1 from "@/../public/banner/banner1.jpg";
+import banner2 from "@/../public/banner/banner2.jpg";
+import banner3 from "@/../public/banner/banner3.jpg";
+import banner4 from "@/../public/banner/banner4.jpg";
 
 interface ItemProps {
 	content: string;
@@ -10,14 +16,13 @@ export default function Item({ content, heading, id }: ItemProps) {
 	const image = () => {
 		switch (id) {
 			case 1:
-				return <img src="/banner/banner1.jpg" alt="banner image" />;
-
+				return <Image src={banner1} alt="banner image" />;
 			case 2:
-				return <img src="/banner/banner2.jpg" alt="banner image" />;
+				return <Image src={banner2} alt="banner image" />;
 			case 3:
-				return <img src="/banner/banner3.jpg" alt="banner image" />;
+				return <Image src={banner3} alt="banner image" />;
 			case 4:
-				return <img src="/banner/banner4.jpg" alt="banner image" />;
+				return <Image src={banner4} alt="banner image" />;
 		}
 	};
 

@@ -16,7 +16,7 @@ export const docs = [
 	},
 	{
 		title: "ECOCRIM DEPLIANT.pdf",
-		link: "/documents/sample.pdf",
+		link: "/documents/docs/ECOCRIM%20DEPLIANT.pdf",
 		id: "afsdfasdasdfadsf",
 	},
 	{
