@@ -34,7 +34,7 @@ export default function Footer() {
 	});
 
 	return (
-		<footer>
+		<footer id="footer">
 			<div className="container footer">
 				<div className="footer-item">
 					<div className="location">

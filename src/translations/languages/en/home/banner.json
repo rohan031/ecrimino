@@ -1,10 +1,15 @@
 {
 	"bannerHead": "CREATION",
+
+	"bannerHead1": "CREATION",
 	"banner1Content": "The School of Criminology of the University of Kinshasa was created by Order of the Minister of Higher and University Education of October 30, 2018, modified and supplemented by the Order of February 24, 2021. It absorbs the current Center of Criminology and social pathology (CCPS), formerly attached to the faculty of law.",
 
+	"bannerHead2": "CREATION",
 	"banner2Content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rutrum, nisl quis sodales fermentum, dolor magna hendrerit quam, sit amet placerat massa ante at quam. Integer tempus sem sed fringilla sodales. Praesent viverra, massa et consectetur rutrum, ante sapien fermentum nunc, a lacinia nisl nunc eu turpis. Donec ligula orci, tempor in viverra eget, pharetra et justo.",
 
+	"bannerHead3": "CREATION",
 	"banner3Content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rutrum, nisl quis sodales fermentum, dolor magna hendrerit quam, sit amet placerat massa ante at quam. Integer tempus sem sed fringilla sodales. Praesent viverra, massa et consectetur rutrum, ante sapien fermentum nunc, a lacinia nisl nunc eu turpis. Donec ligula orci, tempor in viverra eget, pharetra et justo.",
 
+	"bannerHead4": "CREATION",
 	"banner4Content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras rutrum, nisl quis sodales fermentum, dolor magna hendrerit quam, sit amet placerat massa ante at quam. Integer tempus sem sed fringilla sodales. Praesent viverra, massa et consectetur rutrum, ante sapien fermentum nunc, a lacinia nisl nunc eu turpis. Donec ligula orci, tempor in viverra eget, pharetra et justo."
 }

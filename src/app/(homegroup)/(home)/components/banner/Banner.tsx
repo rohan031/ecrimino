@@ -31,7 +31,7 @@ export default function Banner() {
 			<Item
 				key={i}
 				id={i}
-				heading={t("banner.bannerHead")}
+				heading={t(`banner.bannerHead${i}`)}
 				content={t(`banner.banner${i}Content`)}
 			/>
 		);

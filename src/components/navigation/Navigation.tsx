@@ -211,7 +211,7 @@ export default function Navigation() {
 							</div>
 						</li>
 						<li className="nav-items__elements-child">
-							{t("nav.contactus")}
+							<Link href="#footer">{t("nav.contactus")}</Link>
 						</li>
 
 						<div className="nav-items__elements-logo">
