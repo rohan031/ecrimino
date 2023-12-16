@@ -13,7 +13,7 @@ import { useRouter } from "next/navigation";
 export default function Page() {
 	const router = useRouter();
 	const [email, setEmail] = useState("rohanverma031@gmail.com");
-	const [password, setPassword] = useState("");
+	const [password, setPassword] = useState("R1O2H3A4N5:%%");
 
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
@@ -24,18 +24,46 @@ export default function Page() {
 		// 		console.log(res);
 		// 	})
 		// 	.catch((err) => console.log(err.message));
-		// const { result, error } = await signIn(email, password);
-		// if (error) {
-		// 	return console.log(error);
-		// }
 
-		// if (result) {
-		// 	const user = result.user;
+		const { result, error } = await signIn(email, password);
+		if (error) {
+			return console.log(error);
+		}
 
-		// 	if (!user.emailVerified) {
-		// 		await resendEmailVerification();
-		// 	}
-		// }
+		if (result) {
+			const user = result.user;
+
+			if (!user.emailVerified) {
+				await resendEmailVerification();
+				alert("sent email verification mail");
+			} else {
+				// const users = [
+				// 	{
+				// 		email: "rohanverma3892@gmail.com",
+				// 		name: "Rohan Verma",
+				// 		course: "m2",
+				// 	},
+				// ];
+				// let isFaculty = false;
+				// addAdminRole({ users, isFaculty })
+				// 	.then((res) => {
+				// 		console.log(res);
+				// 	})
+				// 	.catch((err: Error) => {
+				// 		console.log(err);
+				// 	});
+				const result = await user.getIdTokenResult();
+				console.log(result);
+
+				if (
+					!result.claims.isSuperAdmin &&
+					result.claims.role === "admin"
+				) {
+					await signoutUser();
+					alert("you are not authorized to access this dashboard");
+				}
+			}
+		}
 
 		// const { result, error } = await signoutUser();
 

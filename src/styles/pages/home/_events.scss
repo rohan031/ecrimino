@@ -25,6 +25,7 @@
 	}
 
 	&-container {
+		outline: 2px solid coral;
 		display: grid;
 		gap: 1.5em;
 
@@ -33,7 +34,7 @@
 		}
 
 		@include ab.screen-75 {
-			grid-template-columns: 3fr 2fr;
+			grid-template-columns: 4fr 2fr;
 		}
 
 		&__item {
@@ -94,6 +95,7 @@
 				img {
 					height: min(100%, 17em);
 					object-fit: cover;
+					width: 100%;
 				}
 			}
 

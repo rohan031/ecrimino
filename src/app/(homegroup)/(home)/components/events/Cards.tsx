@@ -20,11 +20,11 @@ export default function Cards({ img, heading, date, text, link }: CardsProps) {
 			</div>
 
 			<div className="events-container__item-info">
-				<h3>{heading}</h3>
+				<h3>{heading.substring(0, 50) + "..."}</h3>
 
 				<p>{date}</p>
 
-				<p>{text}</p>
+				<p>{text.substring(0, 50) + "..."}</p>
 
 				<div>
 					<a href={link} target="_blank">
