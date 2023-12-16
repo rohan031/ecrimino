@@ -33,9 +33,15 @@
 	}
 }
 
-// 900
+// 1200
 @mixin screen-75 {
 	@media (min-width: 75em) {
+		@content;
+	}
+}
+
+@mixin screen-56 {
+	@media (min-width: 56.25em) {
 		@content;
 	}
 }
