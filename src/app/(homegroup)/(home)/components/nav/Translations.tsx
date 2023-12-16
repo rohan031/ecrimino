@@ -17,7 +17,12 @@ export default function Translations() {
 
 	return (
 		<div className="contact-nav__functions-item">
-			<select name="language" onChange={handleLangChange} value={lang}>
+			<select
+				aria-labelledby="change language"
+				name="language"
+				onChange={handleLangChange}
+				value={lang}
+			>
 				<option value="en">🇬🇧</option>
 				<option value="fr">🇫🇷</option>
 			</select>

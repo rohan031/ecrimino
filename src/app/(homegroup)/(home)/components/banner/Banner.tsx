@@ -46,12 +46,14 @@ export default function Banner() {
 			<button
 				className="embla-parent__button button-prev"
 				onClick={scrollPrev}
+				aria-label="prev banner"
 			>
 				<FontAwesomeIcon icon={faChevronLeft} />
 			</button>
 			<button
 				className="embla-parent__button button-next"
 				onClick={scrollNext}
+				aria-label="next banner"
 			>
 				<FontAwesomeIcon icon={faChevronRight} />
 			</button>

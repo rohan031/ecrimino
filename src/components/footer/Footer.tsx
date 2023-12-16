@@ -64,15 +64,28 @@ export default function Footer() {
 					</div>
 
 					<div className="social">
-						<Icons link={socialLinks.facebook} icon={faFacebookF} />
+						<Icons
+							link={socialLinks.facebook}
+							icon={faFacebookF}
+							label="open facebook page"
+						/>
 
-						<Icons link={socialLinks.twitter} icon={faTwitter} />
+						<Icons
+							link={socialLinks.twitter}
+							icon={faTwitter}
+							label="open twitter page"
+						/>
 
-						<Icons link={socialLinks.whatsapp} icon={faWhatsapp} />
+						<Icons
+							link={socialLinks.whatsapp}
+							icon={faWhatsapp}
+							label="open whatsapp page"
+						/>
 
 						<Icons
 							link={socialLinks.linkedin}
 							icon={faLinkedinIn}
+							label="open linkedin page"
 						/>
 					</div>
 				</div>

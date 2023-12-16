@@ -32,13 +32,29 @@ export default function Nav() {
 				</div>
 
 				<div>
-					<Icons link={socialLinks.facebook} icon={faFacebookF} />
+					<Icons
+						link={socialLinks.facebook}
+						icon={faFacebookF}
+						label="open facebook page"
+					/>
 
-					<Icons link={socialLinks.twitter} icon={faTwitter} />
+					<Icons
+						link={socialLinks.twitter}
+						icon={faTwitter}
+						label="open twitter page"
+					/>
 
-					<Icons link={socialLinks.whatsapp} icon={faWhatsapp} />
+					<Icons
+						link={socialLinks.whatsapp}
+						icon={faWhatsapp}
+						label="open whatsapp page"
+					/>
 
-					<Icons link={socialLinks.linkedin} icon={faLinkedinIn} />
+					<Icons
+						link={socialLinks.linkedin}
+						icon={faLinkedinIn}
+						label="open linkedin page"
+					/>
 
 					<div className="contact-nav__items-functions">
 						<div className="contact-nav__items-functions-item">
