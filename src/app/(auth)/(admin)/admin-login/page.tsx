@@ -32,36 +32,39 @@ export default function Page() {
 			if (!user.emailVerified) {
 				await resendEmailVerification();
 				alert("sent email verification mail");
-			} else {
-				const users = [
-					{
-						email: "rohanverma3892@gmail.com",
-						name: "Rohan Verma",
-						course: "m2",
-						startYear: "2019",
-					},
-				];
-				let isFaculty = false;
-				addAdminRole({ users, isFaculty })
-					.then((res) => {
-						console.log(res);
-					})
-					.catch((err: Error) => {
-						console.log(err);
-					});
-				const result = await user.getIdTokenResult();
-				// console.log(result);
-
-				if (
-					!result.claims.isSuperAdmin &&
-					result.claims.role !== "admin"
-				) {
-					console.log(getUser());
-					await signoutUser();
-					console.log(getUser());
-					alert("you are not authorized to access this dashboard");
-				}
+				return;
 			}
+			// const users = [
+			// 	{
+			// 		email: "rohanverma3892@gmail.com",
+			// 		name: "Rohan Verma",
+			// 		course: "m2",
+			// 		startYear: "2019",
+			// 	},
+			// ];
+			// let isFaculty = false;
+			// addAdminRole({ users, isFaculty })
+			// 	.then((res) => {
+			// 		console.log(res);
+			// 	})
+			// 	.catch((err: Error) => {
+			// 		console.log(err);
+			// 	});
+			const details = await user.getIdTokenResult();
+			console.log(details);
+
+			if (
+				!details.claims.isSuperAdmin &&
+				details.claims.role !== "admin"
+			) {
+				console.log(getUser());
+				await signoutUser();
+				console.log(getUser());
+				alert("you are not authorized to access this dashboard");
+				return;
+			}
+
+			router.push("/admin-dashboard");
 		}
 	};
 
