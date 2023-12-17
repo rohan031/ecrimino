@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Provider from "./providers";
 import { Inter } from "next/font/google";
 import "../styles/main.scss";
 
@@ -24,9 +23,7 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
 	return (
 		<html lang="en" className={inter.className}>
-			<body>
-				<Provider>{children}</Provider>
-			</body>
+			<body>{children}</body>
 		</html>
 	);
 }

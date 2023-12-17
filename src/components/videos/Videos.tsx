@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import VideoItem from "./VideoItem";
-import { useTranslation } from "react-i18next";
 
 type Data = string[];
 type APIRes = { items: { id: { videoId: string } }[] };
@@ -13,7 +12,6 @@ interface VideosProps {
 export default function Videos({ error }: VideosProps) {
 	const [data, setData] = useState<Data>();
 	const [err, setErr] = useState(false);
-	const { t } = useTranslation();
 
 	useEffect(() => {
 		fetch(

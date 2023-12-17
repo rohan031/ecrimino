@@ -10,8 +10,6 @@ import {
 	faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 
-type Banners = React.JSX.Element[];
-
 interface BannerProps {
 	data: {
 		heading: string;
