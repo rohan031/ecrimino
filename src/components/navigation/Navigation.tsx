@@ -5,10 +5,29 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
-import { useTranslation } from "react-i18next";
 
-export default function Navigation() {
-	const { t } = useTranslation();
+interface Links {
+	text: string;
+	link?: string;
+	subLinks?: {
+		text: string;
+		link: string;
+		newPage?: boolean;
+	}[];
+}
+
+interface NavigationProps {
+	data: {
+		academics: Links;
+		admissions: Links;
+		ccps: Links;
+		gallery: Links;
+		aboutus: Links;
+		contactus: Links;
+	};
+}
+
+export default function Navigation({ data }: NavigationProps) {
 	const [navOpen, setNavOpen] = useState<boolean>(false);
 	const [subOpen, setSubOpen] = useState(0);
 	const pathname = usePathname();
@@ -98,12 +117,12 @@ export default function Navigation() {
 								onClick={() => handleSubOpen(1)}
 							>
 								<span>
-									{t("nav.academics")}
+									{data.academics.text}
 									<FontAwesomeIcon icon={faAngleDown} />
 								</span>
 
 								<ul className="nav-links__sub">
-									<li>
+									{/* <li>
 										<Link href="/academics/masters">
 											{t("nav.masters")}
 										</Link>
@@ -117,12 +136,37 @@ export default function Navigation() {
 										<Link href="/academics/certifications">
 											{t("nav.certifications")}
 										</Link>
-									</li>
+									</li> */}
+
+									{data.academics.subLinks?.map((link) => {
+										return (
+											<li key={link.text}>
+												<Link
+													href={link.link}
+													target={`${
+														link.newPage
+															? "_blank"
+															: ""
+													}`}
+												>
+													{link.text}
+												</Link>
+											</li>
+										);
+									})}
 								</ul>
 							</div>
 						</li>
 						<li className="nav-items__elements-child">
-							{t("nav.admissions")}
+							<Link
+								href={
+									data.admissions.link
+										? data.admissions.link
+										: ""
+								}
+							>
+								{data.admissions.text}
+							</Link>
 						</li>
 						<li
 							className="hover nav-items__elements-child"
@@ -139,31 +183,27 @@ export default function Navigation() {
 								onClick={() => handleSubOpen(2)}
 							>
 								<span>
-									{t("nav.ccps")}
+									{data.ccps.text}
 									<FontAwesomeIcon icon={faAngleDown} />
 								</span>
 
 								<ul className="nav-links__sub">
-									<li>
-										<Link href="/ccps/aboutus">
-											{t("nav.ccpsaboutus")}
-										</Link>
-									</li>
-									<li>
-										<Link href="/ccps/trainings">
-											{t("nav.trainings")}
-										</Link>
-									</li>
-									<li>
-										<Link href="https://uclouvain.be/fr/instituts-recherche/juri/cridep/fonds-d-archives-guy-houchon.html">
-											{t("nav.cherguy")}
-										</Link>
-									</li>
-									<li>
-										<Link href="/ccps/partners">
-											{t("nav.partners")}
-										</Link>
-									</li>
+									{data.ccps.subLinks?.map((link) => {
+										return (
+											<li key={link.text}>
+												<Link
+													href={link.link}
+													target={`${
+														link.newPage
+															? "_blank"
+															: ""
+													}`}
+												>
+													{link.text}
+												</Link>
+											</li>
+										);
+									})}
 								</ul>
 							</div>
 						</li>
@@ -173,7 +213,13 @@ export default function Navigation() {
 							</Link>
 						</li> */}
 						<li className="nav-items__elements-child">
-							<Link href="/gallery">{t("nav.gallery")}</Link>
+							<Link
+								href={
+									data.gallery.link ? data.gallery.link : ""
+								}
+							>
+								{data.gallery.text}
+							</Link>
 						</li>
 						<li className="nav-items__elements-child">
 							<input
@@ -187,31 +233,40 @@ export default function Navigation() {
 								onClick={() => handleSubOpen(3)}
 							>
 								<span>
-									{t("nav.aboutus")}
+									{data.aboutus.text}
 									<FontAwesomeIcon icon={faAngleDown} />
 								</span>
 
 								<ul className="nav-links__sub">
-									<li>
-										<Link href="/history">
-											{t("nav.history")}
-										</Link>
-									</li>
-									<li>
-										<Link href="/faculty">
-											{t("nav.faculty")}
-										</Link>
-									</li>
-									{/* <li>
-										<Link href="/documents">
-											{t("nav.docs")}
-										</Link>
-									</li> */}
+									{data.aboutus.subLinks?.map((link) => {
+										return (
+											<li key={link.text}>
+												<Link
+													href={link.link}
+													target={`${
+														link.newPage
+															? "_blank"
+															: ""
+													}`}
+												>
+													{link.text}
+												</Link>
+											</li>
+										);
+									})}
 								</ul>
 							</div>
 						</li>
 						<li className="nav-items__elements-child">
-							<Link href="#footer">{t("nav.contactus")}</Link>
+							<Link
+								href={
+									data.contactus.link
+										? data.contactus.link
+										: ""
+								}
+							>
+								{data.contactus.text}
+							</Link>
 						</li>
 
 						<div className="nav-items__elements-logo">

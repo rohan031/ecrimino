@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useCallback } from "react";
-import { useTranslation } from "react-i18next";
 import Item from "./Item";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
@@ -13,8 +12,15 @@ import {
 
 type Banners = React.JSX.Element[];
 
-export default function Banner() {
-	const { t } = useTranslation();
+interface BannerProps {
+	data: {
+		heading: string;
+		text: string;
+		image: string;
+	}[];
+}
+
+export default function Banner({ data }: BannerProps) {
 	const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()]);
 
 	const scrollPrev = useCallback(() => {
@@ -25,17 +31,16 @@ export default function Banner() {
 		if (emblaApi) emblaApi.scrollNext();
 	}, [emblaApi]);
 
-	let banners: Banners = [];
-	for (let i = 1; i <= 4; i++) {
-		banners.push(
+	let banners = data.map((item) => {
+		return (
 			<Item
-				key={i}
-				id={i}
-				heading={t(`banner.bannerHead${i}`)}
-				content={t(`banner.banner${i}Content`)}
+				key={item.heading}
+				heading={item.heading}
+				text={item.text}
+				image={item.image}
 			/>
 		);
-	}
+	});
 
 	return (
 		<div className="embla-parent">

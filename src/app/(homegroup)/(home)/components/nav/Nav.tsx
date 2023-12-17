@@ -7,10 +7,9 @@ import {
 	faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
-import Translations from "./Translations";
-import Icons from "../../../../../components/icons/Icons";
-import { contacts } from "../../../../../data/contact";
-import { socialLinks } from "../../../../../data/socialLinks";
+import Icons from "@/components/icons/Icons";
+import { contacts } from "@/data/contact";
+import { socialLinks } from "@/data/socialLinks";
 
 export default function Nav() {
 	return (
@@ -57,10 +56,6 @@ export default function Nav() {
 					/>
 
 					<div className="contact-nav__items-functions">
-						<div className="contact-nav__items-functions-item">
-							<Translations />
-						</div>
-
 						<div className="contact-nav__items-functions-item">
 							<Link href={"/login"}> Login </Link>
 						</div>

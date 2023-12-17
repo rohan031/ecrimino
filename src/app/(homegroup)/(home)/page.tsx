@@ -1,15 +1,16 @@
-import Academics from "./components/academics/Academics";
 import Banner from "./components/banner/Banner";
-import CCPS from "./components/ccps/CCPS";
+import Cards from "./components/Cards/Cards";
 import Events from "./components/events/Events";
+
+import { banner, academics, ccps, events } from "@/data/home/data";
 
 export default function Home() {
 	return (
 		<>
-			<Banner />
-			<Academics />
-			<CCPS />
-			<Events />
+			<Banner data={banner} />
+			<Cards data={academics} />
+			<Cards data={ccps} />
+			<Events data={events} />
 		</>
 	);
 }
