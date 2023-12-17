@@ -1,4 +1,5 @@
 import firebase_app from "../config";
+import { getStorage, ref } from "firebase/storage";
 import {
 	signInWithEmailAndPassword,
 	getAuth,
@@ -15,6 +16,7 @@ import {
 
 const auth = getAuth(firebase_app);
 const functions = getFunctions();
+export const storage = getStorage();
 // connectFunctionsEmulator(functions, "127.0.0.1", 5001);
 
 export async function signIn(email, password) {

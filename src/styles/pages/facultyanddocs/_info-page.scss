@@ -37,6 +37,15 @@
 
 		background-position: 25% 50%;
 	}
+
+	&.gallery {
+		background-image: linear-gradient(
+				rgba(0, 0, 0, 0.8),
+				rgba(0, 0, 0, 0.4)
+			),
+			url("../../../../public/gallery/gallery.WebP");
+		background-position: center 25%;
+	}
 }
 
 .faculty-search {
