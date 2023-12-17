@@ -9,14 +9,16 @@ export const faculties = [
 		image: "/faculty/RaoulKIENGE-KIENGEIntudi.WebP",
 		salutation: "Prof. Dr.",
 	},
+
 	{
-		name: "MABWILO KABUYA JEAN RENE",
-		qualification: "DOCTEUR EN PHILOSOPHIE ET MASTER EN CRIMINOLGIE",
-		areaOfStudy: "SECURITE INTERIEURE",
-		departmentName: "ECOLE DE CRIMINOLOGIE DE L'UNIVERSITE DE KINSHASA",
-		image: "/faculty/JeanRenéMabwilo.WebP",
+		name: "Sara Liwerant",
+		qualification: "Ph.D from Paris Nanterre University in",
+		areaOfStudy: "Private Law & Criminal Sciences",
+		departmentName: "Asst. Director of the School of Criminologie",
+		image: "/faculty/sara.WebP",
 		salutation: "Dr.",
 	},
+
 	{
 		name: "Mbokolo Ntikala Albert",
 		qualification: "Diplômé d'études supérieures",
@@ -24,6 +26,14 @@ export const faculties = [
 		departmentName: "Faculté de droit",
 		image: "/faculty/AlbertMbokolo.WebP",
 		salutation: "Mr.",
+	},
+	{
+		name: "MABWILO KABUYA JEAN RENE",
+		qualification: "DOCTEUR EN PHILOSOPHIE ET MASTER EN CRIMINOLGIE",
+		areaOfStudy: "SECURITE INTERIEURE",
+		departmentName: "ECOLE DE CRIMINOLOGIE DE L'UNIVERSITE DE KINSHASA",
+		image: "/faculty/JeanRenéMabwilo.WebP",
+		salutation: "Dr.",
 	},
 	{
 		name: "Taty Mantima Harris",
@@ -34,14 +44,6 @@ export const faculties = [
 		salutation: "Mr.",
 	},
 
-	{
-		name: "Mambiko Nyabita Catherine",
-		qualification: "Licence",
-		areaOfStudy: "Psychologie clinique et criminologie",
-		departmentName: "École de criminologie",
-		image: "/faculty/JeanSalumu.WebP",
-		salutation: "Mrs.",
-	},
 	{
 		name: "MALANDA MVIBIDULU BIENVENU DOUDOU",
 		qualification: "Diplômé d'études supérieures",
@@ -67,5 +69,13 @@ export const faculties = [
 		departmentName: "Ecole de criminologie",
 		image: "/faculty/FélicienKAYOMBO.WebP",
 		salutation: "Mr.",
+	},
+	{
+		name: "Mambiko Nyabita Catherine",
+		qualification: "Licence",
+		areaOfStudy: "Psychologie clinique et criminologie",
+		departmentName: "École de criminologie",
+		image: "/faculty/JeanSalumu.WebP",
+		salutation: "Mrs.",
 	},
 ];

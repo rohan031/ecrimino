@@ -41,6 +41,7 @@ export default function Album({
 
 			if (startIndex >= images.items.length) {
 				setHasMore(false);
+				setLoading(false);
 				return;
 			}
 
