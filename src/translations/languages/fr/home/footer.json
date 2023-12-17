@@ -1,20 +1,20 @@
 {
-	"addressHead": "Entrer en contact",
-	"address": "L’École de criminologie est située à l’Université de Kinshasa, entre l’ERAIFT et le CNPP (en diagonale du Centre hospitalier du Mont-Amba).",
+	"addressHead": "",
+	"address": "",
 
-	"linksHead": "Liens utiles",
-	"masters": "Masters",
-	"gallery": "Gallery",
-	"admissions": "Admissions",
-	"certifications": "Certifications",
-	"document": "Document",
-	"contactUs": "Contactez-nous",
-	"faculty": "Personnel academique et scientifique",
+	"linksHead": "",
+	"masters": "",
+	"gallery": "",
+	"admissions": "",
+	"certifications": "",
+	"document": "",
+	"contactUs": "",
+	"faculty": "",
 
 	"youtubeHead": "Notre chaîne Youtube",
-	"youtubeError": "Impossible de récupérer des vidéos YouTube !! Visitez notre chaîne sur Youtube.",
+	"youtubeError": ".",
 
-	"libraryHead": "Accéder à la bibliothèque",
+	"libraryHead": "",
 
 	"phone": "Téléphone",
 	"email": "E-mail"

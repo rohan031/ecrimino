@@ -128,6 +128,30 @@
 			);
 		}
 
+		&.faculty-level1 {
+			img {
+				object-position: 50% 20%;
+			}
+		}
+
+		&.faculty-level3 {
+			img {
+				object-position: 50% 20%;
+			}
+		}
+
+		&.faculty-level4 {
+			img {
+				object-position: 50% 20%;
+			}
+
+			:nth-child(3) {
+				img {
+					object-position: center;
+				}
+			}
+		}
+
 		.faculty-item {
 			background-color: ab.$white1;
 			border-radius: 0.6em;
@@ -148,34 +172,33 @@
 					height: 26rem;
 
 					object-fit: cover;
-					object-position: 0 0;
 				}
 			}
 
 			// for each image
-			&:nth-child(1) {
-				img {
-					object-position: 50% 20%;
-				}
-			}
+			// &:nth-child(1) {
+			// 	img {
+			// 		object-position: 50% 20%;
+			// 	}
+			// }
 
-			&:nth-child(6) {
-				img {
-					object-position: 50% 50%;
-				}
-			}
+			// &:nth-child(6) {
+			// 	img {
+			// 		object-position: 50% 50%;
+			// 	}
+			// }
 
-			&:nth-child(7) {
-				img {
-					object-position: 50% 35%;
-				}
-			}
+			// &:nth-child(7) {
+			// 	img {
+			// 		object-position: 50% 35%;
+			// 	}
+			// }
 
-			&:nth-child(8) {
-				img {
-					object-position: 50% 35%;
-				}
-			}
+			// &:nth-child(8) {
+			// 	img {
+			// 		object-position: 50% 35%;
+			// 	}
+			// }
 
 			&__info {
 				display: grid;

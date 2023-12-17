@@ -1,8 +1,14 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { useTranslation } from "react-i18next";
-import { faculties } from "@/data/faculty";
+import {
+	faculties,
+	level1,
+	level2,
+	level3,
+	level4,
+	level5,
+} from "@/data/faculty/faculty";
 import Cards from "./Cards";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
@@ -19,7 +25,6 @@ interface Items {
 type List = React.JSX.Element[];
 
 export default function Faculty() {
-	const { t } = useTranslation("translation");
 	const [search, setSearch] = useState("");
 	const [items, setItems] = useState<Items[]>();
 
@@ -47,10 +52,80 @@ export default function Faculty() {
 		);
 	});
 
+	const list1 = level1.map((item) => {
+		return (
+			<Cards
+				key={item.image}
+				name={item.name}
+				qualification={item.qualification}
+				areaOfStudy={item.areaOfStudy}
+				departmentName={item.departmentName}
+				image={item.image}
+				salutation={item.salutation}
+			/>
+		);
+	});
+
+	const list2 = level2.map((item) => {
+		return (
+			<Cards
+				key={item.image}
+				name={item.name}
+				qualification={item.qualification}
+				areaOfStudy={item.areaOfStudy}
+				departmentName={item.departmentName}
+				image={item.image}
+				salutation={item.salutation}
+			/>
+		);
+	});
+
+	const list3 = level3.map((item) => {
+		return (
+			<Cards
+				key={item.image}
+				name={item.name}
+				qualification={item.qualification}
+				areaOfStudy={item.areaOfStudy}
+				departmentName={item.departmentName}
+				image={item.image}
+				salutation={item.salutation}
+			/>
+		);
+	});
+
+	const list4 = level4.map((item) => {
+		return (
+			<Cards
+				key={item.image}
+				name={item.name}
+				qualification={item.qualification}
+				areaOfStudy={item.areaOfStudy}
+				departmentName={item.departmentName}
+				image={item.image}
+				salutation={item.salutation}
+			/>
+		);
+	});
+
+	const list5 = level5.map((item) => {
+		return (
+			<Cards
+				key={item.image}
+				name={item.name}
+				qualification={item.qualification}
+				areaOfStudy={item.areaOfStudy}
+				departmentName={item.departmentName}
+				image={item.image}
+				salutation={item.salutation}
+			/>
+		);
+	});
+
 	return (
 		<>
 			<div className="info-page__heading faculty">
-				<h1>{t("faculty.faculty")}</h1>
+				<h1>Personnel academique et scientifique</h1>
 			</div>
 
 			<div className="faculty-search">
@@ -69,7 +144,31 @@ export default function Faculty() {
 			</div>
 
 			<div className="container">
-				<div className="info-page__container faculty">{list}</div>
+				{search.length >= 1 ? (
+					<div className="info-page__container faculty">{list}</div>
+				) : (
+					<>
+						<div className="info-page__container faculty faculty-level1">
+							{list1}
+						</div>
+
+						<div className="info-page__container faculty faculty-level2">
+							{list2}
+						</div>
+
+						<div className="info-page__container faculty faculty-level3">
+							{list3}
+						</div>
+
+						<div className="info-page__container faculty faculty-level4">
+							{list4}
+						</div>
+
+						<div className="info-page__container faculty faculty-level5">
+							{list5}
+						</div>
+					</>
+				)}
 			</div>
 		</>
 	);

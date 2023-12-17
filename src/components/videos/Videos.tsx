@@ -7,7 +7,10 @@ import { useTranslation } from "react-i18next";
 type Data = string[];
 type APIRes = { items: { id: { videoId: string } }[] };
 
-export default function Videos() {
+interface VideosProps {
+	error: string;
+}
+export default function Videos({ error }: VideosProps) {
 	const [data, setData] = useState<Data>();
 	const [err, setErr] = useState(false);
 	const { t } = useTranslation();
@@ -34,7 +37,7 @@ export default function Videos() {
 	}, []);
 
 	if (err) {
-		return <p>{t("footer.youtubeError")}</p>;
+		return <p>{error}</p>;
 	}
 
 	const videos = data?.map((id) => {

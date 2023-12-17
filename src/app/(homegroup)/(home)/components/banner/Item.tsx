@@ -1,49 +1,12 @@
 import React from "react";
 
 interface ItemProps {
-	content: string;
+	text: string;
 	heading: string;
-	id: number;
+	image: string;
 }
 
-export default function Item({ content, heading, id }: ItemProps) {
-	const image = () => {
-		switch (id) {
-			case 1:
-				return (
-					<img
-						loading="lazy"
-						src="/banner/banner1.WebP"
-						alt="banner image"
-					/>
-				);
-			case 2:
-				return (
-					<img
-						loading="lazy"
-						src="/banner/banner2.WebP"
-						alt="banner image"
-					/>
-				);
-			case 3:
-				return (
-					<img
-						loading="lazy"
-						src="/banner/banner3.WebP"
-						alt="banner image"
-					/>
-				);
-			case 4:
-				return (
-					<img
-						loading="lazy"
-						src="/banner/banner4.WebP"
-						alt="banner image"
-					/>
-				);
-		}
-	};
-
+export default function Item({ text, heading, image }: ItemProps) {
 	return (
 		<div className="banners-item embla__slide">
 			<div className="container banner-item">
@@ -53,10 +16,12 @@ export default function Item({ content, heading, id }: ItemProps) {
 
 				<div className="banner-item__child">
 					<div className="banner-item__child-text">
-						<p>{content}</p>
+						<p>{text}</p>
 					</div>
 
-					<div className="banner-item__child-image">{image()}</div>
+					<div className="banner-item__child-image">
+						{<img src={image} alt={heading} />}
+					</div>
 				</div>
 			</div>
 		</div>
