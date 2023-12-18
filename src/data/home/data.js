@@ -1,3 +1,5 @@
+import { links } from "../links";
+
 export const banner = [
 	{
 		heading: "CRÉATION",
@@ -31,21 +33,21 @@ export const academics = {
 		{
 			heading: "Certifications",
 			text: "L’École assure également des formations certifiantes en...",
-			link: "/",
+			link: links.certifications,
 			image: "/academics/academics1.WebP",
 		},
 
 		{
 			heading: "Masters",
 			text: "L'École propose également des formations de master en...",
-			link: "/",
+			link: links.masters,
 			image: "/academics/academics2.WebP",
 		},
 
 		{
 			heading: "PhD",
 			text: "L’École assure également des formations de PhD en...",
-			link: "/",
+			link: links.phd,
 			image: "/academics/academics3.WebP",
 		},
 	],
