@@ -31,18 +31,21 @@
 }
 
 .academics-details {
-	color: ab.$blue1;
+	color: ab.$text1;
 	margin-block: 3em;
 
 	&__text {
 		font-size: clamp(0.9rem, 1.1vw, 1.25rem);
+		margin-inline: clamp(1.36rem, 3vw, 5.23rem);
 	}
 
 	&__courses {
 		.courses-heading {
+			margin-inline: clamp(1.36rem, 3vw, 5.23rem);
 			margin-block: 1.6em;
 			position: relative;
 			display: inline-block;
+			color: ab.$text1;
 
 			font-size: clamp(1.8rem, 1.9vw, 2.1875rem);
 
@@ -51,7 +54,7 @@
 				content: "";
 				left: 0;
 				right: 60%;
-				background-color: ab.$blue1;
+				background-color: ab.$text1;
 				height: 0.1em;
 				bottom: -0.3em;
 			}
@@ -61,7 +64,7 @@
 
 .courses {
 	&-accordion {
-		// padding-inline: clamp(1.36rem, 3vw, 5.23rem);
+		padding-inline: clamp(1.36rem, 3vw, 5.23rem);
 		padding-block: 0 clamp(2.26rem, 2vw, 3.96rem);
 
 		.accordion-root {
@@ -69,7 +72,7 @@
 			gap: clamp(1.41rem, 2vw, 2.06rem);
 
 			.accordion-item {
-				border-bottom: 0.0625rem solid ab.$red;
+				border-bottom: 0.15rem solid ab.$accent1;
 				padding-block-end: clamp(0.6rem, 1.4vw, 1.31rem);
 				padding-inline: 0.81rem;
 
@@ -81,7 +84,7 @@
 						padding: 0;
 
 						width: 100%;
-						color: ab.$blue1;
+						color: ab.$text1;
 						background-color: transparent;
 						border: none;
 
@@ -105,7 +108,7 @@
 								display: inline-block;
 								width: 1em;
 								height: 0.1em;
-								background-color: ab.$red;
+								background-color: ab.$text1;
 
 								transition: rotate 300ms;
 
@@ -124,9 +127,10 @@
 				.accordion-content {
 					margin-block-start: 1.6rem;
 					overflow: hidden;
+					color: ab.$text1;
 
 					@include ab.screen-48 {
-						padding-inline: 2em;
+						// padding-inline: 2em;
 					}
 
 					&__text {
@@ -148,8 +152,27 @@
 							flex: 1;
 
 							p {
-								font-size: clamp(0.75rem, 3.6cqw, 1.2rem);
+								font-size: clamp(0.75rem, 3.6cqw, 1rem);
 								margin-block-end: 1em;
+							}
+
+							a {
+								border: 0.15em solid ab.$blue1;
+								background-color: ab.$blue2;
+								color: ab.$white;
+								display: inline-block;
+								text-decoration: none;
+								padding-inline: 1.8em;
+								padding-block: 0.4em;
+								font-weight: 600;
+								font-size: 1.2rem;
+
+								transition: color 300ms, background-color 300ms;
+
+								&:hover {
+									color: ab.$blue2;
+									background-color: ab.$white;
+								}
 							}
 						}
 

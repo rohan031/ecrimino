@@ -13,7 +13,7 @@ export const links = {
 
 	gallery: "/gallery",
 
-	aboutus: "about-us",
+	aboutus: "/about-us",
 	faculty: "/faculty",
 	docs: "/documents",
 

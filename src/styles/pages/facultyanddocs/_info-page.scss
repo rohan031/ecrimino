@@ -116,6 +116,7 @@
 
 	&.faculty {
 		color: ab.$blue1;
+		// outline: 2px solid red;
 
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(min(16em, 100%), 1fr));

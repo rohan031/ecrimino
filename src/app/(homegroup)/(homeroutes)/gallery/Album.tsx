@@ -113,6 +113,10 @@ export default function Album({
 				contentLabel={`${albumName} images`}
 				onRequestClose={handleCloseModal}
 				shouldCloseOnOverlayClick={true}
+				onAfterClose={() => {
+					document.body.style.overflow = "auto";
+				}}
+				preventScroll={true}
 				style={{
 					overlay: {
 						zIndex: "2",
