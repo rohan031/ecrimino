@@ -30,29 +30,29 @@ export const ccps = [
 
 export const aboutUs = [
 	{
-		heading: "Long Title for the",
-		text: "Les missions de l'École de Criminologie de l'Université de Kinshasa sont les suivantes : Assurer un enseignement de qualité en formant des acteurs compétents capables de comprendre les situations problématiques, criminalisées ou non, et de proposer des réponses idoines permettant, notamment de développer les droits humains, l'État de droit ainsi que la gouvernance des institutions; Développer la recherche fondamentale ou appliquée dans une approche interdisciplinaire dans le champ de la criminologie; Offrir une expertise et un accompagnement aux institutions ainsi qu'aux acteurs sociaux, dans le domaine de droits humains, de l'État de droit, de la gouvernance et, plus généralement, dans le domaine de la régulation sociale, notamment à travers la consultance et le renforcement des capacités.",
+		heading: "Creation",
+		text: "L’École de criminologie de l’Unversté de Kinshasa a été créée par Arrêté du Ministre de l’Enseignement supérieur et Universitaire du 30 octobre 2018, modifié et complété par l’Arrêté du 24 février 2021. Elle absorbe l’actuel Centre de criminologie et de pathologie sociale (CCPS), rattaché jadis à la faculté de droit. Elle relève directement du Comité de gestion de l’Université de Kinshasa et jouit d’une parfaite autonomie comme toute autre faculté.",
 		image: "/about-us/about-us.WebP",
 		id: "one",
 	},
 
 	{
-		heading: "Long Title for the",
+		heading: "Vision",
 		text: "Les missions de l'École de Criminologie de l'Université de Kinshasa sont les suivantes : Assurer un enseignement de qualité en formant des acteurs compétents capables de comprendre les situations problématiques, criminalisées ou non, et de proposer des réponses idoines permettant, notamment de développer les droits humains, l'État de droit ainsi que la gouvernance des institutions; Développer la recherche fondamentale ou appliquée dans une approche interdisciplinaire dans le champ de la criminologie; Offrir une expertise et un accompagnement aux institutions ainsi qu'aux acteurs sociaux, dans le domaine de droits humains, de l'État de droit, de la gouvernance et, plus généralement, dans le domaine de la régulation sociale, notamment à travers la consultance et le renforcement des capacités.",
 		image: "/about-us/about-us.WebP",
 		id: "two",
 	},
 
 	{
-		heading: "Long Title for the",
-		text: "Les missions de l'École de Criminologie de l'Université de Kinshasa sont les suivantes : Assurer un enseignement de qualité en formant des acteurs compétents capables de comprendre les situations problématiques, criminalisées ou non, et de proposer des réponses idoines permettant, notamment de développer les droits humains, l'État de droit ainsi que la gouvernance des institutions; Développer la recherche fondamentale ou appliquée dans une approche interdisciplinaire dans le champ de la criminologie; Offrir une expertise et un accompagnement aux institutions ainsi qu'aux acteurs sociaux, dans le domaine de droits humains, de l'État de droit, de la gouvernance et, plus généralement, dans le domaine de la régulation sociale, notamment à travers la consultance et le renforcement des capacités.",
+		heading: "Valeurs",
+		text: "En plus des valeurs qui guident l’Université de Kinshasa, l’École de criminologie souscrit aux valeurs spécifiques de l’excellence professionnelle et de l’éthique, articulées autour des principes suivants : - La créativité ; - L’ouverture d’esprit ; - Le sens critique ; - L’esprit d’équipe ; - Le respect de chaque personne ; - La transparence ; - La probité.",
 		image: "/about-us/about-us.WebP",
 		id: "three",
 	},
 
 	{
-		heading: "Long Title for the",
-		text: "Les missions de l'École de Criminologie de l'Université de Kinshasa sont les suivantes : Assurer un enseignement de qualité en formant des acteurs compétents capables de comprendre les situations problématiques, criminalisées ou non, et de proposer des réponses idoines permettant, notamment de développer les droits humains, l'État de droit ainsi que la gouvernance des institutions; Développer la recherche fondamentale ou appliquée dans une approche interdisciplinaire dans le champ de la criminologie; Offrir une expertise et un accompagnement aux institutions ainsi qu'aux acteurs sociaux, dans le domaine de droits humains, de l'État de droit, de la gouvernance et, plus généralement, dans le domaine de la régulation sociale, notamment à travers la consultance et le renforcement des capacités.",
+		heading: "Direction",
+		text: "L’École de criminologie est dirigée par un Comité directeur composé des personnes suivantes : - Professeur Raoul KIENGE-KIENGE INTUDI, Directeur ; - Professeur Jules Éminence NZUNDU, Directeur-adjoint chargé de l’Enseignement ; - Professeure Sara LIWERANT, Directrice-adjointe chargée de la Recherche et du Centre de criminologie et de pathologie sociale (CCPS) ; - C.T. Albert MBOKOLO, Secrétaire académique",
 		image: "/about-us/about-us.WebP",
 		id: "four",
 	},
