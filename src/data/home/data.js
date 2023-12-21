@@ -15,13 +15,13 @@ export const banner = [
 
 	{
 		heading: "MISSION",
-		text: "Les missions de l'École de Criminologie de l'Université de Kinshasa sont les suivantes : Assurer un enseignement de qualité en formant des acteurs compétents capables de comprendre les situations problématiques, criminalisées ou non, et de proposer des réponses idoines permettant, notamment de développer les droits humains, l'État de droit ainsi que la gouvernance des institutions; Développer la recherche fondamentale ou appliquée dans une approche interdisciplinaire dans le champ de la criminologie; Offrir une expertise et un accompagnement aux institutions ainsi qu'aux acteurs sociaux, dans le domaine de droits humains, de l'État de droit, de la gouvernance et, plus généralement, dans le domaine de la régulation sociale, notamment à travers la consultance et le renforcement des capacités.",
+		text: "Les missions de l'École de Criminologie de l'Université de Kinshasa sont les suivantes : Assurer un enseignement de qualité en formant des acteurs compétents capables de comprendre les situations problématiques, criminalisées ou non, et de proposer des réponses idoines permettant",
 		image: "/banner/banner3.WebP",
 	},
 
 	{
 		heading: "VISION",
-		text: "L'École de Criminologie de l'Université de Kinshasa se veut un pôle d'excellence rayonnant en République Démocratique du Congo, en Afrique et dans le monde en matière d'enseignement, de recherche et de service aux collectivités dans le champ de la criminologie, en vue de contribuer au développement des droits humains, de l'État de droit ainsi qu'à la gouvernance des institutions.",
+		text: "L'École de Criminologie de l'Université de Kinshasa se veut un pôle d'excellence rayonnant en République Démocratique du Congo, en Afrique et dans le monde en matière d'enseignement, de recherche et de service aux collectivités dans le champ de la criminologie, en vue de contribuer au développement des droits humains",
 		image: "/banner/banner4.WebP",
 	},
 ];
