@@ -20,15 +20,19 @@ export default function Cards({ img, heading, date, text, link }: CardsProps) {
 			</div>
 
 			<div className="events-container__item-info">
-				<h3>{heading.substring(0, 50) + "..."}</h3>
+				<h3 title={heading}>
+					{heading.substring(0, 50).toLowerCase() + "..."}
+				</h3>
 
 				<p>{date}</p>
 
-				<p>{text.substring(0, 50) + "..."}</p>
+				<p title={text}>
+					{text.substring(0, 50).toLowerCase() + "..."}
+				</p>
 
 				<div>
 					<a href={link} target="_blank">
-						Know More
+						En savoir plus
 						<FontAwesomeIcon icon={faAngleRight} />
 					</a>
 				</div>

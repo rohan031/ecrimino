@@ -45,7 +45,7 @@ function AccordionContent({
 					<p>{children}</p>
 
 					<a href={link} target="_blank">
-						Know More
+						En savoir plus
 					</a>
 				</div>
 

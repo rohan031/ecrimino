@@ -34,21 +34,21 @@ export const academics = {
 			heading: "Certifications",
 			text: "L’École assure également des formations certifiantes en...",
 			link: links.certifications,
-			image: "/academics/academics1.WebP",
+			image: "/courses/five.WebP",
 		},
 
 		{
 			heading: "Masters",
 			text: "L'École propose également des formations de master en...",
 			link: links.masters,
-			image: "/academics/academics2.WebP",
+			image: "/courses/four.WebP",
 		},
 
 		{
 			heading: "PhD",
 			text: "L’École assure également des formations de PhD en...",
 			link: links.phd,
-			image: "/academics/academics3.WebP",
+			image: "/courses/one.WebP",
 		},
 	],
 };
@@ -61,21 +61,21 @@ export const ccps = {
 			heading: "Mission du C.C.P.S.",
 			text: "Le Centre de Criminologie et de Pathologie Sociale (C.C.P.S.) de l'Université de Kinshasa s'engage à développer et à...",
 			link: "/ccps/about-us#mission",
-			image: "/ccps/ccps1.jpg",
+			image: "/ccps/ccps1.WebP",
 		},
 
 		{
 			heading: "Vision du C.C.P.S.",
 			text: "Le C.C.P.S. aspire à être un leader reconnu dans la recherche interdisciplinaire en criminologie, non seulement en République Démocratique du Congo",
 			link: "/ccps/about-us#vision",
-			image: "/ccps/ccps2.jpg",
+			image: "/ccps/ccps2.WebP",
 		},
 
 		{
 			heading: "À Propos du C.C.P.S.",
 			text: "Faisant partie intégrante de l'École de Criminologie de l'Université de Kinshasa, le C.C.P.S. s'inscrit dans la structure administrative et académique de l'université.",
 			link: "/ccps/about-us",
-			image: "/ccps/ccps3.jpg",
+			image: "/ccps/ccps3.WebP",
 		},
 	],
 };
@@ -84,30 +84,30 @@ export const events = [
 	{
 		img: "/events/events1.WebP",
 		heading:
-			"École de criminologie de l’UNIKIN: Remise des certificats en intervention criminologique, 3ème édition du..",
-		date: "9 November, 2023",
+			"la première édition de la cérémonie de remise des diplômes de l'école de criminologie.",
+		date: "22 December, 2023",
 		text: "École de criminologie de l’UNIKIN: Remise des certificats en intervention criminologique, 3ème édition du séminaire d'intervention criminologique.",
 		link: "https://www.facebook.com/Newscd15/videos/1394396691287362/?mibextid=rS40aB7S9Ucbxw6v",
 	},
 	{
 		img: "/events/events2.WebP",
 		heading: "Présentation des résultats de l’approche...",
-		date: "4 September, 2023",
+		date: "22 December, 2023",
 		text: "Présentation des résultats de l’approche AHPER pour...",
-		link: "https://www.facebook.com/Newscd15/videos/1394396691287362/?mibextid=rS40aB7S9Ucbxw6v",
+		link: "https://www.facebook.com/criminologieunikin/posts/874531894677249/",
 	},
 	{
 		img: "/events/events3.WebP",
 		heading: "Présentation des résultats de l’approche.....",
-		date: "27 November, 2023",
+		date: "22 December, 2023",
 		text: "Présentation des résultats de l’approche AHPER pour....",
-		link: "https://www.facebook.com/Newscd15/videos/1394396691287362/?mibextid=rS40aB7S9Ucbxw6v",
+		link: "https://twitter.com/DeUnikin/status/1693661443286282337?s=46&t=l4R8MXbtKlTYsfy1xrXujA",
 	},
 	{
 		img: "/events/events4.WebP",
 		heading: "Présentation des résultats de l’approche....",
-		date: "27 November, 2023",
+		date: "22 December, 2023",
 		text: "Présentation des résultats de l’approche AHPER pour..",
-		link: "https://www.facebook.com/Newscd15/videos/1394396691287362/?mibextid=rS40aB7S9Ucbxw6v",
+		link: "https://twitter.com/intudi87106/status/1700274201276690566",
 	},
 ];

@@ -28,7 +28,7 @@ export default function Events({ data }: EventProps) {
 	return (
 		<div className="events" id="events">
 			<div className="container">
-				<h2 className="events-head">Events</h2>
+				<h2 className="events-head">Événement</h2>
 
 				<div className="events-container">{cards}</div>
 			</div>

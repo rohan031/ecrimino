@@ -19,7 +19,7 @@ export default function Card({ image, heading, text, link }: CardProps) {
 
 				<p>{text}</p>
 
-				<a href={link}>Know More</a>
+				<a href={link}>En savoir plus</a>
 			</div>
 		</div>
 	);
