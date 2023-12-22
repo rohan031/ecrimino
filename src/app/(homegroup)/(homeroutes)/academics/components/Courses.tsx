@@ -8,7 +8,7 @@ interface CoursesProps {
 		heading: string;
 		text: string;
 		image: string;
-		link: string;
+		link?: string;
 	}[];
 }
 
@@ -44,9 +44,11 @@ function AccordionContent({
 				<div className="content-text">
 					<p>{children}</p>
 
-					<a href={link} target="_blank">
-						En savoir plus
-					</a>
+					{link && (
+						<a href={link} target="_blank">
+							En savoir plus
+						</a>
+					)}
 				</div>
 
 				<div className="content-image">

@@ -10,7 +10,7 @@ export default function Aboutus() {
 
 	return (
 		<>
-			<Heading heading="Historie" classname="about-us" />
+			<Heading heading="Qui sommes nous" classname="about-us" />
 
 			<div className="about-us__list">{items}</div>
 		</>

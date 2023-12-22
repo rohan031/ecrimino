@@ -10,9 +10,9 @@ export default function Aboutus() {
 
 	return (
 		<>
-			<Heading heading="A propos de nous" classname="about-us" />
+			<Heading heading="Historie" classname="about-us" />
 
-			<div className="about-us__list">{items}</div>
+			{/* <div className="about-us__list">{items}</div> */}
 		</>
 	);
 }

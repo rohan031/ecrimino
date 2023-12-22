@@ -14,7 +14,7 @@ export default function page() {
 			<div className="container">
 				<div className="academics-details">
 					<p className="academics-details__text">
-						{certifications.text}
+						{certifications.text1}
 					</p>
 
 					<div className="academics-details__courses">
