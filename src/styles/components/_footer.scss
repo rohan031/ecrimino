@@ -108,7 +108,7 @@ footer {
 					grid-template-columns: 1fr 1fr;
 					grid-template-rows: 1fr 1fr;
 
-					&-item {
+					iframe {
 						border-radius: 0.6em;
 						height: clamp(5em, 7vw, 8em);
 						width: 100%;

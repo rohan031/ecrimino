@@ -65,6 +65,14 @@ nav {
 		&-logo {
 			img {
 				width: clamp(12em, 30vw, 18em);
+
+				@include ab.screen-48 {
+					width: clamp(10em, 20vw, 18em);
+				}
+
+				@include ab.screen-56 {
+					width: clamp(12em, 27vw, 18em);
+				}
 			}
 		}
 
@@ -117,7 +125,6 @@ nav {
 			}
 
 			&__elements {
-				// outline: 2px solid lightgreen;
 				background-color: ab.$white;
 				list-style: none;
 				padding-inline: 3em 0;
@@ -147,7 +154,7 @@ nav {
 					clip-path: none;
 
 					align-items: center;
-					gap: clamp(1em, 2vw, 1.5em);
+					gap: clamp(0.8em, 1.8vw, 1.5em);
 				}
 
 				&-child {
@@ -160,7 +167,7 @@ nav {
 					}
 
 					@include ab.screen-48 {
-						font-size: clamp(1rem, 1.7vw, 1.2rem);
+						font-size: clamp(0.9rem, 1.7vw, 1.2rem);
 					}
 
 					a {

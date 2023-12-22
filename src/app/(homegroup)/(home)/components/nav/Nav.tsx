@@ -7,10 +7,9 @@ import {
 	faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
-import Translations from "./Translations";
-import Icons from "../../../../../components/icons/Icons";
-import { contacts } from "../../../../../data/contact";
-import { socialLinks } from "../../../../../data/socialLinks";
+import Icons from "@/components/icons/Icons";
+import { contacts } from "@/data/contact";
+import { socialLinks } from "@/data/socialLinks";
 
 export default function Nav() {
 	return (
@@ -32,21 +31,33 @@ export default function Nav() {
 				</div>
 
 				<div>
-					<Icons link={socialLinks.facebook} icon={faFacebookF} />
+					<Icons
+						link={socialLinks.facebook}
+						icon={faFacebookF}
+						label="open facebook page"
+					/>
 
-					<Icons link={socialLinks.twitter} icon={faTwitter} />
+					<Icons
+						link={socialLinks.twitter}
+						icon={faTwitter}
+						label="open twitter page"
+					/>
 
-					<Icons link={socialLinks.whatsapp} icon={faWhatsapp} />
+					<Icons
+						link={socialLinks.whatsapp}
+						icon={faWhatsapp}
+						label="open whatsapp page"
+					/>
 
-					<Icons link={socialLinks.linkedin} icon={faLinkedinIn} />
+					<Icons
+						link={socialLinks.linkedin}
+						icon={faLinkedinIn}
+						label="open linkedin page"
+					/>
 
 					<div className="contact-nav__items-functions">
 						<div className="contact-nav__items-functions-item">
-							<Translations />
-						</div>
-
-						<div className="contact-nav__items-functions-item">
-							<Link href={"/login"}> Login </Link>
+							<Link href={"/"}> Login </Link>
 						</div>
 					</div>
 				</div>

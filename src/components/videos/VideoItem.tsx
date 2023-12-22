@@ -1,4 +1,6 @@
 import React from "react";
+import LiteYouTubeEmbed from "react-lite-youtube-embed";
+import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
 
 interface VideoItemProps {
 	videoId: string;
@@ -6,15 +8,6 @@ interface VideoItemProps {
 
 export default function VideoItem({ videoId }: VideoItemProps) {
 	return (
-		<iframe
-			className="videos-item"
-			// width="560"
-			// height="315"
-			src={`https://www.youtube.com/embed/${videoId}`}
-			title="YouTube video player"
-			frameBorder="0"
-			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-			allowFullScreen
-		></iframe>
+		<LiteYouTubeEmbed id={videoId} title="ecrimino youtube video player" />
 	);
 }

@@ -8,12 +8,13 @@ interface IconsProps {
 	icon: IconDefinition;
 	link: string;
 	children?: React.ReactNode;
+	label?: string;
 }
 
-export default function Icons({ icon, link, children }: IconsProps) {
+export default function Icons({ icon, link, children, label }: IconsProps) {
 	return (
 		<>
-			<a href={link} target="_blank" className="icon">
+			<a href={link} target="_blank" className="icon" aria-label={label}>
 				<span className="icon-image">
 					<FontAwesomeIcon icon={icon} />
 				</span>

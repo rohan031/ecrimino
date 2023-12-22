@@ -10,9 +10,9 @@ export default function Cards({ title, link }: CardsProps) {
 		let type = title.slice(-3);
 
 		if (type === "pdf") {
-			return <img src="/documents/pdf.png" alt="pdf" />;
+			return <img src="/documents/pdf.png" alt="pdf" loading="lazy" />;
 		} else {
-			return <img src="/documents/doc.png" alt="doc" />;
+			return <img src="/documents/doc.png" alt="doc" loading="lazy" />;
 		}
 	};
 

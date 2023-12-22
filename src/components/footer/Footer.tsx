@@ -1,7 +1,4 @@
-"use client";
-
 import React from "react";
-import { useTranslation } from "react-i18next";
 import Icons from "../icons/Icons";
 import {
 	faFacebookF,
@@ -14,9 +11,38 @@ import Videos from "../videos/Videos";
 import { contacts } from "@/data/contact";
 import { socialLinks } from "@/data/socialLinks";
 
-export default function Footer() {
-	const { t } = useTranslation("translation");
+interface Links {
+	heading: string;
+	subLinks: {
+		text: string;
+		link: string;
+	}[];
+}
 
+interface Content {
+	heading: string;
+	text: string;
+}
+
+interface FooterProps {
+	data: {
+		address: Content;
+		links: Links;
+		library: {
+			heading: string;
+			link: string;
+		};
+		youtube: Content;
+		phone: {
+			heading: string;
+		};
+		email: {
+			heading: string;
+		};
+	};
+}
+
+export default function Footer({ data }: FooterProps) {
 	const contactPhone = contacts.phone.map((item) => {
 		return (
 			<a key={item.number} href={`tel:${item.number}`}>
@@ -34,29 +60,27 @@ export default function Footer() {
 	});
 
 	return (
-		<footer>
+		<footer id="footer">
 			<div className="container footer">
 				<div className="footer-item">
 					<div className="location">
 						<h2 className="footer-item__head">
-							{t("footer.addressHead")}
+							{data.address.heading}
 						</h2>
-						<p className="footer-item__text">
-							{t("footer.address")}
-						</p>
+						<p className="footer-item__text">{data.address.text}</p>
 					</div>
 
 					<div className="contacts">
 						<div className="contacts-item">
 							<h2 className="footer-item__head">
-								{t("footer.phone")}
+								{data.phone.heading}
 							</h2>
 
 							<div className="items">{contactPhone}</div>
 						</div>
 						<div className="contacts-item">
 							<h2 className="footer-item__head">
-								{t("footer.email")}
+								{data.email.heading}
 							</h2>
 
 							<div className="items">{contactEmail}</div>
@@ -64,15 +88,28 @@ export default function Footer() {
 					</div>
 
 					<div className="social">
-						<Icons link={socialLinks.facebook} icon={faFacebookF} />
+						<Icons
+							link={socialLinks.facebook}
+							icon={faFacebookF}
+							label="open facebook page"
+						/>
 
-						<Icons link={socialLinks.twitter} icon={faTwitter} />
+						<Icons
+							link={socialLinks.twitter}
+							icon={faTwitter}
+							label="open twitter page"
+						/>
 
-						<Icons link={socialLinks.whatsapp} icon={faWhatsapp} />
+						<Icons
+							link={socialLinks.whatsapp}
+							icon={faWhatsapp}
+							label="open whatsapp page"
+						/>
 
 						<Icons
 							link={socialLinks.linkedin}
 							icon={faLinkedinIn}
+							label="open linkedin page"
 						/>
 					</div>
 				</div>
@@ -81,59 +118,35 @@ export default function Footer() {
 					<div className="link-group">
 						<div className="footer-item__container">
 							<h2 className="footer-item__head">
-								{t("footer.linksHead")}
+								{data.links.heading}
 							</h2>
 
 							<div className="links">
-								<Link href="/academics/masters">
-									{t("footer.masters")}
-								</Link>
-
-								<Link href="/gallery">
-									{t("footer.gallery")}
-								</Link>
-
-								{/* <Link href="/alumini">
-									{t("footer.alumini")}
-								</Link> */}
-
-								<Link href="/admissions">
-									{t("footer.admissions")}
-								</Link>
-
-								<Link href="/certifications">
-									{t("footer.certifications")}
-								</Link>
-
-								<Link href="/documents">
-									{t("footer.document")}
-								</Link>
-
-								<Link href="/contactus">
-									{t("footer.contactUs")}
-								</Link>
-
-								<Link href="/faculty">
-									{t("footer.faculty")}
-								</Link>
+								{data.links.subLinks.map((link) => {
+									return (
+										<Link key={link.text} href={link.link}>
+											{link.text}
+										</Link>
+									);
+								})}
 							</div>
 						</div>
 
 						<Link
 							className="library footer-item__head"
 							target="_blank"
-							href="https://uclouvain.be/fr/instituts-recherche/juri/cridep/archives.html"
+							href={data.library.link}
 						>
-							{t("footer.libraryHead")}
+							{data.library.heading}
 						</Link>
 					</div>
 
 					<div className="youtube-container">
 						<h2 className="footer-item__head">
-							{t("footer.youtubeHead")}
+							{data.youtube.heading}
 						</h2>
 
-						<Videos />
+						<Videos error={data.youtube.text} />
 					</div>
 				</div>
 			</div>

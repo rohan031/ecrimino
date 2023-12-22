@@ -1,4 +1,5 @@
 import Navigation from "@/components/navigation/Navigation";
+import { nav } from "@/data/common/data";
 import React from "react";
 
 interface HomeRoutesLayoutProps {
@@ -8,7 +9,7 @@ interface HomeRoutesLayoutProps {
 export default function HomeRoutesLayout({ children }: HomeRoutesLayoutProps) {
 	return (
 		<>
-			<Navigation />
+			<Navigation data={nav} />
 			{children}
 		</>
 	);

@@ -10,6 +10,7 @@
 	height: 20em;
 	background-repeat: no-repeat;
 	background-size: cover;
+	text-align: center;
 
 	@include ab.screen-48 {
 		height: 30em;
@@ -24,7 +25,7 @@
 				rgba(0, 0, 0, 0.8),
 				rgba(0, 0, 0, 0.4)
 			),
-			url("../../../../public/documents/document.jpg");
+			url("../../../../public/documents/document.WebP");
 	}
 
 	&.faculty {
@@ -32,9 +33,18 @@
 				rgba(0, 0, 0, 0.8),
 				rgba(0, 0, 0, 0.4)
 			),
-			url("../../../../public/faculty/faculty.png");
+			url("../../../../public/faculty/faculty.WebP");
 
 		background-position: 25% 50%;
+	}
+
+	&.gallery {
+		background-image: linear-gradient(
+				rgba(0, 0, 0, 0.8),
+				rgba(0, 0, 0, 0.4)
+			),
+			url("../../../../public/gallery/gallery.WebP");
+		background-position: center 25%;
 	}
 }
 
@@ -106,6 +116,7 @@
 
 	&.faculty {
 		color: ab.$blue1;
+		// outline: 2px solid red;
 
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(min(16em, 100%), 1fr));
@@ -116,6 +127,30 @@
 				auto-fill,
 				minmax(min(20em, 100%), 1fr)
 			);
+		}
+
+		&.faculty-level1 {
+			img {
+				object-position: 50% 20%;
+			}
+		}
+
+		&.faculty-level3 {
+			img {
+				object-position: 50% 20%;
+			}
+		}
+
+		&.faculty-level4 {
+			img {
+				object-position: 50% 20%;
+			}
+
+			:nth-child(3) {
+				img {
+					object-position: center;
+				}
+			}
 		}
 
 		.faculty-item {
@@ -138,34 +173,33 @@
 					height: 26rem;
 
 					object-fit: cover;
-					object-position: 0 0;
 				}
 			}
 
 			// for each image
-			&:nth-child(1) {
-				img {
-					object-position: 50% 20%;
-				}
-			}
+			// &:nth-child(1) {
+			// 	img {
+			// 		object-position: 50% 20%;
+			// 	}
+			// }
 
-			&:nth-child(6) {
-				img {
-					object-position: 50% 50%;
-				}
-			}
+			// &:nth-child(6) {
+			// 	img {
+			// 		object-position: 50% 50%;
+			// 	}
+			// }
 
-			&:nth-child(7) {
-				img {
-					object-position: 50% 35%;
-				}
-			}
+			// &:nth-child(7) {
+			// 	img {
+			// 		object-position: 50% 35%;
+			// 	}
+			// }
 
-			&:nth-child(8) {
-				img {
-					object-position: 50% 35%;
-				}
-			}
+			// &:nth-child(8) {
+			// 	img {
+			// 		object-position: 50% 35%;
+			// 	}
+			// }
 
 			&__info {
 				display: grid;
