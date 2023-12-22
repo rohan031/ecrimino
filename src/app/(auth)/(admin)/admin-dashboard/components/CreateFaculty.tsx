@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import CSVReader from "react-csv-reader";
 import ShowInfo from "./ShowInfo";
+import { createUser } from "@/firebase/auth/auth";
 
 type FacultyDetails = {
 	timeStamp?: string;
@@ -22,7 +23,24 @@ export default function CreateFaculty() {
 
 	const [bulkFacultyInfo, setBulkFacultyInfo] = useState<BulkFacultyInfo>();
 
-	const handleCreateFaculty: HandleCreateFaculty = (isMultiple = false) => {};
+	const handleCreateFaculty: HandleCreateFaculty = (isMultiple = false) => {
+		let facultyDetails = [];
+		if (isMultiple && bulkFacultyInfo) {
+			facultyDetails = bulkFacultyInfo;
+		} else {
+			facultyDetails.push(facultyInfo);
+		}
+
+		console.log("call to cloud function");
+		console.log(facultyDetails);
+		createUser({ users: facultyDetails, isFaculty: true })
+			.then((res) => {
+				console.log(res);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	};
 
 	const handleCSVUpload = (data: any[]) => {
 		const headers = data[0];
@@ -36,7 +54,8 @@ export default function CreateFaculty() {
 				const obj: any = {};
 				for (let i = 0; i < len; i++) {
 					let key = headers[i].toLowerCase();
-					obj[key] = record[i];
+
+					if (key === "name" || key === "email") obj[key] = record[i];
 				}
 
 				return obj;
@@ -64,11 +83,17 @@ export default function CreateFaculty() {
 
 	return (
 		<div>
-			<form onSubmit={() => handleCreateFaculty()}>
+			<form
+				onSubmit={(e) => {
+					e.preventDefault();
+					handleCreateFaculty();
+				}}
+			>
 				<label htmlFor="name">Name</label>
 				<input
 					type="text"
 					id="name"
+					name="name"
 					value={facultyInfo.name}
 					onChange={handleChange}
 					placeholder="Name..."
@@ -78,6 +103,7 @@ export default function CreateFaculty() {
 				<input
 					type="email"
 					id="email"
+					name="email"
 					value={facultyInfo.email}
 					onChange={handleChange}
 					placeholder="Email..."
@@ -105,7 +131,9 @@ export default function CreateFaculty() {
 				})}
 
 				{bulkFacultyInfo?.length && bulkFacultyInfo.length > 0 && (
-					<button>Create all faculties</button>
+					<button onClick={() => handleCreateFaculty(true)}>
+						Create all faculties
+					</button>
 				)}
 			</div>
 		</div>

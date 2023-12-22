@@ -60,21 +60,21 @@ export const ccps = {
 		{
 			heading: "Mission du C.C.P.S.",
 			text: "Le Centre de Criminologie et de Pathologie Sociale (C.C.P.S.) de l'Université de Kinshasa s'engage à développer et à...",
-			link: "",
+			link: "/ccps/about-us#mission",
 			image: "/ccps/ccps1.jpg",
 		},
 
 		{
 			heading: "Vision du C.C.P.S.",
 			text: "Le C.C.P.S. aspire à être un leader reconnu dans la recherche interdisciplinaire en criminologie, non seulement en République Démocratique du Congo",
-			link: "",
+			link: "/ccps/about-us#vision",
 			image: "/ccps/ccps2.jpg",
 		},
 
 		{
 			heading: "À Propos du C.C.P.S.",
 			text: "Faisant partie intégrante de l'École de Criminologie de l'Université de Kinshasa, le C.C.P.S. s'inscrit dans la structure administrative et académique de l'université.",
-			link: "",
+			link: "/ccps/about-us",
 			image: "/ccps/ccps3.jpg",
 		},
 	],

@@ -22,19 +22,19 @@ export const nav = {
 				text: "A propos de nous",
 				link: links.ccpsAboutUs,
 			},
-			{
-				text: "Trainings",
-				link: links.training,
-			},
+			// {
+			// 	text: "Trainings",
+			// 	link: links.training,
+			// },
 			{
 				text: "Cher guy houchol",
 				link: links.cherguy,
 				newPage: true,
 			},
-			{
-				text: "Partners",
-				link: links.partner,
-			},
+			// {
+			// 	text: "Partners",
+			// 	link: links.partner,
+			// },
 		],
 	},
 
@@ -54,10 +54,10 @@ export const nav = {
 				text: "Personnel academique et scientifique",
 				link: links.faculty,
 			},
-			{
-				text: "Documents",
-				link: links.docs,
-			},
+			// {
+			// 	text: "Documents",
+			// 	link: links.docs,
+			// },
 		],
 	},
 

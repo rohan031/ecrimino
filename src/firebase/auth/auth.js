@@ -18,7 +18,7 @@ export const auth = getAuth(firebase_app);
 const functions = getFunctions();
 export const storage = getStorage();
 
-// connectFunctionsEmulator(functions, "127.0.0.1", 5001);
+connectFunctionsEmulator(functions, "127.0.0.1", 5001);
 
 export async function signIn(email, password) {
 	let result = null,
@@ -45,6 +45,7 @@ export async function resendEmailVerification() {
 }
 
 export const addAdminRole = httpsCallable(functions, "addAdminRole");
+export const createUser = httpsCallable(functions, "createUser");
 
 export const getUser = () => {
 	return auth?.currentUser;
