@@ -27,7 +27,7 @@ export const nav = {
 			// 	link: links.training,
 			// },
 			{
-				text: "Cher guy houchol",
+				text: "Chaire guy houchon",
 				link: links.cherguy,
 				newPage: true,
 			},
