@@ -4,13 +4,32 @@ export const masters = {
 	parts: [
 		{
 			heading: "SÉCURITÉ INTÉRIEURE",
-			text: "Expliquer les situations problèmes dans les différents secteurs de la société congolaise, qu'elles soient criminalisées ou non, ainsi que les modalités de leur gestion en tenant compte de leur complexité",
+			points: true,
+			pointsContent: {
+				heading: "Elle offre les compétences suivantes:",
+				list: [
+					"Expliquer les situations problèmes dans les différents secteurs de la société congolaise, qu'elles soient criminalisées ou non, ainsi que les modalités de leur gestion en tenant compte de leur complexité ",
+					"Organiser la gouvernance de la sécurité en contexte congolais au niveau national ou provincial en vue de l'émergence et de la consolidation d'un Etat sécurisé et sécurisant par la promotion des droits fondamentaux de nature civils, politiques, économiques, sociaux et culturels des citoyens ;",
+					"Concevoir un plan, un dispositif ou un programme de prévention des situations criminalisées en contexte congolais ;",
+					"Concevoir un plan, un dispositif ou un programme de sécurité en identifiant des facteurs de risques susceptibles de compromettre les intérêts de l'Etat ou les droits des citoyens ;",
+					"Gérer les situations d'insécurité dans les milieux urbains congolais d'une manière compatible avec le respect dû aux droits des citoyens garantis par la Constitution.",
+				],
+			},
 			image: "/courses/four.WebP",
 			link: "/documents/docs/Votre%20Ma%C3%AEtrise%20en%20criminologie%20%C3%A0%20l_Universit%C3%A9%20de%20Kinshasa.pdf",
 		},
 		{
 			heading: "CRIMINOLOGIE ÉCONOMIQUE ET ENVIRONNEMENTALE",
-			text: "Analyser les formes et les enjeux de la criminalité économique et environnementale en contexte congolais en vue d'en assurer le contrôle et d'en organiser la prévention",
+			points: true,
+			pointsContent: {
+				heading: "Elle offre les compétences suivantes :",
+				list: [
+					"Expliquer les situations problèmes dans les différents secteurs de la société congolaise, qu'elles soient criminalisées ou non, ainsi que les modalités de leur gestion en tenant compte de leur complexité ;",
+					"Analyser les formes et les enjeux de la criminalité économique et environnementale en contexte congolais en vue d'en assurer le contrôle et d'en organiser la prévention ;",
+					"Concevoir une politique publique de contrôle de la criminalité et environnementale dans le contexte congolais.",
+					"Organiser la gouvernance économique et environnementale en prenant en compte les points de vue de toutes les parties prenantes ainsi que les risques de survenance des actes de criminalité économique et environnementale en vue d'assurer leur prévention.",
+				],
+			},
 			image: "/courses/four.WebP",
 			link: "/documents/docs/Votre%20Ma%C3%AEtrise%20en%20criminologie%20%C3%A0%20l_Universit%C3%A9%20de%20Kinshasa.pdf",
 		},

@@ -39,9 +39,11 @@ export default function Cards({ data }: CardsProps) {
 			<div className="container">
 				<h2 className="info-head">{data.heading}</h2>
 
-				<p className="info-text">{data.text}</p>
+				<div className="info-text">
+					<p>{data.text}</p>
 
-				{data.text2 && <p className="info-text">{data.text2}</p>}
+					{data.text2 && <p>{data.text2}</p>}
+				</div>
 
 				<div className="info-cards embla" ref={emblaRef}>
 					<div className="info-items embla__container">{cards}</div>

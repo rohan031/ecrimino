@@ -61,7 +61,7 @@ export const ccps = {
 		{
 			heading: "Historie",
 			text: "Le Centre de Criminologie et de Pathologie Sociale fonctionna initialement au sein de l’Université de Lovanium, actuelle Université de Kinshasa, depuis l’année 1966 ",
-			link: "/ccps/about-us#mission",
+			link: "/ccps/about-us",
 			image: "/ccps/ccps1.WebP",
 		},
 

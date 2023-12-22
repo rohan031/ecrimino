@@ -3,12 +3,19 @@
 import React from "react";
 import * as Accordion from "@radix-ui/react-accordion";
 
+interface PointsContent {
+	heading: string;
+	list: string[];
+}
+
 interface CoursesProps {
 	courses: {
 		heading: string;
-		text: string;
+		text?: string;
 		image: string;
 		link?: string;
+		points?: boolean;
+		pointsContent?: PointsContent;
 	}[];
 }
 
@@ -42,7 +49,7 @@ function AccordionContent({
 		<Accordion.Content {...props} className="accordion-content">
 			<div className="accordion-content__text">
 				<div className="content-text">
-					<p>{children}</p>
+					{children}
 
 					{link && (
 						<a href={link} target="_blank">
@@ -70,7 +77,19 @@ export default function Courses({ courses }: CoursesProps) {
 				<AccordionTrigger>{item.heading}</AccordionTrigger>
 
 				<AccordionContent image={item.image} link={item.link}>
-					{item.text}
+					{item.text && <p>{item.text}</p>}
+
+					{item.points && (
+						<>
+							<h3>{item.pointsContent?.heading}</h3>
+
+							<ul>
+								{item.pointsContent?.list.map((item) => {
+									return <li key={item}>{item}</li>;
+								})}
+							</ul>
+						</>
+					)}
 				</AccordionContent>
 			</Accordion.Item>
 		);

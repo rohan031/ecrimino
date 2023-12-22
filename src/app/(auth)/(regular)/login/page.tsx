@@ -8,15 +8,15 @@ import {
 	signoutUser,
 	addAdminRole,
 } from "@/firebase/auth/auth";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function Page() {
-	const router = useRouter();
 	const [email, setEmail] = useState("rohanverma031@gmail.com");
 	const [password, setPassword] = useState("R1O2H3A4N5:%%");
 
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
+		alert("Page under construction");
 		// console.log(getUser());
 
 		// addAdminRole({ email })
@@ -74,37 +74,51 @@ export default function Page() {
 		// // }
 	};
 
-	const handleAdminLogin = () => {
-		router.push("/admin-login");
-	};
-
 	return (
-		<>
-			<form onSubmit={handleSubmit}>
-				<div>
-					<label htmlFor="email">Email</label>
-					<input
-						type="email"
-						id="email"
-						value={email}
-						onChange={(e) => setEmail(e.target.value)}
-					/>
+		<div className="login">
+			<div className="container">
+				<div className="login-form">
+					<div className="login-form__head">
+						<Link href="/">
+							<img src="/logo.png" alt="ecrimino" />
+						</Link>
+
+						<h2>User Login</h2>
+					</div>
+
+					<form onSubmit={handleSubmit}>
+						<div>
+							<label htmlFor="email">Email</label>
+							<input
+								type="email"
+								id="email"
+								value={email}
+								onChange={(e) => setEmail(e.target.value)}
+							/>
+						</div>
+
+						<div>
+							<label htmlFor="password">Passwrod</label>
+							<input
+								type="password"
+								id="password"
+								value={password}
+								onChange={(e) => setPassword(e.target.value)}
+							/>
+						</div>
+
+						<div>
+							<button type="submit">Login</button>
+						</div>
+					</form>
+
+					<div className="form-links">
+						<Link href="">Forgot Password?</Link>
+
+						<Link href="/admin-login">Admin login</Link>
+					</div>
 				</div>
-
-				<div>
-					<label htmlFor="password">Passwrod</label>
-					<input
-						type="password"
-						id="password"
-						value={password}
-						onChange={(e) => setPassword(e.target.value)}
-					/>
-				</div>
-
-				<button type="submit">Login</button>
-			</form>
-
-			<button onClick={handleAdminLogin}>Admin login</button>
-		</>
+			</div>
+		</div>
 	);
 }

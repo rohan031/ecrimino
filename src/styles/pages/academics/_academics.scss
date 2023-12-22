@@ -53,6 +53,19 @@
 			url("../../../../public/about-us/cover.WebP");
 		background-position: center 0em;
 	}
+
+	&.ccps-about-us {
+		background-image: linear-gradient(
+				rgba(0, 0, 0, 0.8),
+				rgba(0, 0, 0, 0.4)
+			),
+			url("../../../../public/ccps/ccps1.WebP");
+		background-position: center, center;
+
+		@include ab.screen-64 {
+			background-position: center, center -1em;
+		}
+	}
 }
 
 .academics-details {
@@ -61,12 +74,13 @@
 
 	&__text {
 		font-size: clamp(0.9rem, 1.1vw, 1.25rem);
-		margin-inline: clamp(1.36rem, 3vw, 5.23rem);
+		// margin-inline: clamp(1.36rem, 3vw, 5.23rem);
+		text-align: justify;
 	}
 
 	&__courses {
 		.courses-heading {
-			margin-inline: clamp(1.36rem, 3vw, 5.23rem);
+			// margin-inline: clamp(1.36rem, 3vw, 5.23rem);
 			margin-block: 1.6em;
 			position: relative;
 			display: inline-block;
@@ -89,7 +103,7 @@
 
 .courses {
 	&-accordion {
-		padding-inline: clamp(1.36rem, 3vw, 5.23rem);
+		// padding-inline: clamp(1.36rem, 3vw, 5.23rem);
 		padding-block: 0 clamp(2.26rem, 2vw, 3.96rem);
 
 		.accordion-root {
@@ -175,6 +189,7 @@
 						.content-text {
 							container-type: inline-size;
 							flex: 1;
+							// text-align: justify;
 
 							p {
 								font-size: clamp(0.75rem, 3.6cqw, 1rem);
