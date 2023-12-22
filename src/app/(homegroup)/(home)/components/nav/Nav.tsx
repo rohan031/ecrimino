@@ -57,7 +57,7 @@ export default function Nav() {
 
 					<div className="contact-nav__items-functions">
 						<div className="contact-nav__items-functions-item">
-							<Link href={"/"}> Login </Link>
+							<Link href={"/login"}> Login </Link>
 						</div>
 					</div>
 				</div>
