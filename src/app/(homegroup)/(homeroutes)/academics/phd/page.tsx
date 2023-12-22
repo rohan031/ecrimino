@@ -10,7 +10,9 @@ export default function page() {
 
 			<div className="container">
 				<div className="academics-details">
-					<p className="academics-details__text">{phd.text}</p>
+					<div>
+						<p className="academics-details__text">{phd.text}</p>
+					</div>
 
 					<div className="academics-details__courses">
 						<h2 className="courses-heading">Programs Offered</h2>

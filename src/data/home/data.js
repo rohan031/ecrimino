@@ -28,7 +28,8 @@ export const banner = [
 
 export const academics = {
 	heading: "Enseignement",
-	text: "L’École de criminologie organise un Master en criminologie en trois ans : Master préparatoire, Master 1 et Master II (en sécurité intérieure, criminologie économique et environnementale, gestion de la paix et des conflits, protection de l’enfant, criminalistique ( foreinsique), etc.",
+	text: "Le programme de Master en criminologie est ouvert aux candidats répondant aux critères spécifiques suivants : être détenteur d’un diplôme de licence dans les disci- plines ci-après : anthropologie, communication, droit, économie, environnement, histoire, informatique, lettres, médecine, philosophie, psychologie, relations internatio- nales, sciences politiques, sociologie avoir obtenu au moins 65% en dernière année. réussir au test d’admis- sion organisé par l’École.",
+	text2: "Formations certifiantes et renforcement des capacités. Ces formations donnent lieu à la délivrance d’un Certificat d’Université. L’École de crimi- nologie peut aussi organiser des formations spécifiques en renforcement des capacités à la demande des institu- tions intéressées. Ces formations donneront lieu à une Attestation de participation.",
 	cards: [
 		{
 			heading: "Certifications",
@@ -55,28 +56,28 @@ export const academics = {
 
 export const ccps = {
 	heading: "Centre de Criminologie et de Pathologie",
-	text: "Formations Certifiantes et Renforcement des Capacités L'école propose des formations économique et paix et gouvernance. \nCes formations débouchent sur la délivrance d'un Certificat d'Université. \nDes programmes personnalisés de renforcement des capacités sont également disponibles sur demande des institutions intéressées, conduisant à une certifiantes en gouvernance de la sécurité, gouvernance Attestation de participation​​.",
+	text: "Le Centre de Criminologie et de Pathologie Sociale rattaché à l ’Ecole de Criminologie de l’Université de Kinshasa : L’approche AHPER est une approche criminologique novatrice, qui signifie Accompagnement Holistique et de Proximité pour l’Eman- cipation par la Réinsertion économique et socioprofessionnelle des Jeunes dits KULUNA pour leur sortie de violence. Elle a été mise en œuvre avec l’appui de OPEN SOCIETY AFRICA",
 	cards: [
 		{
-			heading: "Mission du C.C.P.S.",
-			text: "Le Centre de Criminologie et de Pathologie Sociale (C.C.P.S.) de l'Université de Kinshasa s'engage à développer et à...",
-			link: "/ccps/about-us#mission",
+			heading: "Historie",
+			text: "Le Centre de Criminologie et de Pathologie Sociale fonctionna initialement au sein de l’Université de Lovanium, actuelle Université de Kinshasa, depuis l’année 1966 ",
+			link: "/ccps/about-us",
 			image: "/ccps/ccps1.WebP",
 		},
 
 		{
-			heading: "Vision du C.C.P.S.",
-			text: "Le C.C.P.S. aspire à être un leader reconnu dans la recherche interdisciplinaire en criminologie, non seulement en République Démocratique du Congo",
-			link: "/ccps/about-us#vision",
+			heading: "Formations",
+			text: "Les jeunes sortis de violence et réinsérés dans la vie socioprofessionnelle grâce au projet AHPER",
+			link: "",
 			image: "/ccps/ccps2.WebP",
 		},
 
-		{
-			heading: "À Propos du C.C.P.S.",
-			text: "Faisant partie intégrante de l'École de Criminologie de l'Université de Kinshasa, le C.C.P.S. s'inscrit dans la structure administrative et académique de l'université.",
-			link: "/ccps/about-us",
-			image: "/ccps/ccps3.WebP",
-		},
+		// {
+		// 	heading: "",
+		// 	text: "Faisant partie intégrante de l'École de Criminologie de l'Université de Kinshasa, le C.C.P.S. s'inscrit dans la structure administrative et académique de l'université.",
+		// 	link: "/ccps/about-us",
+		// 	image: "/ccps/ccps3.WebP",
+		// },
 	],
 };
 

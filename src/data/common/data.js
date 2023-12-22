@@ -19,7 +19,7 @@ export const nav = {
 		text: "CCPS",
 		subLinks: [
 			{
-				text: "A propos de nous",
+				text: "Historie",
 				link: links.ccpsAboutUs,
 			},
 			// {
@@ -47,7 +47,7 @@ export const nav = {
 		text: "A propos de nous",
 		subLinks: [
 			{
-				text: "Historie",
+				text: "Qui sommes nous",
 				link: links.aboutus,
 			},
 			{

@@ -24,11 +24,13 @@
 	}
 
 	&-text {
-		text-align: justify;
 		margin-block: 1.5em 2.5em;
-
 		width: min(100%, 100rem);
-		font-size: clamp(1rem, 2vw, 1.2rem);
+
+		> p {
+			text-align: justify;
+			font-size: clamp(1rem, 2vw, 1.2rem);
+		}
 	}
 
 	&-items {
