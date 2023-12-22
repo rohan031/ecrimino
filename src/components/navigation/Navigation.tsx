@@ -264,6 +264,7 @@ export default function Navigation({ data }: NavigationProps) {
 										? data.contactus.link
 										: ""
 								}
+								onClick={() => setNavOpen(false)}
 							>
 								{data.contactus.text}
 							</Link>
