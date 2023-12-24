@@ -13,11 +13,11 @@ import Link from "next/link";
 
 export default function Page() {
 	const router = useRouter();
-	const [email, setEmail] = useState("rohanverma031@gmail.com");
-	const [password, setPassword] = useState("R1O2H3A4N5:%%");
+	// const [email, setEmail] = useState("rohanverma031@gmail.com");
+	// const [password, setPassword] = useState("R1O2H3A4N5:%%");
 
-	// const [email, setEmail] = useState("vermarohan031@gmail.com");
-	// const [password, setPassword] = useState("mKG0uU)Yt)8@q");
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
 
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
