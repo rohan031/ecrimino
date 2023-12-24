@@ -10,6 +10,7 @@ export default function Gallery() {
 	let album1Ref = ref(storage, "gallery/album1");
 	let album2Ref = ref(storage, "gallery/album2");
 	let album3Ref = ref(storage, "gallery/album3");
+	let album4Ref = ref(storage, "gallery/album4");
 
 	return (
 		<>
@@ -36,6 +37,12 @@ export default function Gallery() {
 							galleryRef={album3Ref}
 							albumCover="/gallery/album3/cover.WebP"
 							albumName={gallery.album3}
+						/>
+
+						<Album
+							galleryRef={album4Ref}
+							albumCover="/gallery/album4/cover.WebP"
+							albumName={gallery.album4}
 						/>
 					</div>
 				</div>
