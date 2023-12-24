@@ -3,7 +3,7 @@ import { links } from "../links";
 export const banner = [
 	{
 		heading: "CRÉATION",
-		text: "L’École de criminologie de l’Universté de Kinshasa a été créée par Arrêté du Ministre de l’Enseignement supérieur et Universitaire du 30 octobre 2018, modifié et complété par l’Arrêté du 24 février 2021. Elle absorbe l’actuel Centre de criminologie et de pathologie sociale (CCPS), rattaché jadis à la faculté de droit.. ",
+		text: "L’École de criminologie de l’Univesité de Kinshasa a été créée par Arrêté du Ministre de l’Enseignement supérieur et Universitaire du 30 octobre 2018, modifié et complété par l’Arrêté du 24 février 2021. Elle absorbe l’actuel Centre de criminologie et de pathologie sociale (CCPS), rattaché jadis à la faculté de droit.. ",
 		image: "/banner/banner1.WebP",
 	},
 
