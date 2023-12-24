@@ -82,9 +82,9 @@ export default function Page() {
 			<div className="container">
 				<div className="login-form">
 					<div className="login-form__head">
-						<Link href="/">
-							<img src="/logo.png" alt="ecrimino" />
-						</Link>
+						{/* <Link href="/"> */}
+						<img src="/logo.png" alt="ecrimino" />
+						{/* </Link> */}
 
 						<h2>User Login</h2>
 					</div>
