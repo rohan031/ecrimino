@@ -66,7 +66,7 @@ export default function Page() {
 		// 		return;
 		// 	}
 
-		// 	router.push("/admin-dashboard");
+		// 	router.push("/admin/home");
 		// }
 	};
 

@@ -118,7 +118,7 @@ export default function Page() {
 					<div className="form-links">
 						<Link href="">Forgot Password?</Link>
 
-						<Link href="/admin-login">Admin login</Link>
+						<Link href="/admin/login">Admin login</Link>
 					</div>
 				</div>
 			</div>
