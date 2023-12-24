@@ -57,7 +57,12 @@ export default function Nav() {
 
 					<div className="contact-nav__items-functions">
 						<div className="contact-nav__items-functions-item">
-							<Link href={"/login"}> Login </Link>
+							<Link
+								href={"https://dashboard.ecrimino.com"}
+								target="__blank"
+							>
+								Login
+							</Link>
 						</div>
 					</div>
 				</div>

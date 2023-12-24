@@ -3,7 +3,7 @@
 import React from "react";
 import { gallery } from "@/data/gallery";
 import { storage } from "@/firebase/auth/auth";
-import { ref, StorageReference } from "firebase/storage";
+import { ref } from "firebase/storage";
 import Album from "./Album";
 
 export default function Gallery() {
