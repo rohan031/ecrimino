@@ -97,6 +97,7 @@ export default function CreateFaculty() {
 					value={facultyInfo.name}
 					onChange={handleChange}
 					placeholder="Name..."
+					required
 				/>
 
 				<label htmlFor="email">Email</label>
@@ -107,6 +108,7 @@ export default function CreateFaculty() {
 					value={facultyInfo.email}
 					onChange={handleChange}
 					placeholder="Email..."
+					required
 				/>
 
 				<button type="submit">Create Faculty</button>

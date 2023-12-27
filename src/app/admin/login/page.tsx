@@ -1,15 +1,17 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import {
 	signIn,
 	resendEmailVerification,
 	getUser,
 	signoutUser,
-	addAdminRole,
+	auth,
 } from "@/firebase/auth/auth";
+import { onAuthStateChanged } from "firebase/auth";
 import Link from "next/link";
+import Loader from "@/components/Loader/Loader";
 
 export default function Page() {
 	const router = useRouter();
@@ -19,56 +21,82 @@ export default function Page() {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 
+	const [loading, setLoading] = useState(true);
+
+	useEffect(() => {
+		const authstate = onAuthStateChanged(auth, async (user) => {
+			if (user) {
+				setLoading(false);
+				if (!user.emailVerified) {
+					await resendEmailVerification();
+					alert("sent email verification mail");
+					return;
+				}
+
+				const result = await user?.getIdTokenResult();
+				setLoading(false);
+
+				if (
+					!result?.claims.isSuperAdmin &&
+					result?.claims.role !== "admin"
+				) {
+					await signoutUser();
+					return;
+				}
+
+				router.push("/admin/home");
+			} else {
+				setLoading(false);
+			}
+		});
+
+		return () => authstate();
+	}, []);
+
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		alert("dashboard under construction");
+		// alert("dashboard under construction");
 
-		// const { result, error } = await signIn(email, password);
-		// if (error) {
-		// 	return console.log(error);
-		// }
+		const { result, error } = await signIn(email, password);
+		if (error) {
+			return console.log(error);
+		}
 
-		// if (result) {
-		// 	const user = result.user;
+		if (result) {
+			const user = result.user;
 
-		// 	if (!user.emailVerified) {
-		// 		await resendEmailVerification();
-		// 		alert("sent email verification mail");
-		// 		return;
-		// 	}
-		// 	// const users = [
-		// 	// 	{
-		// 	// 		email: "rohanverma3892@gmail.com",
-		// 	// 		name: "Rohan Verma",
-		// 	// 		course: "m2",
-		// 	// 		startYear: "2019",
-		// 	// 	},
-		// 	// ];
-		// 	// let isFaculty = false;
-		// 	// addAdminRole({ users, isFaculty })
-		// 	// 	.then((res) => {
-		// 	// 		console.log(res);
-		// 	// 	})
-		// 	// 	.catch((err: Error) => {
-		// 	// 		console.log(err);
-		// 	// 	});
-		// 	const details = await user.getIdTokenResult();
-		// 	console.log(details);
+			if (!user.emailVerified) {
+				await resendEmailVerification();
+				alert("sent email verification mail");
+				return;
+			}
 
-		// 	if (
-		// 		!details.claims.isSuperAdmin &&
-		// 		details.claims.role !== "admin"
-		// 	) {
-		// 		console.log(getUser());
-		// 		await signoutUser();
-		// 		console.log(getUser());
-		// 		alert("you are not authorized to access this dashboard");
-		// 		return;
-		// 	}
+			const details = await user.getIdTokenResult();
 
-		// 	router.push("/admin/home");
-		// }
+			if (
+				!details.claims.isSuperAdmin &&
+				details.claims.role !== "admin"
+			) {
+				await signoutUser();
+				alert("you are not authorized to access this dashboard");
+				return;
+			}
+
+			router.push("/admin/home");
+		}
 	};
+
+	if (loading) {
+		return (
+			<Loader
+				style={{
+					width: "100vw",
+					height: "100vh",
+					backgroundColor: "#333",
+				}}
+			/>
+		);
+	}
 
 	return (
 		<div className="login">

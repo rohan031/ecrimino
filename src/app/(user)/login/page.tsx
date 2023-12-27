@@ -6,7 +6,6 @@ import {
 	resendEmailVerification,
 	getUser,
 	signoutUser,
-	addAdminRole,
 } from "@/firebase/auth/auth";
 import Link from "next/link";
 
