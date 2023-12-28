@@ -55,7 +55,7 @@ export const academics = {
 };
 
 export const ccps = {
-	heading: "Centre de Criminologie et de Pathologie",
+	heading: "Centre de Criminologie et de Pathologie Sociale",
 	text: "Le Centre de Criminologie et de Pathologie Sociale rattaché à l ’Ecole de Criminologie de l’Université de Kinshasa : L’approche AHPER est une approche criminologique novatrice, qui signifie Accompagnement Holistique et de Proximité pour l’Eman- cipation par la Réinsertion économique et socioprofessionnelle des Jeunes dits KULUNA pour leur sortie de violence. Elle a été mise en œuvre avec l’appui de OPEN SOCIETY AFRICA",
 	cards: [
 		{
