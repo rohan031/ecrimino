@@ -120,7 +120,7 @@
 				p {
 					text-transform: capitalize;
 					&:nth-child(2) {
-						color: #00000066;
+						// color: #000000;
 						font-size: clamp(0.8rem, 2.5vw, 0.9rem);
 
 						@include ab.screen-48 {

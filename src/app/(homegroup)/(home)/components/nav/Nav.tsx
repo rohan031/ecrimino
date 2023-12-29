@@ -19,12 +19,14 @@ export default function Nav() {
 					<Icons
 						link={`tel:${contacts.phone[0].number}`}
 						icon={faPhoneVolume}
+						label="phone"
 					>
 						{contacts.phone[0].display}
 					</Icons>
 					<Icons
 						link={`mailto:${contacts.email[0]}`}
 						icon={faEnvelope}
+						label="mail"
 					>
 						{contacts.email[0]}
 					</Icons>
