@@ -29,13 +29,14 @@ export default function Banner({ data }: BannerProps) {
 		if (emblaApi) emblaApi.scrollNext();
 	}, [emblaApi]);
 
-	let banners = data.map((item) => {
+	let banners = data.map((item, index) => {
 		return (
 			<Item
 				key={item.heading}
 				heading={item.heading}
 				text={item.text}
 				image={item.image}
+				index={index}
 			/>
 		);
 	});

@@ -5,9 +5,10 @@ interface ItemProps {
 	text: string;
 	heading: string;
 	image: string;
+	index: number;
 }
 
-export default function Item({ text, heading, image }: ItemProps) {
+export default function Item({ text, heading, image, index }: ItemProps) {
 	return (
 		<div className="banners-item embla__slide">
 			<div className="container banner-item">
@@ -27,7 +28,7 @@ export default function Item({ text, heading, image }: ItemProps) {
 								alt={heading}
 								width="742"
 								height="288"
-								priority={true}
+								priority={index === 0}
 							/>
 						}
 					</div>
