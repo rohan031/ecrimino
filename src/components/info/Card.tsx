@@ -16,8 +16,8 @@ export default function Card({ image, heading, text, link }: CardProps) {
 					src={image}
 					alt={heading}
 					loading="lazy"
-					width="400"
-					height="267"
+					width="329"
+					height="220"
 				/>
 			</div>
 
