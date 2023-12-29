@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
 
 interface Links {
 	text: string;
@@ -86,7 +87,14 @@ export default function Navigation({ data }: NavigationProps) {
 		<nav className={`${!show && !navOpen && "hide"}`}>
 			<div className="container nav">
 				<Link href="/" className="nav-logo">
-					<img src="/logo.png" alt="Ecole de Criminology" />
+					<Image
+						src="/logo.png"
+						alt="Ecole de Criminology"
+						width="288"
+						height="62"
+						// width="192"
+						// height="41"
+					/>
 				</Link>
 
 				<div className="nav-items">
@@ -271,7 +279,12 @@ export default function Navigation({ data }: NavigationProps) {
 						</li>
 
 						<div className="nav-items__elements-logo">
-							<img src="./logo.png" alt="Ecole de Criminology" />
+							<Image
+								src="/logo.png"
+								alt="Ecole de Criminology"
+								width="240"
+								height="52"
+							/>
 						</div>
 					</ul>
 				</div>

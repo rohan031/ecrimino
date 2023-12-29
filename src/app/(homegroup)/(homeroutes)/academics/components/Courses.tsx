@@ -2,6 +2,7 @@
 
 import React from "react";
 import * as Accordion from "@radix-ui/react-accordion";
+import Image from "next/image";
 
 interface PointsContent {
 	heading: string;
@@ -59,7 +60,15 @@ function AccordionContent({
 				</div>
 
 				<div className="content-image">
-					<img src={image} loading="lazy" />
+					{image && (
+						<Image
+							src={image}
+							loading="lazy"
+							width="885"
+							height="320"
+							alt="academics"
+						/>
+					)}
 				</div>
 			</div>
 		</Accordion.Content>

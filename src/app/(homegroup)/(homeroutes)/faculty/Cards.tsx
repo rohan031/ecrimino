@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 interface CardsProps {
@@ -22,7 +23,13 @@ export default function Cards({
 	return (
 		<div className="faculty-item">
 			<div className="faculty-item__image">
-				<img src={image} alt={name} loading="lazy" />
+				<Image
+					src={image}
+					alt={name}
+					loading="lazy"
+					width="343"
+					height="416"
+				/>
 			</div>
 
 			<div className="faculty-item__info">

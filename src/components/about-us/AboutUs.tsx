@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 interface AboutUsProps {
@@ -18,7 +19,12 @@ export default function AboutUs({ data }: AboutUsProps) {
 				<p className="item-content__text">{data.text}</p>
 
 				<div className="item-content__image">
-					<img src={data.image} alt={data.heading} />
+					<Image
+						src={data.image}
+						alt={data.heading}
+						width="560"
+						height="255"
+					/>
 				</div>
 			</div>
 		</div>

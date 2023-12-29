@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 interface ItemProps {
@@ -20,7 +21,14 @@ export default function Item({ text, heading, image }: ItemProps) {
 					</div>
 
 					<div className="banner-item__child-image">
-						{<img src={image} alt={heading} />}
+						{
+							<Image
+								src={image}
+								alt={heading}
+								width="742"
+								height="288"
+							/>
+						}
 					</div>
 				</div>
 			</div>

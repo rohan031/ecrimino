@@ -11,6 +11,7 @@ import Loader from "@/components/loader/Loader";
 import Modal from "react-modal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
 
 interface AlbumProps {
 	galleryRef: StorageReference;
@@ -103,7 +104,12 @@ export default function Album({
 	return (
 		<div className="album">
 			<div className="album-details" onClick={handleOpenModal}>
-				<img src={albumCover} alt={albumName} />
+				<Image
+					src={albumCover}
+					alt={albumName}
+					width="864"
+					height="575"
+				/>
 
 				<p>{albumName.toLowerCase()}</p>
 			</div>
@@ -146,6 +152,9 @@ export default function Album({
 								loading="lazy"
 								src={url}
 								onClick={() => handleImage(url)}
+								alt="gallery image"
+								width="607"
+								height="404"
 							/>
 						))}
 					</div>

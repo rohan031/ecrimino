@@ -3,6 +3,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
 
 interface CardsProps {
 	img: string;
@@ -16,7 +17,13 @@ export default function Cards({ img, heading, date, text, link }: CardsProps) {
 	return (
 		<div className="events-container__item">
 			<div className="events-container__item-img">
-				<img src={img} alt="heading" loading="lazy" />
+				<Image
+					src={img}
+					alt="heading"
+					loading="lazy"
+					width="332"
+					height="191"
+				/>
 			</div>
 
 			<div className="events-container__item-info">

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 interface CardProps {
@@ -11,7 +12,13 @@ export default function Card({ image, heading, text, link }: CardProps) {
 	return (
 		<div className="info-items__child embla__slide">
 			<div className="info-items__child-container">
-				<img src={image} alt={heading} loading="lazy" />
+				<Image
+					src={image}
+					alt={heading}
+					loading="lazy"
+					width="400"
+					height="267"
+				/>
 			</div>
 
 			<div className="info-items__child-container">

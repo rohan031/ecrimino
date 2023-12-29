@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 interface CardsProps {
@@ -10,14 +11,29 @@ export default function Cards({ title, link }: CardsProps) {
 		let type = title.slice(-3);
 
 		if (type === "pdf") {
-			return <img src="/documents/pdf.png" alt="pdf" loading="lazy" />;
+			return (
+				<Image
+					src="/documents/pdf.png"
+					alt="pdf"
+					loading="lazy"
+					width="138"
+					height="161"
+				/>
+			);
 		} else {
-			return <img src="/documents/doc.png" alt="doc" loading="lazy" />;
+			return (
+				<Image
+					src="/documents/doc.png"
+					alt="doc"
+					loading="lazy"
+					width="138"
+					height="161"
+				/>
+			);
 		}
 	};
 
 	let displayTitle = title.substring(0, 50);
-	console.log(displayTitle);
 
 	return (
 		<div className="doc-item">
