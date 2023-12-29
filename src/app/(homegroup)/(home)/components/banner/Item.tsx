@@ -27,6 +27,7 @@ export default function Item({ text, heading, image }: ItemProps) {
 								alt={heading}
 								width="742"
 								height="288"
+								priority={true}
 							/>
 						}
 					</div>
