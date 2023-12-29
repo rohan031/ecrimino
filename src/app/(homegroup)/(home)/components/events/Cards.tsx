@@ -11,19 +11,41 @@ interface CardsProps {
 	date: string;
 	text: string;
 	link: string;
+	index: number;
 }
 
-export default function Cards({ img, heading, date, text, link }: CardsProps) {
+export default function Cards({
+	img,
+	heading,
+	date,
+	text,
+	link,
+	index,
+}: CardsProps) {
 	return (
 		<div className="events-container__item">
 			<div className="events-container__item-img">
-				<Image
-					src={img}
-					alt="heading"
-					loading="lazy"
-					width="332"
-					height="191"
-				/>
+				{index === 0 ? (
+					<img
+						src={img}
+						alt="heading"
+						loading="lazy"
+						width="179"
+						height="231"
+						// width="332"
+						// height="191"
+					/>
+				) : (
+					<Image
+						src={img}
+						alt="heading"
+						loading="lazy"
+						width="179"
+						height="231"
+						// width="332"
+						// height="191"
+					/>
+				)}
 			</div>
 
 			<div className="events-container__item-info">

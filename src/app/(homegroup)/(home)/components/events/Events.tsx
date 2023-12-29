@@ -12,7 +12,7 @@ interface EventProps {
 }
 
 export default function Events({ data }: EventProps) {
-	const cards = data?.map((item) => {
+	const cards = data?.map((item, index) => {
 		return (
 			<Cards
 				key={item.heading}
@@ -21,6 +21,7 @@ export default function Events({ data }: EventProps) {
 				date={item.date}
 				text={item.text}
 				link={item.link}
+				index={index}
 			/>
 		);
 	});
