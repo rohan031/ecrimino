@@ -1,20 +1,57 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
 	signIn,
 	resendEmailVerification,
 	getUser,
 	signoutUser,
+    auth,
 } from "@/firebase/auth/auth";
 import Link from "next/link";
+import { onAuthStateChanged } from "firebase/auth";
+import { useRouter } from "next/navigation";
 
 export default function Page() {
 	// const [email, setEmail] = useState("rohanverma031@gmail.com");
 	// const [password, setPassword] = useState("R1O2H3A4N5:%%");
 
+    const router = useRouter();
+
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+
+    const [loading, setLoading] = useState(false)
+
+    const authstate = onAuthStateChanged(auth, async (user) => {
+        if (user) {
+            setLoading(false);
+            if (!user.emailVerified) {
+                await resendEmailVerification();
+                alert("sent email verification mail");
+                return;
+            }
+
+            const result = await user?.getIdTokenResult();
+            setLoading(false);
+
+            if (
+                !result?.claims.isSuperAdmin &&
+                result?.claims.role !== "admin"
+            ) {
+                await signoutUser();
+                return;
+            }
+
+            router.push("/admin/home");
+        } else {
+            setLoading(false);
+        }
+    });
+
+    return () => authstate();
+}, []);
+
 
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();

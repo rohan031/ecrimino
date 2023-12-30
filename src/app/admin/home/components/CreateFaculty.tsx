@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import CSVReader from "react-csv-reader";
 import ShowInfo from "./ShowInfo";
 import { createUser } from "@/firebase/auth/auth";
+import DeleteFaculty from "./delete-user/DeleteFaculty";
 
 type FacultyDetails = {
 	timeStamp?: string;
@@ -22,6 +23,7 @@ export default function CreateFaculty() {
 	});
 
 	const [bulkFacultyInfo, setBulkFacultyInfo] = useState<BulkFacultyInfo>();
+	const [deleteFaculty, setDeleteFaculty] = useState(false);
 
 	const handleCreateFaculty: HandleCreateFaculty = (isMultiple = false) => {
 		let facultyDetails = [];
@@ -36,9 +38,13 @@ export default function CreateFaculty() {
 		createUser({ users: facultyDetails, isFaculty: true })
 			.then((res) => {
 				console.log(res);
+				alert("successfully created faculty");
+				setFacultyInfo({ name: "", email: "" });
+				setBulkFacultyInfo(undefined);
 			})
 			.catch((err) => {
-				console.log(err);
+				console.error(err);
+				alert("can't create faculty");
 			});
 	};
 
@@ -138,6 +144,12 @@ export default function CreateFaculty() {
 					</button>
 				)}
 			</div>
+
+			<button onClick={() => setDeleteFaculty(true)}>
+				Delete Faculty
+			</button>
+
+			{deleteFaculty && <DeleteFaculty />}
 		</div>
 	);
 }

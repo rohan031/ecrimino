@@ -6,7 +6,6 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import CreateFaculty from "./components/CreateFaculty";
 import CreateStudent from "./components/CreateStudent";
-import DeleteUser from "./components/DeleteUser";
 import Loader from "@/components/Loader/Loader";
 import CreateAdmin from "./components/CreateAdmin";
 
@@ -43,6 +42,10 @@ export default function Page() {
 		return () => authstate();
 	}, []);
 
+	const handleSignout = async () => {
+		await signoutUser();
+	};
+
 	if (loading || !user) {
 		return (
 			<Loader
@@ -58,8 +61,7 @@ export default function Page() {
 	const handlePage = async (p: number) => {
 		// p -> 1 -> create faculty
 		// p -> 2 -> create student
-		// p -> 3 -> delete faculty
-		// p -> 4 -> delete student X
+		// p -> 3 -> Create Admin
 
 		setPage(p);
 	};
@@ -73,8 +75,6 @@ export default function Page() {
 				return <CreateStudent />;
 
 			case 3:
-				return <DeleteUser />;
-			case 4:
 				return <CreateAdmin />;
 		}
 	};
@@ -83,9 +83,10 @@ export default function Page() {
 		<>
 			<button onClick={() => handlePage(1)}>Create Faculty</button>
 			<button onClick={() => handlePage(2)}>Create Student</button>
-			<button onClick={() => handlePage(3)}>Delete user</button>
-			<button onClick={() => handlePage(4)}>Create Admin</button>
-
+			{superAdmin && (
+				<button onClick={() => handlePage(3)}>Create Admin</button>
+			)}
+			<button onClick={handleSignout}>Sign Out</button>
 			{/* handle page shown */}
 			<div>{component()}</div>
 		</>

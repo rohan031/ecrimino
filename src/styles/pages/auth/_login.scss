@@ -22,7 +22,7 @@
 			rgba(16, 121, 170, 0.9),
 			rgba(16, 121, 170, 1) 62.5vmin
 		),
-		url("../../../../public/courses/four.WebP");
+		url("../../../../public/auth/login.WebP");
 	background-repeat: no-repeat;
 	background-size: 100%;
 	background-attachment: fixed;
@@ -44,9 +44,53 @@
 				rgba(16, 121, 170, 0.9),
 				rgba(16, 121, 170, 1) 75%
 			),
-			url("../../../../public/courses/four.WebP");
+			url("../../../../public/auth/login.WebP");
 
 		padding-block-start: 0;
+	}
+
+	&.admin {
+		background-image: linear-gradient(
+				to bottom,
+				rgba(0, 0, 0, 0.8),
+				rgba(0, 0, 0, 0.4)
+			),
+			linear-gradient(
+				to bottom,
+				rgba(16, 121, 170, 0.1),
+				rgba(16, 121, 170, 0.2),
+				rgba(16, 121, 170, 0.4),
+				rgba(16, 121, 170, 0.6),
+				rgba(16, 121, 170, 0.8),
+				rgba(16, 121, 170, 0.9),
+				rgba(16, 121, 170, 1) 62.5vmin
+			),
+			url("../../../../public/auth/admin.WebP");
+		background-repeat: no-repeat;
+		background-size: 100%;
+		background-attachment: fixed;
+
+		@include ab.screen-64 {
+			background-size: cover;
+			background-image: linear-gradient(
+					to right,
+					rgba(0, 0, 0, 0.8),
+					rgba(0, 0, 0, 0.4)
+				),
+				linear-gradient(
+					to right,
+					rgba(16, 121, 170, 0.1),
+					rgba(16, 121, 170, 0.2),
+					rgba(16, 121, 170, 0.4),
+					rgba(16, 121, 170, 0.6),
+					rgba(16, 121, 170, 0.8),
+					rgba(16, 121, 170, 0.9),
+					rgba(16, 121, 170, 1) 75%
+				),
+				url("../../../../public/auth/admin.WebP");
+
+			padding-block-start: 0;
+		}
 	}
 
 	&-form {
@@ -118,6 +162,13 @@
 					border-radius: 0.3rem;
 
 					font-size: clamp(1rem, 1vw, 1.1rem);
+
+					&:disabled {
+						background-color: darken(
+							$color: ab.$form-input,
+							$amount: 50
+						);
+					}
 				}
 
 				button {
@@ -135,6 +186,11 @@
 					&:hover {
 						color: ab.$blue1;
 						background-color: ab.$white;
+					}
+
+					&:disabled {
+						background-color: ab.$white;
+						cursor: wait;
 					}
 				}
 			}

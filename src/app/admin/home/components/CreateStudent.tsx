@@ -5,13 +5,14 @@ import CSVReader from "react-csv-reader";
 import ShowInfo from "./ShowInfo";
 import { createUser } from "@/firebase/auth/auth";
 import { courses, courseMap } from "@/data/course";
+import DeleteStudent from "./delete-user/DeleteStudent";
 
 type StudentDetails = {
 	timeStamp?: string;
 	name: string;
 	email: string;
 	course: string;
-	startyear: string;
+	startYear: string;
 };
 
 type BulkStudentInfo = StudentDetails[];
@@ -22,11 +23,12 @@ export default function CreateStudent() {
 	const [studentInfo, setStudentInfo] = useState<StudentDetails>({
 		name: "",
 		email: "",
-		course: "",
-		startyear: "",
+		course: "m1",
+		startYear: "",
 	});
 
 	const [bulkStudentInfo, setBulkStudentInfo] = useState<BulkStudentInfo>();
+	const [deleteStudent, setDeleteStudent] = useState(false);
 
 	const handleCreateStudent: HandleCreateStudent = (isMultiple = false) => {
 		let studentDetails = [];
@@ -37,18 +39,25 @@ export default function CreateStudent() {
 		}
 
 		if (studentDetails.length === 0) {
-			console.log(studentDetails);
 			return;
 		}
 
-		console.log("call to cloud function");
-		console.log(studentDetails);
 		createUser({ users: studentDetails, isFaculty: false })
 			.then((res) => {
 				console.log(res);
+				alert("successfully created student");
+				setStudentInfo({
+					name: "",
+					email: "",
+					course: "m1",
+					startYear: "",
+				});
+
+				setBulkStudentInfo(undefined);
 			})
 			.catch((err) => {
-				console.log(err);
+				console.error(err);
+				alert("can't create student");
 			});
 	};
 
@@ -75,7 +84,11 @@ export default function CreateStudent() {
 					) {
 						if (record[i].length === 0) isEmpty = true;
 
-						obj[key] = record[i];
+						if (key === "startyear") {
+							obj["startYear"] = record[i];
+						} else {
+							obj[key] = record[i];
+						}
 					}
 				}
 
@@ -140,8 +153,8 @@ export default function CreateStudent() {
 				<input
 					type="string"
 					id="start-year"
-					name="startyear"
-					value={studentInfo.startyear}
+					name="startYear"
+					value={studentInfo.startYear}
 					onChange={handleChange}
 					required
 					placeholder="Start Year..."
@@ -182,7 +195,7 @@ export default function CreateStudent() {
 							key={info.email}
 							name={info.name}
 							email={info.email}
-							startYear={info.startyear}
+							startYear={info.startYear}
 							course={courseMap[course as keyof typeof courseMap]}
 						/>
 					);
@@ -194,6 +207,12 @@ export default function CreateStudent() {
 					</button>
 				)}
 			</div>
+
+			<button onClick={() => setDeleteStudent(true)}>
+				Delete Students
+			</button>
+
+			{deleteStudent && <DeleteStudent />}
 		</div>
 	);
 }

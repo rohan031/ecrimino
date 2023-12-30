@@ -22,6 +22,7 @@ export default function Page() {
 	const [password, setPassword] = useState("");
 
 	const [loading, setLoading] = useState(true);
+	const [isSigningIn, setIsSigningIn] = useState(false);
 
 	useEffect(() => {
 		const authstate = onAuthStateChanged(auth, async (user) => {
@@ -56,10 +57,13 @@ export default function Page() {
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		// alert("dashboard under construction");
+		setIsSigningIn(true);
 
 		const { result, error } = await signIn(email, password);
+		setIsSigningIn(false);
 		if (error) {
-			return console.log(error);
+			console.log(error);
+			return;
 		}
 
 		if (result) {
@@ -81,8 +85,6 @@ export default function Page() {
 				alert("you are not authorized to access this dashboard");
 				return;
 			}
-
-			router.push("/admin/home");
 		}
 	};
 
@@ -99,7 +101,7 @@ export default function Page() {
 	}
 
 	return (
-		<div className="login">
+		<div className="login admin">
 			<div className="container">
 				<div className="login-form">
 					<div className="login-form__head">
@@ -118,6 +120,8 @@ export default function Page() {
 								id="email"
 								value={email}
 								onChange={(e) => setEmail(e.target.value)}
+								disabled={isSigningIn}
+								required
 							/>
 						</div>
 
@@ -128,11 +132,24 @@ export default function Page() {
 								id="password"
 								value={password}
 								onChange={(e) => setPassword(e.target.value)}
+								disabled={isSigningIn}
+								required
 							/>
 						</div>
 
 						<div>
-							<button type="submit">Login</button>
+							<button type="submit" disabled={isSigningIn}>
+								{isSigningIn ? (
+									<Loader
+										style={{
+											margin: "0.8em 1.2em",
+											scale: "0.5",
+										}}
+									/>
+								) : (
+									"Login"
+								)}
+							</button>
 						</div>
 					</form>
 
