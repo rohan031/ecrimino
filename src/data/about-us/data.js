@@ -28,27 +28,27 @@ export const ccps = [
 export const aboutUs = [
 	{
 		heading: "Création",
-		text: "L’École de criminologie de l’Unversté de Kinshasa a été créée par Arrêté du Ministre de l’Enseignement supérieur et Universitaire du 30 octobre 2018, modifié et complété par l’Arrêté du 24 février 2021. Elle absorbe l’actuel Centre de criminologie et de pathologie sociale (CCPS), rattaché jadis à la faculté de droit. Elle relève directement du Comité de gestion de l’Université de Kinshasa et jouit d’une parfaite autonomie comme toute autre faculté.",
+		text: "L’École de criminologie de l’Université de Kinshasa a été créée par un Arrêté du Ministre de l’ESU le 30 octobre 2018 tel que modifié et complété par le 24 février 2021, à la suite du développement de la recherche et des activités de formation organisées par le Centre de criminologie et de pathologie sociale (CCPS), actuellement rattaché à l’école, depuis le 16 mai 2013.",
 		image: "/about-us/banner1.WebP",
 		id: "one",
 	},
 
 	{
 		heading: "Vision",
-		text: "Les missions de l'École de Criminologie de l'Université de Kinshasa sont les suivantes : Assurer un enseignement de qualité en formant des acteurs compétents capables de comprendre les situations problématiques, criminalisées ou non, et de proposer des réponses idoines permettant, notamment de développer les droits humains, l'État de droit ainsi que la gouvernance des institutions; Développer la recherche fondamentale ou appliquée dans une approche interdisciplinaire dans le champ de la criminologie; Offrir une expertise et un accompagnement aux institutions ainsi qu'aux acteurs sociaux, dans le domaine de droits humains, de l'État de droit, de la gouvernance et, plus généralement, dans le domaine de la régulation sociale, notamment à travers la consultance et le renforcement des capacités.",
+		text: "L’École de criminologie de l’Université de Kinshasa se veut un pôle d’excellence rayonnant en RDC, en Afrique et dans le monde en matière d’enseignement, de recherche et de service aux collectivtés dans le champ de la criminologie, en vue de contribuer au développement des droits humains, de l’État de droit ainsi qu’à la gouvernance des institutions.",
 		image: "/about-us/banner4.WebP",
 		id: "two",
 	},
 
 	{
 		heading: "Valeurs",
-		text: "En plus des valeurs qui guident l’Université de Kinshasa, l’École de criminologie souscrit aux valeurs spécifiques de l’excellence professionnelle et de l’éthique, articulées autour des principes suivants : - La créativité ; - L’ouverture d’esprit ; - Le sens critique ; - L’esprit d’équipe ; - Le respect de chaque personne ; - La transparence ; - La probité.",
+		text: "En plus des valeurs qui guident l’Université de Kinshasa, l’École de criminologie souscrit aux valeurs spécifiques de l’excellence professionnelle et de l’éthique, articulées autour des principes suivants: ➢ La créativité; ➢ L’ouverture d’esprit; ➢ Le sens critique; ➢ L“esprit d’équipe; ➢ Le respect de chaque personne; ➢ La transparence; ➢ La probité.",
 		image: "/about-us/banner2.WebP",
 		id: "three",
 	},
 	{
 		heading: "Mission",
-		text: "Les missions de l’École de Criminologie de l’Université de Kinshasa sont les suivantes : Assurer un enseignement de qualité en formant des acteurs compétents capables de comprendre les situations problématiques, criminali- sées ou non, et de proposer des réponses idoines permet- tant, notamment de développer les droits humains, l’État de droit ainsi que la gouvernance des institutions ; Déve- lopper la recherche fondamentale ou appliquée dans une approche interdisciplinaire dans le champ de la crimino- logie ; Offrir une expertise et un accompagnement aux institutions ainsi qu’aux acteurs sociaux, dans le domaine de droits humains, de l’État de droit, de la gouvernance et, plus généralement, dans le domaine de la régulation sociale, notamment à travers la consultance et le renfor- cement des capacités.",
+		text: "Assurer un enseignement de qualité en formant des acteurs compétents capables de comprendre les situations problématiques, criminalisées ou non, et de proposer des réponses idoines permettant, notamment, de développer les droits humains, l’État de droit ainsi que la gouvernance des institutions;",
 		image: "/about-us/banner3.WebP",
 		id: "four",
 	},

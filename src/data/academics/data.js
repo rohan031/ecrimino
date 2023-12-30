@@ -1,6 +1,6 @@
 export const masters = {
 	heading: "Masters",
-	text: "L’École de criminologie organise un Master en criminolo-Education/ESU gie en trois ans : Master préparatoire, Master 1 et Master II. En effet, la nature interdisciplinaire de la criminologie intégrant trois principaux pôles de connaissances (sociologie et anthropologie, psychologie et droit) rend indispensable l’acquisition des prérequis aux études de criminologie par les candidats provenant des différentes disciplines. Le Master préparatoire permet de constituer un socle commun et homogène de savoir et de méthodo- logie (acquisition des fondamentaux des sciences sociales pour les juristes par exemple, ou acquisition des fonda- mentaux du droit pour les non juristes etc.) pour ensuite entamer le Master en criminologie en 2 ans. Après le Master préparatoire, les candidats entament le Master I puis, pour le Master II, ils peuvent choisir entre l’option «Analyse et intervention» et l’option « Recherche» L’École forme des futurs enseignants après le Master en criminologie, dans un programme de doctorat. Par ail- leurs, l’École de criminologie organise aussi des forma- tions certifiantes destinées aux professionnels.",
+	text: "L’École de criminologie organise en 2 ans un Master en criminologie suivant le programme des études dans la filière de criminologie défini par le MINESU tel qu’arrimé au LMD dans le domaine des Sciences de l’homme et de la société, et qui comprend les mentions suivantes:",
 	parts: [
 		{
 			heading: "SÉCURITÉ INTÉRIEURE",
@@ -66,7 +66,7 @@ export const phd = {
 	parts: [
 		{
 			heading: "Recherches et Doctorat",
-			text: "L’École dispose déjà d’une collection aux éditions Academia L’Harmattan à Louvain-la-Neuve (Belgique), intitulée Publications du Centre de criminologie de l’Université de Kinshasa pour la diffusion de ses travaux de recherche. Par ailleurs, des partenariats avec des universités et des structures natio- nales et internationales de recherche sont d’ores et déjà envisagés. Ils nourriront les discussions scientifiques et permettront de développer les collaborations en matière d’enseignement, de recherche et de mobilité. Concernant la recherche appliquée, elle est réalisée par des études commanditées, des consultances auprès d’institutions nationales et internationales.",
+			text: "L’École de criminologie promeut la recherche dans le champ de la criminologie à travers les travaux des apprenants, qui doivent publier un article scientifique dans une revue idexée avant de défendre leurs mémoires de master en criminologie, qui doit avoir par ailleurs la forme d’un article scientifique publiable dans les revues internationales spécialisées de la criminologie. L’École de criminologie exécute aussi les recherches à travers les travaux des chercheurs du CCPS et les Assistants qui réalisent leurs doctorats en criminologie ou dans les disciplines voisines à l’Université de Kinshasa et à l’étranger (Canada).",
 			image: "/courses/one.WebP",
 			// link: "",
 		},
