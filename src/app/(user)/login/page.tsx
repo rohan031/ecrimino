@@ -6,112 +6,101 @@ import {
 	resendEmailVerification,
 	getUser,
 	signoutUser,
-    auth,
+	auth,
 } from "@/firebase/auth/auth";
 import Link from "next/link";
 import { onAuthStateChanged } from "firebase/auth";
 import { useRouter } from "next/navigation";
+import Loader from "@/components/Loader/Loader";
 
 export default function Page() {
 	// const [email, setEmail] = useState("rohanverma031@gmail.com");
 	// const [password, setPassword] = useState("R1O2H3A4N5:%%");
 
-    const router = useRouter();
+	const router = useRouter();
 
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 
-    const [loading, setLoading] = useState(false)
+	const [loading, setLoading] = useState(true);
+	const [isSigningIn, setIsSigningIn] = useState(false);
 
-    const authstate = onAuthStateChanged(auth, async (user) => {
-        if (user) {
-            setLoading(false);
-            if (!user.emailVerified) {
-                await resendEmailVerification();
-                alert("sent email verification mail");
-                return;
-            }
+	useEffect(() => {
+		const authstate = onAuthStateChanged(auth, async (user) => {
+			if (user) {
+				if (!user.emailVerified) {
+					await resendEmailVerification();
+					alert("sent email verification mail");
+					return;
+				}
 
-            const result = await user?.getIdTokenResult();
-            setLoading(false);
+				const result = await user?.getIdTokenResult();
 
-            if (
-                !result?.claims.isSuperAdmin &&
-                result?.claims.role !== "admin"
-            ) {
-                await signoutUser();
-                return;
-            }
+				if (
+					result?.claims.isSuperAdmin ||
+					result?.claims.role === "admin"
+				) {
+					router.push("/admin/login");
+					return;
+				}
 
-            router.push("/admin/home");
-        } else {
-            setLoading(false);
-        }
-    });
+				router.push("/home");
+			} else {
+				setLoading(false);
+			}
+		});
 
-    return () => authstate();
-}, []);
-
+		return () => authstate();
+	}, []);
 
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		alert("Page under construction");
-		// console.log(getUser());
+		// alert("Page under construction");
+		setIsSigningIn(true);
 
-		// addAdminRole({ email })
-		// 	.then((res) => {
-		// 		console.log(res);
-		// 	})
-		// 	.catch((err) => console.log(err.message));
+		const { result, error } = await signIn(email, password);
+		if (error) {
+			console.error(error);
+			alert(error);
+			setIsSigningIn(false);
+			return;
+		}
 
-		// const { result, error } = await signIn(email, password);
-		// if (error) {
-		// 	return console.log(error);
-		// }
+		if (result) {
+			const user = result.user;
 
-		// if (result) {
-		// 	const user = result.user;
+			if (!user.emailVerified) {
+				await resendEmailVerification();
+				alert("sent email verification mail");
+				setIsSigningIn(false);
+				return;
+			}
 
-		// 	if (!user.emailVerified) {
-		// 		await resendEmailVerification();
-		// 		alert("sent email verification mail");
-		// 	} else {
-		// 		// const users = [
-		// 		// 	{
-		// 		// 		email: "rohanverma3892@gmail.com",
-		// 		// 		name: "Rohan Verma",
-		// 		// 		course: "m2",
-		// 		// 	},
-		// 		// ];
-		// 		// let isFaculty = false;
-		// 		// addAdminRole({ users, isFaculty })
-		// 		// 	.then((res) => {
-		// 		// 		console.log(res);
-		// 		// 	})
-		// 		// 	.catch((err: Error) => {
-		// 		// 		console.log(err);
-		// 		// 	});
-		// 		const result = await user.getIdTokenResult();
-		// 		console.log(result);
+			const details = await user.getIdTokenResult();
 
-		// 		if (
-		// 			!result.claims.isSuperAdmin &&
-		// 			result.claims.role === "admin"
-		// 		) {
-		// 			await signoutUser();
-		// 			alert("you are not authorized to access this dashboard");
-		// 		}
-		// 	}
-		// }
-
-		// // const { result, error } = await signoutUser();
-
-		// // if (error) {
-		// // 	console.log(error);
-		// // } else {
-		// // 	console.log(result);
-		// // }
+			if (
+				details.claims.isSuperAdmin ||
+				details.claims.role === "admin"
+			) {
+				await signoutUser();
+				alert("you are not authorized to access this dashboard");
+				setIsSigningIn(false);
+				return;
+			}
+		}
 	};
+
+	if (loading) {
+		return (
+			<Loader
+				style={{
+					width: "100vw",
+					height: "100vh",
+					backgroundColor: "#333",
+				}}
+			/>
+		);
+	}
 
 	return (
 		<div className="login">
@@ -133,6 +122,9 @@ export default function Page() {
 								id="email"
 								value={email}
 								onChange={(e) => setEmail(e.target.value)}
+								disabled={isSigningIn}
+								required
+								placeholder="Email..."
 							/>
 						</div>
 
@@ -143,11 +135,25 @@ export default function Page() {
 								id="password"
 								value={password}
 								onChange={(e) => setPassword(e.target.value)}
+								disabled={isSigningIn}
+								required
+								placeholder="Password..."
 							/>
 						</div>
 
 						<div>
-							<button type="submit">Login</button>
+							<button type="submit" disabled={isSigningIn}>
+								{isSigningIn ? (
+									<Loader
+										style={{
+											margin: "0.8em 1.2em",
+											scale: "0.5",
+										}}
+									/>
+								) : (
+									"Login"
+								)}
+							</button>
 						</div>
 					</form>
 

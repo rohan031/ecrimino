@@ -20,7 +20,6 @@ export default function Page() {
 		const authstate = onAuthStateChanged(auth, async (user) => {
 			if (user) {
 				const result = await user?.getIdTokenResult();
-				setLoading(false);
 
 				if (result?.claims.isSuperAdmin) {
 					setSuperAdmin(true);
@@ -30,12 +29,12 @@ export default function Page() {
 					!result?.claims.isSuperAdmin &&
 					result?.claims.role !== "admin"
 				) {
-					await signoutUser();
-					router.push("/admin/login");
+					router.push("/login");
 				}
+
+				setLoading(false);
 			} else {
 				router.push("/admin/login");
-				setLoading(false);
 			}
 		});
 

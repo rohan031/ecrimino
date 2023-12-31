@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import {
 	signIn,
 	resendEmailVerification,
-	getUser,
 	signoutUser,
 	auth,
 } from "@/firebase/auth/auth";
@@ -27,7 +26,6 @@ export default function Page() {
 	useEffect(() => {
 		const authstate = onAuthStateChanged(auth, async (user) => {
 			if (user) {
-				setLoading(false);
 				if (!user.emailVerified) {
 					await resendEmailVerification();
 					alert("sent email verification mail");
@@ -35,13 +33,12 @@ export default function Page() {
 				}
 
 				const result = await user?.getIdTokenResult();
-				setLoading(false);
 
 				if (
 					!result?.claims.isSuperAdmin &&
 					result?.claims.role !== "admin"
 				) {
-					await signoutUser();
+					router.push("/login");
 					return;
 				}
 
@@ -60,9 +57,11 @@ export default function Page() {
 		setIsSigningIn(true);
 
 		const { result, error } = await signIn(email, password);
-		setIsSigningIn(false);
+
 		if (error) {
-			console.log(error);
+			setIsSigningIn(false);
+			console.error(error);
+			alert(error);
 			return;
 		}
 
@@ -72,6 +71,7 @@ export default function Page() {
 			if (!user.emailVerified) {
 				await resendEmailVerification();
 				alert("sent email verification mail");
+				setIsSigningIn(false);
 				return;
 			}
 
@@ -83,6 +83,7 @@ export default function Page() {
 			) {
 				await signoutUser();
 				alert("you are not authorized to access this dashboard");
+				setIsSigningIn(false);
 				return;
 			}
 		}
@@ -122,6 +123,7 @@ export default function Page() {
 								onChange={(e) => setEmail(e.target.value)}
 								disabled={isSigningIn}
 								required
+								placeholder="Email..."
 							/>
 						</div>
 
@@ -134,6 +136,7 @@ export default function Page() {
 								onChange={(e) => setPassword(e.target.value)}
 								disabled={isSigningIn}
 								required
+								placeholder="Password..."
 							/>
 						</div>
 
