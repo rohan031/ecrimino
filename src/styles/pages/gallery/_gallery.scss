@@ -133,11 +133,28 @@
 			column-count: 1;
 		}
 
+		&:hover {
+			img {
+				scale: 0.9;
+			}
+		}
+
+		&:has(img:hover) > img:not(:hover) {
+			scale: 0.9;
+		}
+
 		img {
 			border-radius: 0.75em;
 			margin-block: 0.75em;
 			width: 100%;
 			height: auto;
+			cursor: pointer;
+
+			transition: scale 300ms;
+
+			&:hover {
+				scale: 1.1;
+			}
 		}
 	}
 }
