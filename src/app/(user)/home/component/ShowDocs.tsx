@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { getDownloadURL, ref } from "firebase/storage";
 import { storage, deleteResource } from "@/firebase/auth/auth";
 
@@ -7,7 +7,7 @@ interface ShowDocsProps {
 	facultyId: string;
 	fileLocation: string;
 	fileName: string;
-	docId: string;
+	docId?: string;
 }
 
 export default function ShowDocs({
@@ -34,7 +34,7 @@ export default function ShowDocs({
 			<p onClick={handleClick}>{fileName}</p>
 			<p>{course}</p>
 
-			<button onClick={handleDelete}>Delete</button>
+			{docId && <button onClick={handleDelete}>Delete</button>}
 		</div>
 	);
 }

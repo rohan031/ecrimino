@@ -199,7 +199,7 @@ export async function getDocsById(id) {
 }
 
 export async function getDocsByCourse(course) {
-	const q = query(resourcesRef, where("facultyId", "==", id));
+	const q = query(resourcesRef, where("course", "==", course));
 	let result = null,
 		error = null;
 

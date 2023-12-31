@@ -51,5 +51,5 @@ export default function Page() {
 		);
 	}
 
-	return <>{faculty ? <Faculty user={user} /> : <Student />}</>;
+	return <>{faculty ? <Faculty user={user} /> : <Student user={user} />}</>;
 }
