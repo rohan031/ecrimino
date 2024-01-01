@@ -193,6 +193,12 @@
 						cursor: wait;
 					}
 				}
+
+				.error {
+					color: red;
+					font-size: 0.9rem;
+					text-align: center;
+				}
 			}
 
 			> :last-child {

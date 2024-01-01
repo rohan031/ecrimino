@@ -40,7 +40,7 @@ export default function Student({ user }: { user: User }) {
 
 	useEffect(() => {
 		getCourse();
-	});
+	}, []);
 
 	return (
 		<>

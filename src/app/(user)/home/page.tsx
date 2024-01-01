@@ -21,7 +21,7 @@ export default function Page() {
 				const result = await user?.getIdTokenResult();
 
 				if (
-					result?.claims.isSuperAdmin &&
+					result?.claims.isSuperAdmin ||
 					result?.claims.role === "admin"
 				) {
 					router.push("/admin/login");

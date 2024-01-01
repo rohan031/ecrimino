@@ -11,6 +11,7 @@ import {
 import { onAuthStateChanged } from "firebase/auth";
 import Link from "next/link";
 import Loader from "@/components/Loader/Loader";
+import { FirebaseError } from "firebase/app";
 
 export default function Page() {
 	const router = useRouter();
@@ -22,6 +23,8 @@ export default function Page() {
 
 	const [loading, setLoading] = useState(true);
 	const [isSigningIn, setIsSigningIn] = useState(false);
+
+	const [error, setError] = useState<string | null>(null);
 
 	useEffect(() => {
 		const authstate = onAuthStateChanged(auth, async (user) => {
@@ -59,9 +62,15 @@ export default function Page() {
 		const { result, error } = await signIn(email, password);
 
 		if (error) {
+			let err = error as FirebaseError;
+
+			if (err.code == "auth/invalid-credential") {
+				setError("Invalid email or password. Please try again.");
+			} else {
+				setError("Can't login right now. Please try again later.");
+			}
+
 			setIsSigningIn(false);
-			console.error(error);
-			alert(error);
 			return;
 		}
 
@@ -82,7 +91,7 @@ export default function Page() {
 				details.claims.role !== "admin"
 			) {
 				await signoutUser();
-				alert("you are not authorized to access this dashboard");
+				setError("You are not authorized to access this dashboard");
 				setIsSigningIn(false);
 				return;
 			}
@@ -140,12 +149,15 @@ export default function Page() {
 							/>
 						</div>
 
+						<div>{error && <p className="error">{error}</p>}</div>
+
 						<div>
 							<button type="submit" disabled={isSigningIn}>
 								{isSigningIn ? (
 									<Loader
 										style={{
-											margin: "0.8em 1.2em",
+											paddingBlock: "0.8em",
+											paddingInline: "1.2em",
 											scale: "0.5",
 										}}
 									/>
