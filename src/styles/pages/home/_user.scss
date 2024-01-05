@@ -1,5 +1,116 @@
 @use "../../abstracts" as ab;
 
-.user-details {
-	outline: 2px solid red;
+.nav {
+	background-color: ab.$grey1;
+}
+.user-nav {
+	margin-block: 0 2em;
+
+	padding: 1em 0 0.8em;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	.ecrimino {
+		width: min(15rem, 50%);
+	}
+
+	.user-trigger {
+		background-color: transparent;
+		color: ab.$blue1;
+
+		border: 0;
+		font-weight: 600;
+		font-size: 1rem;
+
+		text-decoration: underline transparent;
+
+		transition: text-decoration-color 300ms;
+
+		&[data-state="open"] {
+			text-decoration-color: ab.$blue1;
+		}
+	}
+}
+
+.user-content {
+	padding: 0.8em 1.2em;
+	background-color: ab.$grey2;
+	border-radius: 0.75rem;
+	translate: -1em;
+
+	color: ab.$blue2;
+	display: grid;
+	gap: 0.8em;
+
+	@include ab.screen-86 {
+		translate: 0;
+	}
+
+	& > * {
+		outline: none;
+		user-select: none;
+	}
+
+	button {
+		color: ab.$blue2;
+		cursor: pointer;
+	}
+}
+
+.student-docs {
+	.docs-container {
+		border-radius: 0.75rem;
+		padding: 1em;
+		background-color: ab.$grey1;
+		min-height: 75vh;
+		margin-block-start: 3em;
+
+		.no-docs {
+			text-wrap: balance;
+			font-size: 1.2rem;
+		}
+
+		.docs-item {
+			text-align: center;
+			text-wrap: balance;
+			display: grid;
+			gap: 0.3em;
+			border-radius: 0.75rem;
+
+			cursor: pointer;
+			padding: 0.6em;
+
+			position: relative;
+
+			&:hover::before {
+				opacity: 1;
+			}
+
+			&::before {
+				content: "";
+				position: absolute;
+				inset: 0;
+				border-radius: 0.75rem;
+				opacity: 0;
+				box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+					rgba(17, 17, 26, 0.1) 0px 8px 24px,
+					rgba(17, 17, 26, 0.1) 0px 16px 56px;
+
+				transition: opacity 300ms;
+			}
+
+			img {
+				margin-inline: auto;
+			}
+		}
+
+		.resources-container {
+			display: grid;
+			gap: 1em;
+
+			grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+		}
+	}
 }

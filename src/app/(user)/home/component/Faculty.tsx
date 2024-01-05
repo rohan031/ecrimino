@@ -8,6 +8,12 @@ import UploadDocs from "./UploadDocs";
 import ShowDocs from "./ShowDocs";
 import { DocumentData } from "firebase/firestore";
 
+import Ecrimino from "@/../public/logo.png";
+import Image from "next/image";
+import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
+import DropDownTrigger from "@/components/DropDown/DropDownTrigger";
+import DropDownItem from "@/components/DropDown/DropDownItem";
+
 interface Docs {
 	docData: DocumentData[];
 	docId: string[];
@@ -42,11 +48,54 @@ export default function Faculty({ user }: { user: User }) {
 
 	return (
 		<>
-			<div>
-				<p>{user.displayName}</p>
-				<p>{user.email}</p>
-				<p>{user.uid}</p>
-				<p>Faculty</p>
+			<div className="nav">
+				<div className="container">
+					<div className="user-nav">
+						<div className="ecrimino">
+							<Image
+								priority={true}
+								src={Ecrimino}
+								alt="Ecrimino"
+							/>
+						</div>
+
+						<DropdownMenu.Root>
+							<DropDownTrigger>
+								<button className="user-trigger">
+									{user.displayName}
+								</button>
+							</DropDownTrigger>
+
+							<DropdownMenu.Portal>
+								<DropdownMenu.Content
+									className="user-content"
+									sideOffset={5}
+								>
+									<DropDownItem>
+										<p className="user-item">
+											{user.displayName}
+										</p>
+									</DropDownItem>
+
+									<DropDownItem>
+										<p className="user-item">
+											{user.email}
+										</p>
+									</DropDownItem>
+
+									<DropDownItem>
+										<button
+											className="user-item"
+											onClick={handleSignout}
+										>
+											Sign Out
+										</button>
+									</DropDownItem>
+								</DropdownMenu.Content>
+							</DropdownMenu.Portal>
+						</DropdownMenu.Root>
+					</div>
+				</div>
 			</div>
 
 			<button onClick={() => setUploadDoc(true)}>Upload document</button>
@@ -57,7 +106,7 @@ export default function Faculty({ user }: { user: User }) {
 			{/* handle page shown */}
 
 			<div>
-				<button onClick={getDocs}>Show My docs</button>
+				<button onClick={getDocs}>Manage my Uploaded resources</button>
 
 				{docs?.docData &&
 					docs.docData.map((doc, index) => {

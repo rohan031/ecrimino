@@ -4,14 +4,14 @@
 
 body {
 	font-family: "Inter", sans-serif;
-	color: ab.$white;
+	// color: ab.$white;
 	scroll-behavior: smooth;
-	background-color: ab.$dark1;
+	// background-color: ab.$dark1;
 	// color: black;
 }
 
 .container {
-	width: min(90%, 85rem);
+	width: min(90%, 75rem);
 	margin-inline: auto;
 }
 
@@ -44,4 +44,9 @@ dialog {
 	&::backdrop {
 		background-color: rgba(0, 0, 0, 0.349);
 	}
+}
+
+img {
+	height: auto;
+	max-width: 100%;
 }

@@ -1,11 +1,16 @@
 import { DocumentData } from "firebase/firestore";
 import React, { useEffect, useState, useCallback } from "react";
 
-import { getDocsByCourse } from "@/firebase/auth/auth";
+import { getDocsByCourse, signoutUser } from "@/firebase/auth/auth";
 import ShowDocs from "./ShowDocs";
 import { User } from "firebase/auth";
+import Ecrimino from "@/../public/logo.png";
 
 import { courseMap } from "@/data/course";
+import Image from "next/image";
+import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
+import DropDownTrigger from "@/components/DropDown/DropDownTrigger";
+import DropDownItem from "@/components/DropDown/DropDownItem";
 
 interface Docs {
 	docData: DocumentData[];
@@ -42,32 +47,96 @@ export default function Student({ user }: { user: User }) {
 		getCourse();
 	}, []);
 
+	const handleSignout = async () => {
+		await signoutUser();
+	};
+
 	return (
-		<div className="container">
-			<div className="user-details">
-				<p>{user.displayName}</p>
-				<p>{user.email}</p>
-				{course && <p>{courseMap[course as keyof typeof courseMap]}</p>}
-				<p>{user.uid}</p>
-				<p>Student</p>
-			</div>
-
-			<div>
-				{!docs && <p>No resources for your course has been uploaded</p>}
-
-				{docs?.docData &&
-					docs.docData.map((doc) => {
-						return (
-							<ShowDocs
-								key={doc.fileLocation}
-								course={doc.course}
-								facultyId={doc.facultyId}
-								fileLocation={doc.fileLocation}
-								fileName={doc.fileName}
+		<>
+			<div className="nav">
+				<div className="container">
+					<div className="user-nav">
+						<div className="ecrimino">
+							<Image
+								priority={true}
+								src={Ecrimino}
+								alt="Ecrimino"
 							/>
-						);
-					})}
+						</div>
+
+						<DropdownMenu.Root>
+							<DropDownTrigger>
+								<button className="user-trigger">
+									{user.displayName}
+								</button>
+							</DropDownTrigger>
+
+							<DropdownMenu.Portal>
+								<DropdownMenu.Content
+									className="user-content"
+									sideOffset={5}
+								>
+									<DropDownItem>
+										<p className="user-item">
+											{user.email}
+										</p>
+									</DropDownItem>
+
+									<DropDownItem>
+										{course && (
+											<p className="user-item">
+												{
+													courseMap[
+														course as keyof typeof courseMap
+													]
+												}
+											</p>
+										)}
+									</DropDownItem>
+
+									<DropDownItem>
+										<button
+											className="user-item"
+											onClick={handleSignout}
+										>
+											Sign Out
+										</button>
+									</DropDownItem>
+								</DropdownMenu.Content>
+							</DropdownMenu.Portal>
+						</DropdownMenu.Root>
+					</div>
+				</div>
 			</div>
-		</div>
+
+			<div className="student-docs">
+				<div className="container">
+					<div className="docs-container">
+						{!docs && (
+							<p className="no-docs">
+								No resources for your course has been uploaded.
+								Check again later for any updated resource.
+							</p>
+						)}
+
+						{docs?.docData && (
+							<div className="resources-container">
+								{docs.docData.map((doc) => {
+									return (
+										<ShowDocs
+											key={doc.fileLocation}
+											course={doc.course}
+											facultyId={doc.facultyId}
+											fileLocation={doc.fileLocation}
+											fileName={doc.fileName}
+										/>
+									);
+								})}
+							</div>
+						)}
+					</div>
+				</div>
+			</div>
+		</>
 	);
 }

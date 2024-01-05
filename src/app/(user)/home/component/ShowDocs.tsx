@@ -2,6 +2,9 @@ import React from "react";
 import { getDownloadURL, ref } from "firebase/storage";
 import { storage, deleteResource } from "@/firebase/auth/auth";
 
+import Pdf from "@/../public/pdf.png";
+import Image from "next/image";
+
 interface ShowDocsProps {
 	course: string;
 	facultyId: string;
@@ -30,8 +33,9 @@ export default function ShowDocs({
 	};
 
 	return (
-		<div>
-			<p onClick={handleClick}>{fileName}</p>
+		<div className="docs-item" onClick={handleClick} title={fileName}>
+			<Image src={Pdf} alt="" />
+			<p>{fileName}</p>
 			<p>{course}</p>
 
 			{docId && <button onClick={handleDelete}>Delete</button>}
