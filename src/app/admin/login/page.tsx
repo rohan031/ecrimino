@@ -13,6 +13,7 @@ import Link from "next/link";
 import Loader from "@/components/Loader/Loader";
 import { FirebaseError } from "firebase/app";
 import ForgotPassword from "@/components/ForgotPassword/ForgotPassword";
+import EmailConfirm from "@/components/Modals/EmailConfirm";
 
 export default function Page() {
 	const router = useRouter();
@@ -25,13 +26,16 @@ export default function Page() {
 
 	const [error, setError] = useState<string | null>(null);
 	const forgotPasswordModalRef = useRef<HTMLDialogElement | null>(null);
+	const confirmEmailRef = useRef<HTMLDialogElement | null>(null);
+	const loginStateRef = useRef<boolean>(false);
 
 	useEffect(() => {
 		const authstate = onAuthStateChanged(auth, async (user) => {
 			if (user) {
 				if (!user.emailVerified) {
 					await resendEmailVerification();
-					alert("sent email verification mail");
+					confirmEmailRef.current?.showModal();
+					setIsSigningIn(false);
 					return;
 				}
 
@@ -41,7 +45,15 @@ export default function Page() {
 					!result?.claims.isSuperAdmin &&
 					result?.claims.role !== "admin"
 				) {
-					router.push("/login");
+					if (!loginStateRef.current) {
+						router.push("/login");
+						return;
+					}
+
+					await signoutUser();
+					setError("You are not authorized to access this dashboard");
+					setIsSigningIn(false);
+					setLoading(false);
 					return;
 				}
 
@@ -58,6 +70,7 @@ export default function Page() {
 		e.preventDefault();
 		setIsSigningIn(true);
 
+		loginStateRef.current = true;
 		const { result, error } = await signIn(email, password);
 
 		if (error) {
@@ -71,29 +84,6 @@ export default function Page() {
 
 			setIsSigningIn(false);
 			return;
-		}
-
-		if (result) {
-			const user = result.user;
-
-			if (!user.emailVerified) {
-				await resendEmailVerification();
-				alert("sent email verification mail");
-				setIsSigningIn(false);
-				return;
-			}
-
-			const details = await user.getIdTokenResult();
-
-			if (
-				!details.claims.isSuperAdmin &&
-				details.claims.role !== "admin"
-			) {
-				await signoutUser();
-				setError("You are not authorized to access this dashboard");
-				setIsSigningIn(false);
-				return;
-			}
 		}
 	};
 
@@ -126,6 +116,12 @@ export default function Page() {
 					<ForgotPassword
 						forgotpasswordModal={forgotPasswordModalRef}
 					/>
+				</dialog>
+			</>
+
+			<>
+				<dialog ref={confirmEmailRef} className="email-confirm">
+					<EmailConfirm confirmEmail={confirmEmailRef} />
 				</dialog>
 			</>
 

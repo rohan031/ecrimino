@@ -223,3 +223,36 @@
 		}
 	}
 }
+
+.email-confirm {
+	&-item {
+		h2 {
+			margin-block: 1em;
+		}
+		text-align: center;
+		text-wrap: balance;
+
+		button {
+			color: ab.$white;
+			border: 0.1em solid ab.$blue1;
+			background-color: ab.$blue1;
+			padding: 0.2em 1.4em;
+			border-radius: 0.5rem;
+
+			font-size: clamp(1.1rem, 1.3vw, 1.5rem);
+
+			cursor: pointer;
+			transition: color 300ms, background-color 300ms;
+
+			&:hover {
+				color: ab.$blue1;
+				background-color: ab.$white;
+			}
+
+			&:disabled {
+				background-color: ab.$white;
+				cursor: wait;
+			}
+		}
+	}
+}

@@ -30,6 +30,7 @@ export default function Page() {
 					result?.claims.role !== "admin"
 				) {
 					router.push("/login");
+					return;
 				}
 
 				setLoading(false);

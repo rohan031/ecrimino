@@ -33,3 +33,15 @@ body {
 .message {
 	color: rgb(24, 211, 24);
 }
+
+dialog {
+	border: 0;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	border-radius: 0.75em;
+	width: min(95%, 50ch);
+	color: ab.$blue1;
+
+	&::backdrop {
+		background-color: rgba(0, 0, 0, 0.349);
+	}
+}
