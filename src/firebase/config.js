@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp, getApps } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { getAnalytics, isSupported } from "firebase/analytics";
 
 const firebaseConfig = {
 	apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -18,4 +18,6 @@ let firebase_app =
 
 export default firebase_app;
 
-const analytics = getAnalytics(app);
+const analytics = isSupported().then((yes) =>
+	yes ? getAnalytics(firebase_app) : null
+);
