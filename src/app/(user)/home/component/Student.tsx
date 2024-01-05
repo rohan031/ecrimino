@@ -43,8 +43,8 @@ export default function Student({ user }: { user: User }) {
 	}, []);
 
 	return (
-		<>
-			<div>
+		<div className="container">
+			<div className="user-details">
 				<p>{user.displayName}</p>
 				<p>{user.email}</p>
 				{course && <p>{courseMap[course as keyof typeof courseMap]}</p>}
@@ -68,6 +68,6 @@ export default function Student({ user }: { user: User }) {
 						);
 					})}
 			</div>
-		</>
+		</div>
 	);
 }

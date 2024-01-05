@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
 	signIn,
 	resendEmailVerification,
@@ -13,6 +13,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import Loader from "@/components/Loader/Loader";
 import { FirebaseError } from "firebase/app";
+import ForgotPassword from "@/components/ForgotPassword/ForgotPassword";
 
 export default function Page() {
 	const router = useRouter();
@@ -24,6 +25,7 @@ export default function Page() {
 	const [isSigningIn, setIsSigningIn] = useState(false);
 
 	const [error, setError] = useState<string | null>(null);
+	const forgotPasswordModalRef = useRef<HTMLDialogElement | null>(null);
 
 	useEffect(() => {
 		const authstate = onAuthStateChanged(auth, async (user) => {
@@ -55,7 +57,6 @@ export default function Page() {
 
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		// alert("Page under construction");
 		setIsSigningIn(true);
 
 		const { result, error } = await signIn(email, password);
@@ -108,71 +109,104 @@ export default function Page() {
 		);
 	}
 
+	const handleForgotPassword = () => {
+		if (!forgotPasswordModalRef.current) return;
+
+		forgotPasswordModalRef.current.showModal();
+	};
+
 	return (
-		<div className="login">
-			<div className="container">
-				<div className="login-form">
-					<div className="login-form__head">
-						{/* <Link href="/"> */}
-						<img src="/logo.png" alt="ecrimino" />
-						{/* </Link> */}
+		<>
+			{/* dialog */}
+			<>
+				<dialog
+					ref={forgotPasswordModalRef}
+					className="forgot-password"
+				>
+					<ForgotPassword
+						forgotpasswordModal={forgotPasswordModalRef}
+					/>
+				</dialog>
+			</>
 
-						<h2>User Login</h2>
-					</div>
+			<>
+				<div className="login">
+					<div className="container-login container">
+						<div className="login-form">
+							<div className="login-form__head">
+								{/* <Link href="/"> */}
+								<img src="/logo.png" alt="ecrimino" />
+								{/* </Link> */}
 
-					<form onSubmit={handleSubmit}>
-						<div>
-							<label htmlFor="email">Email</label>
-							<input
-								type="email"
-								id="email"
-								value={email}
-								onChange={(e) => setEmail(e.target.value)}
-								disabled={isSigningIn}
-								required
-								placeholder="Email..."
-							/>
-						</div>
+								<h2>User Login</h2>
+							</div>
 
-						<div>
-							<label htmlFor="password">Passwrod</label>
-							<input
-								type="password"
-								id="password"
-								value={password}
-								onChange={(e) => setPassword(e.target.value)}
-								disabled={isSigningIn}
-								required
-								placeholder="Password..."
-							/>
-						</div>
-
-						<div>{error && <p className="error">{error}</p>}</div>
-
-						<div>
-							<button type="submit" disabled={isSigningIn}>
-								{isSigningIn ? (
-									<Loader
-										style={{
-											paddingBlock: "0.8em",
-											paddingInline: "1.2em",
-											scale: "0.5",
-										}}
+							<form onSubmit={handleSubmit}>
+								<div>
+									<label htmlFor="email">Email</label>
+									<input
+										type="email"
+										id="email"
+										value={email}
+										onChange={(e) =>
+											setEmail(e.target.value)
+										}
+										disabled={isSigningIn}
+										required
+										placeholder="Email..."
 									/>
-								) : (
-									"Login"
-								)}
-							</button>
+								</div>
+
+								<div>
+									<label htmlFor="password">Passwrod</label>
+									<input
+										type="password"
+										id="password"
+										value={password}
+										onChange={(e) =>
+											setPassword(e.target.value)
+										}
+										disabled={isSigningIn}
+										required
+										placeholder="Password..."
+									/>
+								</div>
+
+								<div>
+									{error && <p className="error">{error}</p>}
+								</div>
+
+								<div>
+									<button
+										type="submit"
+										disabled={isSigningIn}
+									>
+										{isSigningIn ? (
+											<Loader
+												style={{
+													paddingBlock: "0.8em",
+													paddingInline: "1.2em",
+													scale: "0.5",
+												}}
+											/>
+										) : (
+											"Login"
+										)}
+									</button>
+								</div>
+							</form>
+
+							<div className="form-links">
+								<button onClick={handleForgotPassword}>
+									Forgot Password?
+								</button>
+
+								<Link href="/admin/login">Admin login</Link>
+							</div>
 						</div>
-					</form>
-
-					<div className="form-links">
-						<Link href="">Forgot Password?</Link>
-
-						<Link href="/admin/login">Admin login</Link>
 					</div>
 				</div>
-			</div>
-		</div>
+			</>
+		</>
 	);
 }

@@ -193,12 +193,6 @@
 						cursor: wait;
 					}
 				}
-
-				.error {
-					color: red;
-					font-size: 0.9rem;
-					text-align: center;
-				}
 			}
 
 			> :last-child {
@@ -213,9 +207,15 @@
 			font-size: clamp(0.8rem, 1.4vw, 1rem);
 			margin-block-start: 1rem;
 
-			a {
-				text-decoration-color: transparent;
+			a,
+			button {
+				text-decoration: underline transparent;
+				background-color: transparent;
+				border: 0;
+				cursor: pointer;
+				color: ab.$blue1;
 
+				transition: text-decoration-color 300ms;
 				&:hover {
 					text-decoration-color: ab.$blue1;
 				}

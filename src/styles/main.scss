@@ -6,11 +6,30 @@ body {
 	font-family: "Inter", sans-serif;
 	color: ab.$white;
 	scroll-behavior: smooth;
-	background-color: ab.$white;
-	color: black;
+	background-color: ab.$dark1;
+	// color: black;
 }
 
 .container {
-	width: min(96%, 120rem);
+	width: min(90%, 85rem);
 	margin-inline: auto;
+}
+
+.container-login {
+	width: min(96%, 120rem);
+}
+
+.error,
+.message {
+	font-size: 0.9rem;
+	text-align: left;
+	text-wrap: balance;
+}
+
+.error {
+	color: red;
+}
+
+.message {
+	color: rgb(24, 211, 24);
 }

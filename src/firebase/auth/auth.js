@@ -7,6 +7,7 @@ import {
 	signOut,
 	browserSessionPersistence,
 	setPersistence,
+	sendPasswordResetEmail,
 } from "firebase/auth";
 import {
 	getFunctions,
@@ -66,6 +67,20 @@ export async function signoutUser() {
 	} catch (err) {
 		console.error(err);
 	}
+}
+
+export async function forgotPassword(email) {
+	let result = null,
+		error = null;
+
+	try {
+		await sendPasswordResetEmail(auth, email);
+		result = true;
+	} catch (err) {
+		error = err;
+	}
+
+	return { result, error };
 }
 
 // https callable
