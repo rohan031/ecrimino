@@ -154,7 +154,7 @@ export default function Page() {
 								</div>
 
 								<div>
-									<label htmlFor="password">Passwrod</label>
+									<label htmlFor="password">Password</label>
 									<input
 										type="password"
 										id="password"
