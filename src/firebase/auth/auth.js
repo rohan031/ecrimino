@@ -166,6 +166,9 @@ export async function addFileMetaData(
 	facultyId,
 	course
 ) {
+	let result = null,
+		error = null;
+
 	try {
 		const docRef = await addDoc(resourcesRef, {
 			fileName,
@@ -174,12 +177,13 @@ export async function addFileMetaData(
 			course,
 		});
 
-		console.log("successfully uploaded");
-		alert("successfully uploaded");
+		result = true;
 	} catch (err) {
 		console.error(err);
-		alert("error uploading");
+		error = err;
 	}
+
+	return { result, error };
 }
 
 export async function getDocsById(id) {
@@ -247,15 +251,20 @@ export async function deleteResource(docId, resourceLink) {
 
 	let promises = [];
 
+	let result = null,
+		error = null;
+
 	try {
 		promises.push(deleteDoc(docRef));
 		promises.push(deleteObject(resourceRef));
 
 		await Promise.all(promises);
 		console.log("successfully delete doc");
-		alert("deleted doc successfully");
+		result = true;
 	} catch (err) {
-		console.error(err);
-		alert("error delete records");
+		console.error("can't delete doc right now");
+		error = err;
 	}
+
+	return { result, error };
 }

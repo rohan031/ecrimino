@@ -43,6 +43,7 @@ dialog {
 
 	&::backdrop {
 		background-color: rgba(0, 0, 0, 0.349);
+		backdrop-filter: blur(0.15em);
 	}
 }
 

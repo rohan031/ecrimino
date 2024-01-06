@@ -20,6 +20,8 @@
 		background-color: transparent;
 		color: ab.$blue1;
 
+		cursor: pointer;
+
 		border: 0;
 		font-weight: 600;
 		font-size: 1rem;
@@ -31,6 +33,57 @@
 		&[data-state="open"] {
 			text-decoration-color: ab.$blue1;
 		}
+
+		&:hover {
+			text-decoration-color: ab.$blue1;
+		}
+	}
+}
+
+.docs-item {
+	text-align: center;
+	text-wrap: balance;
+	display: grid;
+	gap: 0.3em;
+	border-radius: 0.75rem;
+
+	padding: 0.6em;
+
+	position: relative;
+
+	&:hover::before {
+		opacity: 1;
+	}
+
+	.link {
+		cursor: pointer;
+		color: ab.$accent1;
+
+		text-decoration: underline transparent;
+
+		transition: text-decoration-color 300ms;
+
+		&:hover {
+			text-decoration-color: ab.$accent1;
+		}
+	}
+
+	&::before {
+		z-index: -1;
+		content: "";
+		position: absolute;
+		inset: 0;
+		border-radius: 0.75rem;
+		opacity: 0;
+		box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+			rgba(17, 17, 26, 0.1) 0px 8px 24px,
+			rgba(17, 17, 26, 0.1) 0px 16px 56px;
+
+		transition: opacity 300ms;
+	}
+
+	img {
+		margin-inline: auto;
 	}
 }
 
@@ -60,50 +113,19 @@
 }
 
 .student-docs {
+	margin-block-end: 5em;
+
 	.docs-container {
 		border-radius: 0.75rem;
 		padding: 1em;
 		background-color: ab.$grey1;
 		min-height: 75vh;
 		margin-block-start: 3em;
+		box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
 		.no-docs {
 			text-wrap: balance;
 			font-size: 1.2rem;
-		}
-
-		.docs-item {
-			text-align: center;
-			text-wrap: balance;
-			display: grid;
-			gap: 0.3em;
-			border-radius: 0.75rem;
-
-			cursor: pointer;
-			padding: 0.6em;
-
-			position: relative;
-
-			&:hover::before {
-				opacity: 1;
-			}
-
-			&::before {
-				content: "";
-				position: absolute;
-				inset: 0;
-				border-radius: 0.75rem;
-				opacity: 0;
-				box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-					rgba(17, 17, 26, 0.1) 0px 8px 24px,
-					rgba(17, 17, 26, 0.1) 0px 16px 56px;
-
-				transition: opacity 300ms;
-			}
-
-			img {
-				margin-inline: auto;
-			}
 		}
 
 		.resources-container {
@@ -111,6 +133,321 @@
 			gap: 1em;
 
 			grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+		}
+	}
+}
+
+.faculty-dashboard {
+	margin-block-end: 5em;
+
+	.faculty-main-container {
+		border-radius: 0.75rem;
+		padding: 1em;
+		background-color: ab.$grey1;
+		min-height: 75vh;
+		margin-block-start: 3em;
+		box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+	}
+
+	&__heading {
+		color: ab.$blue1;
+	}
+
+	.faculty-actions {
+		margin-block: 1em;
+
+		display: flex;
+		justify-content: space-between;
+
+		font-size: 1.1rem;
+
+		& > * {
+			cursor: pointer;
+		}
+
+		&__links {
+			background-color: transparent;
+			border: 0;
+
+			color: ab.$blue2;
+			font-weight: 500;
+
+			text-decoration: underline transparent;
+
+			transition: text-decoration-color 300ms;
+
+			&:hover {
+				text-decoration-color: ab.$blue2;
+			}
+		}
+
+		&__button {
+			--bg-size-x: 98%;
+			background-color: ab.$accent1;
+			background-image: linear-gradient(ab.$white, ab.$white);
+			background-repeat: no-repeat;
+			background-size: 0 100%;
+			color: ab.$white;
+			border: 0;
+			padding: 0.3em 1em;
+
+			border-radius: 0.3rem;
+
+			transition: background-size 300ms;
+
+			position: relative;
+
+			&::before {
+				inset: 0;
+				content: "";
+				position: absolute;
+				border-radius: 0.3rem;
+				box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+				opacity: 0;
+
+				transition: opacity 300ms;
+			}
+
+			&:hover {
+				background-size: var(--bg-size-x) 100%;
+
+				p {
+					color: transparent;
+					background-size: var(--bg-size-x) 100%;
+				}
+			}
+
+			&:hover::before {
+				opacity: 1;
+			}
+
+			p {
+				background-image: linear-gradient(ab.$accent1, ab.$accent1);
+				background-clip: text;
+
+				background-size: 0 100%;
+
+				transition: color 300ms, background-size 300ms;
+			}
+
+			&:disabled {
+				cursor: not-allowed;
+				background-size: var(--bg-size-x) 100%;
+
+				p {
+					color: transparent;
+					background-size: var(--bg-size-x) 100%;
+				}
+			}
+		}
+	}
+
+	.faculty-docs {
+		margin-block: 2em;
+
+		display: grid;
+		gap: 2em;
+
+		grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+
+		img {
+			width: 5rem;
+		}
+
+		.docs-item > button {
+			background-color: #d80032;
+			color: ab.$white;
+			font-size: 1.1rem;
+			border-radius: 0.5rem;
+			border: 0;
+			padding-block: 0.2em;
+			cursor: pointer;
+
+			&:hover {
+				background-color: lighten($color: #d80032, $amount: 5);
+			}
+		}
+
+		dialog {
+			text-align: left;
+			user-select: none;
+
+			p {
+				margin-block: 0.5em;
+			}
+		}
+
+		.confirm-delete-buttons {
+			gap: 1.5em;
+			display: flex;
+			margin-block: 1em 0;
+
+			justify-content: flex-end;
+
+			button:first-child {
+				background-color: #d80032;
+				color: ab.$white;
+				font-size: 1.1rem;
+				border-radius: 0.5rem;
+				border: 0;
+				padding-block: 0.15em;
+				cursor: pointer;
+				padding-inline: 1em;
+
+				&:hover {
+					background-color: lighten($color: #d80032, $amount: 5);
+				}
+
+				&:disabled {
+					background-color: #d80032d7;
+				}
+			}
+
+			button:last-child {
+				background-color: transparent;
+				border: none;
+				color: ab.$accent1;
+				font-size: 1.1rem;
+				cursor: pointer;
+				text-decoration: underline transparent;
+
+				transition: text-decoration-color 300ms;
+
+				&:hover {
+					text-decoration-color: ab.$accent1;
+				}
+
+				&:disabled {
+					text-decoration-color: transparent;
+				}
+			}
+
+			button:disabled {
+				cursor: not-allowed;
+			}
+		}
+	}
+
+	.no-docs {
+		height: 20rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		p {
+			font-size: 1.5rem;
+			font-weight: 500;
+			color: ab.$blue2;
+			text-align: center;
+			text-wrap: balance;
+		}
+	}
+}
+
+.upload-docs {
+	&__menu {
+		display: flex;
+		justify-content: flex-end;
+
+		button {
+			background-color: transparent;
+			border: 0;
+
+			&:hover {
+				svg {
+					scale: 1.1;
+				}
+			}
+			svg {
+				font-size: 1.5rem;
+				color: ab.$blue1;
+				cursor: pointer;
+				transition: scale 150ms;
+			}
+		}
+	}
+
+	&__container {
+		display: grid;
+		gap: 2em;
+
+		&-heading {
+			color: ab.$blue2;
+			position: relative;
+
+			&::before {
+				content: "";
+				position: absolute;
+				height: 0.1rem;
+				background-color: ab.$blue2;
+				width: 7.5rem;
+				bottom: -0.3em;
+			}
+		}
+
+		&-form {
+			background-color: ab.$grey2;
+			border-radius: 0.75rem;
+			padding: 1.5em 0.75em;
+
+			overflow: scroll;
+			width: 100%;
+
+			form {
+				display: grid;
+				gap: 1.2em;
+
+				> div {
+					color: ab.$blue1;
+
+					display: flex;
+					gap: 0.5em;
+					align-items: center;
+					flex-wrap: wrap;
+
+					input[type="text"] {
+						width: min(100%, 16rem);
+						padding: 0.3em;
+					}
+
+					> div {
+						width: min(100%, 16rem);
+					}
+
+					input[type="file"] {
+						width: 100%;
+						padding: 0.5em 0.2em;
+						color: ab.$blue2;
+
+						&:disabled {
+							color: grey;
+						}
+					}
+
+					progress {
+						display: block;
+						width: 100%;
+					}
+
+					.upload {
+						color: rgb(10, 119, 10);
+						font-weight: 600;
+					}
+
+					.message {
+						color: rgb(10, 119, 10);
+					}
+
+					button {
+						padding-inline: 1em;
+						padding-block: 0.2em;
+
+						&:disabled {
+							cursor: not-allowed;
+						}
+					}
+				}
+			}
 		}
 	}
 }
