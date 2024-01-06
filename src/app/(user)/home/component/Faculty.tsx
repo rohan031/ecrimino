@@ -14,7 +14,6 @@ import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import DropDownTrigger from "@/components/DropDown/DropDownTrigger";
 import DropDownItem from "@/components/DropDown/DropDownItem";
 
-import Modal from "react-modal";
 import { FirebaseError } from "firebase/app";
 
 interface Docs {
