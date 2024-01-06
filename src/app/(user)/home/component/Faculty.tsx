@@ -15,6 +15,9 @@ import DropDownTrigger from "@/components/DropDown/DropDownTrigger";
 import DropDownItem from "@/components/DropDown/DropDownItem";
 
 import { FirebaseError } from "firebase/app";
+import ChangePassword from "@/components/Modals/ChangePassword";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
 interface Docs {
 	docData: DocumentData[];
@@ -27,6 +30,8 @@ export default function Faculty({ user }: { user: User }) {
 	const [docsLoading, setDocsLoading] = useState(false);
 	const [err, setErr] = useState<string | null>(null);
 	const [msg, setMsg] = useState<string | null>(null);
+
+	const changePasswordRef = useRef<HTMLDialogElement | null>(null);
 
 	const handleSignout = async () => {
 		await signoutUser();
@@ -80,8 +85,21 @@ export default function Faculty({ user }: { user: User }) {
 		});
 	};
 
+	const handleChangePassword = () => {
+		changePasswordRef.current?.showModal();
+	};
+
+	const handleChangePasswordClose = () => {
+		changePasswordRef.current?.close();
+	};
+
 	return (
 		<>
+			<>
+				<dialog ref={changePasswordRef}>
+					<ChangePassword handleClose={handleChangePasswordClose} />
+				</dialog>
+			</>
 			<div className="nav">
 				<div className="container">
 					<div className="user-nav">
@@ -97,6 +115,7 @@ export default function Faculty({ user }: { user: User }) {
 							<DropDownTrigger>
 								<button className="user-trigger">
 									{user.displayName}
+									<FontAwesomeIcon icon={faAngleDown} />
 								</button>
 							</DropDownTrigger>
 
@@ -119,10 +138,19 @@ export default function Faculty({ user }: { user: User }) {
 
 									<DropDownItem>
 										<button
-											className="user-item"
+											onClick={handleChangePassword}
+											className="password-change"
+										>
+											Change Password
+										</button>
+									</DropDownItem>
+
+									<DropDownItem>
+										<button
+											className="user-item logout"
 											onClick={handleSignout}
 										>
-											Sign Out
+											Log Out
 										</button>
 									</DropDownItem>
 								</DropdownMenu.Content>

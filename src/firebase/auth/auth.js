@@ -8,6 +8,7 @@ import {
 	browserSessionPersistence,
 	setPersistence,
 	sendPasswordResetEmail,
+	updatePassword,
 } from "firebase/auth";
 import {
 	getFunctions,
@@ -75,6 +76,20 @@ export async function forgotPassword(email) {
 
 	try {
 		await sendPasswordResetEmail(auth, email);
+		result = true;
+	} catch (err) {
+		error = err;
+	}
+
+	return { result, error };
+}
+
+export async function changePassword(password) {
+	let result = null,
+		error = null;
+
+	try {
+		await updatePassword(getUser(), password);
 		result = true;
 	} catch (err) {
 		error = err;

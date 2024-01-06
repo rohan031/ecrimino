@@ -1,5 +1,5 @@
 import { DocumentData } from "firebase/firestore";
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback, useRef } from "react";
 
 import { getDocsByCourse, signoutUser } from "@/firebase/auth/auth";
 import ShowDocs from "./ShowDocs";
@@ -11,6 +11,9 @@ import Image from "next/image";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import DropDownTrigger from "@/components/DropDown/DropDownTrigger";
 import DropDownItem from "@/components/DropDown/DropDownItem";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import ChangePassword from "@/components/Modals/ChangePassword";
 
 interface Docs {
 	docData: DocumentData[];
@@ -19,6 +22,7 @@ interface Docs {
 export default function Student({ user }: { user: User }) {
 	const [docs, setDocs] = useState<Docs>();
 	const [course, setCourse] = useState<string>();
+	const changePasswordRef = useRef<HTMLDialogElement | null>(null);
 
 	const getCourse = useCallback(async () => {
 		const usertoken = await user?.getIdTokenResult();
@@ -51,8 +55,22 @@ export default function Student({ user }: { user: User }) {
 		await signoutUser();
 	};
 
+	const handleChangePassword = () => {
+		changePasswordRef.current?.showModal();
+	};
+
+	const handleChangePasswordClose = () => {
+		changePasswordRef.current?.close();
+	};
+
 	return (
 		<>
+			<>
+				<dialog ref={changePasswordRef}>
+					<ChangePassword handleClose={handleChangePasswordClose} />
+				</dialog>
+			</>
+
 			<div className="nav">
 				<div className="container">
 					<div className="user-nav">
@@ -68,6 +86,7 @@ export default function Student({ user }: { user: User }) {
 							<DropDownTrigger>
 								<button className="user-trigger">
 									{user.displayName}
+									<FontAwesomeIcon icon={faAngleDown} />
 								</button>
 							</DropDownTrigger>
 
@@ -96,10 +115,19 @@ export default function Student({ user }: { user: User }) {
 
 									<DropDownItem>
 										<button
-											className="user-item"
+											onClick={handleChangePassword}
+											className="password-change"
+										>
+											Change Password
+										</button>
+									</DropDownItem>
+
+									<DropDownItem>
+										<button
+											className="user-item logout"
 											onClick={handleSignout}
 										>
-											Sign Out
+											Log Out
 										</button>
 									</DropDownItem>
 								</DropdownMenu.Content>

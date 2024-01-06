@@ -1,9 +1,8 @@
 @use "../../abstracts" as ab;
 
 .login {
-	outline: 2px solid red;
 	width: 100%;
-	min-height: 100vh;
+	min-height: 100vmax;
 	padding-block-start: clamp(13.8rem, 40vw, 20rem);
 	color: ab.$blue1;
 
@@ -93,8 +92,14 @@
 		}
 	}
 
+	.container {
+		height: 85vmax;
+	}
+
 	&-form {
 		box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+		position: sticky;
+		top: 1em;
 
 		background-color: ab.$white;
 		border-radius: 0.75rem;
@@ -111,7 +116,7 @@
 
 		@include ab.screen-64 {
 			width: 35rem;
-			padding-block: 2.6rem 1;
+			padding-block: 2.6rem 1rem;
 
 			gap: 1.8rem;
 

@@ -109,6 +109,32 @@
 	button {
 		color: ab.$blue2;
 		cursor: pointer;
+		border: 0;
+
+		&.logout {
+			background-color: #dc0000;
+			color: ab.$white;
+			border: 0;
+			padding-block: 0.3em;
+			border-radius: 0.4em;
+			font-size: 1.1rem;
+
+			transition: background-color 300ms;
+
+			&:hover {
+				background-color: lighten($color: #dc0000, $amount: 5);
+			}
+		}
+
+		&.password-change {
+			background-color: transparent;
+			text-decoration: underline transparent;
+			text-align: left;
+
+			&:hover {
+				text-decoration-color: ab.$blue1;
+			}
+		}
 	}
 }
 
@@ -119,9 +145,12 @@
 		border-radius: 0.75rem;
 		padding: 1em;
 		background-color: ab.$grey1;
-		min-height: 75vh;
+
+		height: min(40rem, 75vh);
 		margin-block-start: 3em;
 		box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+		overflow-y: scroll;
 
 		.no-docs {
 			text-wrap: balance;
