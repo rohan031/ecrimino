@@ -14,6 +14,7 @@ import DropDownItem from "@/components/DropDown/DropDownItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import ChangePassword from "@/components/Modals/ChangePassword";
+import Link from "next/link";
 
 interface Docs {
 	docData: DocumentData[];
@@ -163,6 +164,37 @@ export default function Student({ user }: { user: User }) {
 							</div>
 						)}
 					</div>
+				</div>
+			</div>
+
+			<div className="bottom container">
+				<div className="bottom-left">
+					<Image
+						src="/bottom/library.WebP"
+						alt=""
+						width="300"
+						height="200"
+					/>
+
+					<a
+						href="https://uclouvain.be/fr/instituts-recherche/juri/cridep/archives.html"
+						target="_blank"
+					>
+						Library Link
+					</a>
+				</div>
+
+				<div className="bottom-right">
+					<Image
+						src="/logo.png"
+						alt="ecrimino"
+						width="200"
+						height="100"
+					/>
+
+					<a href="https://ecrimino.com/documents" target="_blank">
+						Document Page
+					</a>
 				</div>
 			</div>
 		</>

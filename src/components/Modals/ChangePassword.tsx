@@ -109,7 +109,11 @@ export default function ChangePassword({ handleClose }: ChangePasswordProps) {
 				<div>
 					<button
 						type="submit"
-						disabled={confirmPassword !== password || isChanging}
+						disabled={
+							confirmPassword.length === 0 ||
+							confirmPassword !== password ||
+							isChanging
+						}
 					>
 						{isChanging ? (
 							<Loader
@@ -126,7 +130,7 @@ export default function ChangePassword({ handleClose }: ChangePasswordProps) {
 
 					<button
 						type="reset"
-						onClick={handleClose}
+						onClick={handleModalClose}
 						disabled={isChanging}
 					>
 						Cancel
