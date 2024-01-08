@@ -11,6 +11,15 @@ export const faculties = [
 	},
 
 	{
+		name: "J.E. NZUNDU NZALALEMBA",
+		qualification: "Ph.d",
+		areaOfStudy: "Criminologie",
+		departmentName: "Asst. Director Of The School Of Criminologie",
+		image: "/faculty/nuzu.jpg",
+		salutation: "Prof.",
+	},
+
+	{
 		name: "Sara Liwerant",
 		qualification: "Ph.D from Paris Nanterre University in",
 		areaOfStudy: "Private Law & Criminal Sciences",
@@ -94,6 +103,14 @@ export const level1 = [
 ];
 
 export const level2 = [
+	{
+		name: "J.E. NZUNDU NZALALEMBA",
+		qualification: "Ph.d",
+		areaOfStudy: "Criminologie",
+		departmentName: "Asst. Director Of The School Of Criminologie",
+		image: "/faculty/nuzu.jpg",
+		salutation: "Prof.",
+	},
 	{
 		name: "Sara Liwerant",
 		qualification: "Ph.D from Paris Nanterre University in",
