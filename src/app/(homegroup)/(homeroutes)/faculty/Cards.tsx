@@ -23,7 +23,7 @@ export default function Cards({
 	return (
 		<div className="faculty-item">
 			<div className="faculty-item__image">
-				<Image
+				<img
 					src={image}
 					alt={name}
 					loading="lazy"
