@@ -15,13 +15,17 @@
 
 	.ecrimino {
 		width: min(15rem, 50%);
+
+		img {
+			width: 100%;
+		}
 	}
 
 	.user-trigger {
 		background-color: ab.$blue1;
 		color: ab.$white;
 
-		padding-inline: 1.4em;
+		padding-inline: 1em;
 		padding-block: 0.4em;
 
 		border-radius: 0.5rem;
@@ -142,6 +146,20 @@
 
 			&:hover {
 				text-decoration-color: ab.$blue1;
+			}
+		}
+
+		&.create-admin {
+			border: 0.1em solid ab.$blue2;
+			background-color: transparent;
+			border-radius: 0.4em;
+			font-size: 1.1rem;
+
+			transition: background-color 300ms, color 300ms;
+
+			&:hover {
+				background-color: ab.$blue2;
+				color: ab.$white;
 			}
 		}
 	}

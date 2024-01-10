@@ -29,6 +29,7 @@ export default function Page() {
 	const [superAdmin, setSuperAdmin] = useState(false);
 
 	const changePasswordRef = useRef<HTMLDialogElement | null>(null);
+	const createAdminRef = useRef<HTMLDialogElement | null>(null);
 
 	useEffect(() => {
 		const authstate = onAuthStateChanged(auth, async (user) => {
@@ -95,9 +96,6 @@ export default function Page() {
 
 			case 2:
 				return <CreateStudent />;
-
-			case 3:
-				return <CreateAdmin />;
 		}
 	};
 
@@ -109,11 +107,25 @@ export default function Page() {
 		changePasswordRef.current?.close();
 	};
 
+	const handleCreateAdmin = () => {
+		createAdminRef.current?.showModal();
+	};
+
+	const handleCreateAdminClose = () => {
+		createAdminRef.current?.close();
+	};
+
 	return (
 		<>
 			<>
 				<dialog ref={changePasswordRef}>
 					<ChangePassword handleClose={handleChangePasswordClose} />
+				</dialog>
+			</>
+
+			<>
+				<dialog ref={createAdminRef}>
+					<CreateAdmin handleClose={handleCreateAdminClose} />
 				</dialog>
 			</>
 
@@ -156,6 +168,17 @@ export default function Page() {
 										</button>
 									</DropDownItem>
 
+									{superAdmin && (
+										<DropDownItem>
+											<button
+												onClick={handleCreateAdmin}
+												className="create-admin"
+											>
+												Create Admin
+											</button>
+										</DropDownItem>
+									)}
+
 									<DropDownItem>
 										<button
 											className="user-item logout"
@@ -171,17 +194,25 @@ export default function Page() {
 				</div>
 			</div>
 
-			<div>
-				<button onClick={() => handlePage(1)}>Create Faculty</button>
-				<button onClick={() => handlePage(2)}>Create Student</button>
-				{superAdmin && (
-					<button onClick={() => handlePage(3)}>Create Admin</button>
-				)}
-				<button onClick={handleSignout}>Sign Out</button>
-			</div>
+			<div className="container admin-container">
+				<div className="admin-menu">
+					<button
+						onClick={() => handlePage(1)}
+						className={`${page === 1 ? "active" : ""}`}
+					>
+						Create Faculty
+					</button>
+					<button
+						onClick={() => handlePage(2)}
+						className={`${page === 2 ? "active" : ""}`}
+					>
+						Create Student
+					</button>
+				</div>
 
-			{/* handle page shown */}
-			<div>{component()}</div>
+				{/* handle page shown */}
+				<div>{component()}</div>
+			</div>
 		</>
 	);
 }

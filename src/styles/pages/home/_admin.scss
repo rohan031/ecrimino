@@ -1,1 +1,97 @@
 @use "../../abstracts" as ab;
+
+.admin-container {
+	border-radius: 0.75rem;
+	padding: 1em;
+	background-color: ab.$white;
+	min-height: 75vh;
+	margin-block-start: 3em;
+	box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+	.admin-menu {
+		display: grid;
+		column-gap: 2em;
+		row-gap: 1em;
+
+		grid-template-columns: repeat(auto-fill, minmax(8rem, auto));
+
+		button {
+		}
+	}
+}
+
+.create-admin-container {
+	form {
+		display: grid;
+		gap: 1em;
+
+		margin-block: 1em 0;
+
+		div {
+			display: flex;
+			gap: 0.8em;
+			flex-wrap: wrap;
+			align-items: center;
+
+			&:last-child {
+				justify-content: center;
+			}
+
+			input {
+				width: min(15rem, 100%);
+			}
+
+			button {
+				cursor: pointer;
+
+				&:disabled {
+					cursor: not-allowed;
+				}
+
+				&[type="submit"] {
+					background-color: ab.$blue2;
+					color: ab.$white;
+					border-radius: 0.3rem;
+					padding: 0.3em 1em;
+
+					transition: background-color 300ms;
+					border: 0.1em solid ab.$blue2;
+
+					&:hover {
+						background-color: lighten(
+							$color: ab.$blue2,
+							$amount: 10
+						);
+					}
+
+					&:disabled {
+						background-color: ab.$blue2;
+						filter: opacity(75%);
+					}
+				}
+			}
+		}
+	}
+
+	.create-admin__menu {
+		display: flex;
+		justify-content: flex-end;
+
+		button {
+			background-color: transparent;
+			border: 0;
+
+			&:hover {
+				svg {
+					scale: 1.1;
+				}
+			}
+			svg {
+				font-size: 1.5rem;
+				color: ab.$blue1;
+				cursor: pointer;
+				transition: scale 150ms;
+			}
+		}
+	}
+}
