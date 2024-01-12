@@ -84,7 +84,6 @@ export default function Page() {
 	const handlePage = async (p: number) => {
 		// p -> 1 -> create faculty
 		// p -> 2 -> create student
-		// p -> 3 -> Create Admin
 
 		setPage(p);
 	};
@@ -196,22 +195,33 @@ export default function Page() {
 
 			<div className="container admin-container">
 				<div className="admin-menu">
-					<button
-						onClick={() => handlePage(1)}
-						className={`${page === 1 ? "active" : ""}`}
+					<div
+						className={`${
+							page === 1
+								? "active admin-menu__button"
+								: "admin-menu__button"
+						}`}
 					>
-						Create Faculty
-					</button>
-					<button
-						onClick={() => handlePage(2)}
-						className={`${page === 2 ? "active" : ""}`}
+						<button onClick={() => handlePage(1)}>
+							Create Faculty
+						</button>
+					</div>
+
+					<div
+						className={`${
+							page === 2
+								? "active admin-menu__button"
+								: "admin-menu__button"
+						}`}
 					>
-						Create Student
-					</button>
+						<button onClick={() => handlePage(2)}>
+							Create Student
+						</button>
+					</div>
 				</div>
 
 				{/* handle page shown */}
-				<div>{component()}</div>
+				<div className="admin-window">{component()}</div>
 			</div>
 		</>
 	);

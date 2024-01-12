@@ -143,7 +143,7 @@ export default function UploadDocs({ uid, handleClose }: UploadDocsProps) {
 	return (
 		<>
 			<div className="upload-docs">
-				<div className="upload-docs__menu">
+				<div className="modal-menu">
 					<button onClick={handleModalClose} title="close">
 						<FontAwesomeIcon icon={faXmark} />
 					</button>

@@ -1,10 +1,16 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import CSVReader from "react-csv-reader";
 import ShowInfo from "./ShowInfo";
 import { createUser } from "@/firebase/auth/auth";
 import DeleteFaculty from "./delete-user/DeleteFaculty";
+
+import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
+import DropDownTrigger from "@/components/DropDown/DropDownTrigger";
+import DropDownItem from "@/components/DropDown/DropDownItem";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 type FacultyDetails = {
 	timeStamp?: string;
@@ -23,7 +29,8 @@ export default function CreateFaculty() {
 	});
 
 	const [bulkFacultyInfo, setBulkFacultyInfo] = useState<BulkFacultyInfo>();
-	const [deleteFaculty, setDeleteFaculty] = useState(false);
+
+	const deleteFacultyRef = useRef<HTMLDialogElement | null>(null);
 
 	const handleCreateFaculty: HandleCreateFaculty = (isMultiple = false) => {
 		let facultyDetails = [];
@@ -87,69 +94,127 @@ export default function CreateFaculty() {
 		});
 	};
 
+	const handleDeleteFacultyModalOpen = () => {
+		deleteFacultyRef.current?.showModal();
+	};
+
+	const handleDeleteFacultyModalClose = () => {
+		deleteFacultyRef.current?.close();
+	};
+
 	return (
-		<div>
-			<form
-				onSubmit={(e) => {
-					e.preventDefault();
-					handleCreateFaculty();
-				}}
-			>
-				<label htmlFor="name">Name</label>
-				<input
-					type="text"
-					id="name"
-					name="name"
-					value={facultyInfo.name}
-					onChange={handleChange}
-					placeholder="Name..."
-					required
+		<>
+			<>
+				<dialog></dialog>
+			</>
+
+			<>
+				<dialog ref={deleteFacultyRef}>
+					<DeleteFaculty
+						handleClose={handleDeleteFacultyModalClose}
+					/>
+				</dialog>
+			</>
+
+			<div className="faculty-management">
+				<div className="faculty-management__menu">
+					<h2>Details</h2>
+
+					<div>
+						<DropdownMenu.Root>
+							<DropDownTrigger>
+								<button className="user-trigger">
+									More
+									<FontAwesomeIcon icon={faAngleDown} />
+								</button>
+							</DropDownTrigger>
+
+							<DropdownMenu.Portal>
+								<DropdownMenu.Content
+									className="user-content"
+									sideOffset={5}
+								>
+									<DropDownItem>
+										<button
+											onClick={
+												handleDeleteFacultyModalOpen
+											}
+											className="password-change"
+										>
+											Delete Faculty
+										</button>
+									</DropDownItem>
+
+									<DropDownItem>
+										<button
+											// onClick={handleChangePassword}
+											className="password-change"
+										>
+											Create Multiple
+										</button>
+									</DropDownItem>
+								</DropdownMenu.Content>
+							</DropdownMenu.Portal>
+						</DropdownMenu.Root>
+					</div>
+				</div>
+
+				<form
+					onSubmit={(e) => {
+						e.preventDefault();
+						handleCreateFaculty();
+					}}
+				>
+					<label htmlFor="name">Name</label>
+					<input
+						type="text"
+						id="name"
+						name="name"
+						value={facultyInfo.name}
+						onChange={handleChange}
+						placeholder="Name..."
+						required
+					/>
+
+					<label htmlFor="email">Email</label>
+					<input
+						type="email"
+						id="email"
+						name="email"
+						value={facultyInfo.email}
+						onChange={handleChange}
+						placeholder="Email..."
+						required
+					/>
+
+					<button type="submit">Create Faculty</button>
+				</form>
+
+				<CSVReader
+					onFileLoaded={handleCSVUpload}
+					onError={handleError}
+					inputId="csv-reader"
+					inputStyle={{ color: "red" }}
 				/>
 
-				<label htmlFor="email">Email</label>
-				<input
-					type="email"
-					id="email"
-					name="email"
-					value={facultyInfo.email}
-					onChange={handleChange}
-					placeholder="Email..."
-					required
-				/>
+				<div>
+					{bulkFacultyInfo?.map((info) => {
+						return (
+							<ShowInfo
+								key={info.email}
+								name={info.name}
+								email={info.email}
+							/>
+						);
+					})}
 
-				<button type="submit">Create Faculty</button>
-			</form>
-
-			<CSVReader
-				onFileLoaded={handleCSVUpload}
-				onError={handleError}
-				inputId="csv-reader"
-				inputStyle={{ color: "red" }}
-			/>
-
-			<div>
-				{bulkFacultyInfo?.map((info) => {
-					return (
-						<ShowInfo
-							key={info.email}
-							name={info.name}
-							email={info.email}
-						/>
-					);
-				})}
-
-				{bulkFacultyInfo?.length && bulkFacultyInfo.length > 0 && (
-					<button onClick={() => handleCreateFaculty(true)}>
-						Create all faculties
-					</button>
-				)}
+					{bulkFacultyInfo?.length && bulkFacultyInfo.length > 0 && (
+						<button onClick={() => handleCreateFaculty(true)}>
+							Create all faculties
+						</button>
+					)}
+				</div>
 			</div>
-
-			<button onClick={() => setDeleteFaculty(true)}>
-				Delete Faculty
-			</button>
-
-			{deleteFaculty && <DeleteFaculty />}
-		</div>
+		</>
 	);
 }

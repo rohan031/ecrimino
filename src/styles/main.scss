@@ -49,3 +49,75 @@ img {
 	height: auto;
 	max-width: 100%;
 }
+
+.modal-menu {
+	display: flex;
+	justify-content: flex-end;
+
+	button {
+		background-color: transparent;
+		border: 0;
+
+		&:hover {
+			svg {
+				scale: 1.1;
+			}
+		}
+		svg {
+			font-size: 1.5rem;
+			color: ab.$blue1;
+			cursor: pointer;
+			transition: scale 150ms;
+		}
+	}
+}
+
+.confirm-delete-buttons {
+	gap: 1.5em;
+	display: flex;
+	margin-block: 1em 0;
+
+	justify-content: flex-end;
+
+	button:first-child {
+		background-color: #d80032;
+		color: ab.$white;
+		font-size: 1.1rem;
+		border-radius: 0.5rem;
+		border: 0;
+		padding-block: 0.15em;
+		cursor: pointer;
+		padding-inline: 1em;
+
+		&:hover {
+			background-color: lighten($color: #d80032, $amount: 5);
+		}
+
+		&:disabled {
+			background-color: #d80032d7;
+		}
+	}
+
+	button:last-child {
+		background-color: transparent;
+		border: none;
+		color: ab.$accent1;
+		font-size: 1.1rem;
+		cursor: pointer;
+		text-decoration: underline transparent;
+
+		transition: text-decoration-color 300ms;
+
+		&:hover {
+			text-decoration-color: ab.$accent1;
+		}
+
+		&:disabled {
+			text-decoration-color: transparent;
+		}
+	}
+
+	button:disabled {
+		cursor: not-allowed;
+	}
+}

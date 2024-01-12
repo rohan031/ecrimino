@@ -79,7 +79,9 @@ export default function ShowDocs({
 				<dialog ref={confirmDeleteRef}>
 					<h3>Confirm Delete</h3>
 
-					<p>Do you really want to delete the document?</p>
+					<p style={{ marginBlock: "0.5em" }}>
+						Do you really want to delete the document?
+					</p>
 
 					<div className="confirm-delete-buttons">
 						<button

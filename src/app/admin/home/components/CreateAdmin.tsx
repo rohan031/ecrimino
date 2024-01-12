@@ -51,7 +51,7 @@ export default function CreateAdmin({ handleClose }: CreateAdminProps) {
 
 	return (
 		<div className="create-admin-container">
-			<div className="create-admin__menu">
+			<div className="modal-menu">
 				<button onClick={handleModalClose} title="close">
 					<FontAwesomeIcon icon={faXmark} />
 				</button>
