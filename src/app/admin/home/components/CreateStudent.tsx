@@ -100,7 +100,13 @@ export default function CreateStudent() {
 		const headers = data[0];
 		let len = headers.length;
 		data.pop();
-		console.log(data);
+
+		let valid = false;
+
+		let name = false;
+		let email = false;
+		let startyear = false;
+		let course = false;
 
 		let arrayOfObject: BulkStudentInfo = data
 			.slice(1)
@@ -121,17 +127,30 @@ export default function CreateStudent() {
 
 						if (key === "startyear") {
 							obj["startYear"] = record[i];
+							startyear = true;
 						} else {
 							obj[key] = record[i];
+
+							if (key === "email") email = true;
+							if (key === " course") course = true;
+							if (key === "name") name = true;
 						}
 					}
 				}
 
+				valid = name && email && startyear && course;
+
 				if (!isEmpty) return obj;
 			});
 
-		console.log(arrayOfObject);
-		setBulkStudentInfo(arrayOfObject);
+		if (valid) setBulkStudentInfo(arrayOfObject);
+		else {
+			// wrong csv
+			setMultiErr(
+				"Invalid Details in the .csv file. Please check the documentation for the corrent file format"
+			);
+			setMultiMsg(null);
+		}
 	};
 
 	const handleError = (error: any) => {
@@ -176,6 +195,76 @@ export default function CreateStudent() {
 
 	return (
 		<>
+			<>
+				<dialog ref={createMultipleStudentRef}>
+					<div className="multiple-create-faculty">
+						<h3>Create Multiple Faculty</h3>
+
+						<CSVReader
+							onFileLoaded={handleCSVUpload}
+							onError={handleError}
+							inputId="csv-reader"
+							inputStyle={{ color: "red" }}
+							label="Input .csv files "
+						/>
+
+						<div className="csv-info">
+							{bulkStudentInfo?.map((info) => {
+								return (
+									<ShowInfo
+										key={info.email}
+										name={info.name}
+										email={info.email}
+									/>
+								);
+							})}
+
+							<div>
+								{multiErr && (
+									<p className="error">{multiErr}</p>
+								)}
+
+								{multiMsg && (
+									<p className="message">{multiMsg}</p>
+								)}
+							</div>
+
+							{bulkStudentInfo?.length &&
+								bulkStudentInfo.length > 0 && (
+									<div className="csv-info__button">
+										<button
+											onClick={() =>
+												handleCreateStudent(true)
+											}
+											disabled={multiCreating}
+										>
+											{multiCreating ? (
+												<Loader
+													style={{
+														paddingBlock: "0.8em",
+														paddingInline: "3em",
+														scale: "0.4",
+													}}
+												/>
+											) : (
+												<p>Create all students</p>
+											)}
+										</button>
+									</div>
+								)}
+						</div>
+
+						<div className="cancel">
+							<button
+								onClick={handleMultipleCreateStudentModalClose}
+								disabled={multiCreating}
+							>
+								Cancel
+							</button>
+						</div>
+					</div>
+				</dialog>
+			</>
 			<>
 				<dialog className="manage-student" ref={deleteStudentRef}>
 					<DeleteStudent
@@ -320,36 +409,6 @@ export default function CreateStudent() {
 						</button>
 					</div>
 				</form>
-
-				<CSVReader
-					onFileLoaded={handleCSVUpload}
-					onError={handleError}
-					inputId="csv-reader"
-					inputStyle={{ color: "red" }}
-				/>
-
-				<div>
-					{bulkStudentInfo?.map((info) => {
-						let course = info.course;
-						return (
-							<ShowInfo
-								key={info.email}
-								name={info.name}
-								email={info.email}
-								startYear={info.startYear}
-								course={
-									courseMap[course as keyof typeof courseMap]
-								}
-							/>
-						);
-					})}
-
-					{bulkStudentInfo?.length && bulkStudentInfo.length > 0 && (
-						<button onClick={() => handleCreateStudent(true)}>
-							Create all students
-						</button>
-					)}
-				</div>
 			</div>
 		</>
 	);

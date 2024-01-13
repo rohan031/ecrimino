@@ -88,6 +88,11 @@ export default function CreateFaculty() {
 		let len = headers.length;
 		data.pop();
 
+		let valid = false;
+
+		let name = false;
+		let email = false;
+
 		let arrayOfObject: BulkFacultyInfo = data
 			.slice(1)
 			.map((record: any) => {
@@ -96,12 +101,24 @@ export default function CreateFaculty() {
 					let key = headers[i].toLowerCase();
 
 					if (key === "name" || key === "email") obj[key] = record[i];
+
+					if (key === "name") name = true;
+					if (key === "email") email = true;
 				}
 
 				return obj;
 			});
 
-		setBulkFacultyInfo(arrayOfObject);
+		valid = name && email;
+
+		if (valid) setBulkFacultyInfo(arrayOfObject);
+		else {
+			// wrong csv
+			setMultiErr(
+				"Invalid Details in the .csv file. Please check the documentation for the corrent file format"
+			);
+			setMultiMsg(null);
+		}
 	};
 
 	const handleError = (error: any) => {
