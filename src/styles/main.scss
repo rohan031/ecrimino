@@ -39,9 +39,16 @@ dialog {
 	width: min(95%, 50ch);
 	color: ab.$blue1;
 
+	max-height: 75dvh;
+	overflow-x: scroll;
+
 	&::backdrop {
 		background-color: rgba(0, 0, 0, 0.349);
 		backdrop-filter: blur(0.15em);
+	}
+
+	&.manage-student {
+		width: min(95%, 75ch);
 	}
 }
 
@@ -120,4 +127,16 @@ img {
 	button:disabled {
 		cursor: not-allowed;
 	}
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+	-moz-appearance: textfield;
 }

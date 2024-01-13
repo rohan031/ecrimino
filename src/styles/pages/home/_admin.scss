@@ -137,7 +137,7 @@
 .admin-window {
 	margin: 1em;
 
-	.faculty-management {
+	.user-management {
 		text-align: center;
 
 		&__menu {
@@ -224,12 +224,12 @@
 	}
 }
 
-.delete-faculty {
-	.faculty-item__parent {
+.delete-user {
+	.user-item__parent {
 		text-align: center;
 	}
 
-	.faculty-item {
+	.user-item {
 		margin-block-start: 1em;
 		display: inline-grid;
 		padding: 1em;
@@ -359,6 +359,76 @@
 			&:disabled {
 				text-decoration-color: transparent;
 				cursor: not-allowed;
+			}
+		}
+	}
+}
+
+.bulk-filter {
+	margin-block: 2em 0;
+	display: grid;
+	gap: 1em;
+
+	.delete-all {
+		text-align: center;
+		button {
+			cursor: pointer;
+			background-color: #dc0000;
+			color: ab.$white;
+			border: 0;
+			padding-block: 0.3em;
+			border-radius: 0.4em;
+			font-size: 1.1rem;
+			padding-inline: 1.6em;
+
+			transition: background-color 300ms;
+
+			&:hover {
+				background-color: lighten($color: #dc0000, $amount: 5);
+			}
+		}
+	}
+
+	.show-filter {
+		> button {
+			background-color: transparent;
+			border: 0;
+			outline: 0.1em solid ab.$blue2;
+			color: ab.$blue2;
+			padding: 0.3em 1em;
+			border-radius: 0.3em;
+			font-weight: 500;
+			cursor: pointer;
+		}
+	}
+
+	.students-container {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(15rem, auto));
+		gap: 1.5em;
+
+		.student-item {
+			box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+			padding: 1em;
+			border-radius: 0.375rem;
+			display: grid;
+			gap: 0.5em;
+
+			button {
+				cursor: pointer;
+				background-color: #dc0000;
+				color: ab.$white;
+				border: 0;
+				padding-block: 0.3em;
+				border-radius: 0.4em;
+				font-size: 1.1rem;
+				padding-inline: 1.6em;
+
+				transition: background-color 300ms;
+
+				&:hover {
+					background-color: lighten($color: #dc0000, $amount: 5);
+				}
 			}
 		}
 	}

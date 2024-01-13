@@ -141,7 +141,7 @@ export default function DeleteFaculty({ handleClose }: DeleteFacultyProps) {
 				</dialog>
 			</>
 
-			<div className="delete-faculty">
+			<div className="delete-user">
 				<div className="modal-menu">
 					<button onClick={handleModalClose} title="close">
 						<FontAwesomeIcon icon={faXmark} />
@@ -185,8 +185,8 @@ export default function DeleteFaculty({ handleClose }: DeleteFacultyProps) {
 				</form>
 
 				{faculty && (
-					<div className="faculty-item__parent">
-						<div className="faculty-item">
+					<div className="user-item__parent">
+						<div className="user-item">
 							<p>{faculty.userData.name}</p>
 							<p>{faculty.userData.email}</p>
 

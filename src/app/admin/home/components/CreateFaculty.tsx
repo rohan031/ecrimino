@@ -221,8 +221,8 @@ export default function CreateFaculty() {
 				</dialog>
 			</>
 
-			<div className="faculty-management">
-				<div className="faculty-management__menu">
+			<div className="user-management">
+				<div className="user-management__menu">
 					<h2>Details</h2>
 
 					<div>
@@ -246,7 +246,7 @@ export default function CreateFaculty() {
 											}
 											className="password-change"
 										>
-											Delete Faculty
+											Manage Faculty
 										</button>
 									</DropDownItem>
 
