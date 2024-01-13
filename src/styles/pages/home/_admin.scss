@@ -4,7 +4,8 @@
 	border-radius: 0.75rem;
 	// padding: 1em;
 	background-color: ab.$white;
-	min-height: 75vh;
+	height: 75vh;
+	overflow-x: scroll;
 	margin-block-start: 3em;
 	box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
@@ -136,6 +137,7 @@
 
 .admin-window {
 	margin: 1em;
+	padding-block-end: 1em;
 
 	.user-management {
 		text-align: center;
@@ -429,6 +431,45 @@
 				&:hover {
 					background-color: lighten($color: #dc0000, $amount: 5);
 				}
+			}
+		}
+	}
+}
+
+.view-all-fac {
+	text-align: left;
+
+	button {
+		background-color: transparent;
+		border: 0;
+		outline: 0.1em solid ab.$blue2;
+		color: ab.$blue2;
+		padding: 0.3em 1em;
+		border-radius: 0.3em;
+		font-weight: 500;
+		cursor: pointer;
+
+		&:disabled {
+			cursor: not-allowed;
+		}
+	}
+
+	.all-faculty-container {
+		margin-block: 1em;
+
+		display: grid;
+		gap: 1.5em;
+		grid-template-columns: repeat(auto-fill, minmax(16rem, auto));
+
+		> div {
+			border-radius: 0.35rem;
+			padding: 1em;
+			color: ab.$blue1;
+			box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+			transition: scale 300ms;
+
+			&:hover {
+				scale: 1.05;
 			}
 		}
 	}

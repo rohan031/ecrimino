@@ -109,6 +109,31 @@ export const facultyRef = collection(firestore, "faculty");
 export const resourcesRef = collection(firestore, "resources");
 
 // firestore fetch
+export async function getAllFaculty() {
+	let result = null,
+		error = null;
+
+	try {
+		const querySnapshot = await getDocs(facultyRef);
+
+		if (querySnapshot.empty) {
+			return { result, error };
+		}
+
+		let facultyData = [];
+
+		querySnapshot.docs.forEach((doc) => {
+			facultyData.push(doc.data());
+		});
+
+		result = facultyData;
+	} catch (err) {
+		error = err;
+	}
+
+	return { result, error };
+}
+
 async function getUserByEmail(email, collectionRef) {
 	const q = query(collectionRef, where("email", "==", email));
 	let result = null,

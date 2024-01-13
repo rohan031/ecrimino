@@ -3,7 +3,7 @@
 import React, { useState, useRef } from "react";
 import CSVReader from "react-csv-reader";
 import ShowInfo from "./ShowInfo";
-import { createUser } from "@/firebase/auth/auth";
+import { createUser, getAllFaculty } from "@/firebase/auth/auth";
 import DeleteFaculty from "./delete-user/DeleteFaculty";
 
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
@@ -13,6 +13,7 @@ import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Loader from "@/components/Loader/Loader";
 import { FirebaseError } from "firebase/app";
+import { DocumentData } from "firebase/firestore";
 
 type FacultyDetails = {
 	timeStamp?: string;
@@ -42,6 +43,37 @@ export default function CreateFaculty() {
 	const [multiCreating, setMultiCreating] = useState(false);
 	const [multiErr, setMultiErr] = useState<string | null>(null);
 	const [multiMsg, setMultiMsg] = useState<string | null>(null);
+
+	const [allFaculty, setAllFaculty] = useState<DocumentData[] | null>(null);
+	const [allFacultyLoading, setAllFacultyLoading] = useState(false);
+	const [allFacultyErr, setAllFacultyErr] = useState<string | null>(null);
+
+	const getFaculties = async () => {
+		setAllFacultyLoading(true);
+
+		const { result, error } = await getAllFaculty();
+
+		if (error) {
+			let err = error as FirebaseError;
+			setAllFacultyErr(err.message);
+			setAllFacultyLoading(false);
+			setAllFaculty(null);
+			return;
+		}
+
+		if (!result) {
+			setAllFacultyErr(
+				"No faculty added yet. Add a faculty to view its detail."
+			);
+			setAllFacultyLoading(false);
+			setAllFaculty(null);
+			return;
+		}
+
+		setAllFacultyLoading(false);
+		setAllFaculty(result);
+		setAllFacultyErr(null);
+	};
 
 	const handleCreateFaculty: HandleCreateFaculty = (isMultiple = false) => {
 		let facultyDetails = [];
@@ -340,6 +372,46 @@ export default function CreateFaculty() {
 						</button>
 					</div>
 				</form>
+
+				<div className="view-all-fac">
+					<div>
+						<button
+							onClick={getFaculties}
+							disabled={allFacultyLoading}
+						>
+							{allFacultyLoading ? (
+								<Loader
+									style={{
+										paddingBlock: "0.8em",
+										paddingInline: "3em",
+										scale: "0.4",
+									}}
+								/>
+							) : (
+								<p>View all faculty</p>
+							)}
+						</button>
+					</div>
+
+					<div>
+						{allFacultyErr && (
+							<p className="error">{allFacultyErr}</p>
+						)}
+					</div>
+
+					{allFaculty && (
+						<div className="all-faculty-container">
+							{allFaculty.map((fac) => {
+								return (
+									<div key={fac.email}>
+										<p>{fac.name}</p>
+										<p>{fac.email}</p>
+									</div>
+								);
+							})}
+						</div>
+					)}
+				</div>
 			</div>
 		</>
 	);

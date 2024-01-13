@@ -200,7 +200,8 @@
 		border-radius: 0.75rem;
 		padding: 1em;
 		background-color: ab.$white;
-		min-height: 75vh;
+		height: 75vh;
+		overflow-x: scroll;
 		margin-block-start: 3em;
 		box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 	}
