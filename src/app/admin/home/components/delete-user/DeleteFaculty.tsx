@@ -140,6 +140,7 @@ export default function DeleteFaculty({ handleClose }: DeleteFacultyProps) {
 					{deleteErr && <p className="error">{deleteErr}</p>}
 				</dialog>
 			</>
+
 			<div className="delete-faculty">
 				<div className="modal-menu">
 					<button onClick={handleModalClose} title="close">

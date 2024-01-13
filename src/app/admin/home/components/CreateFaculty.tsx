@@ -11,6 +11,8 @@ import DropDownTrigger from "@/components/DropDown/DropDownTrigger";
 import DropDownItem from "@/components/DropDown/DropDownItem";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Loader from "@/components/Loader/Loader";
+import { FirebaseError } from "firebase/app";
 
 type FacultyDetails = {
 	timeStamp?: string;
@@ -31,27 +33,53 @@ export default function CreateFaculty() {
 	const [bulkFacultyInfo, setBulkFacultyInfo] = useState<BulkFacultyInfo>();
 
 	const deleteFacultyRef = useRef<HTMLDialogElement | null>(null);
+	const createMultipleFacultyRef = useRef<HTMLDialogElement | null>(null);
+
+	const [creating, setCreating] = useState(false);
+	const [err, setErr] = useState<string | null>(null);
+	const [msg, setMsg] = useState<string | null>(null);
+
+	const [multiCreating, setMultiCreating] = useState(false);
+	const [multiErr, setMultiErr] = useState<string | null>(null);
+	const [multiMsg, setMultiMsg] = useState<string | null>(null);
 
 	const handleCreateFaculty: HandleCreateFaculty = (isMultiple = false) => {
 		let facultyDetails = [];
+
 		if (isMultiple && bulkFacultyInfo) {
 			facultyDetails = bulkFacultyInfo;
+			setMultiCreating(true);
 		} else {
 			facultyDetails.push(facultyInfo);
+			setCreating(true);
 		}
 
-		console.log("call to cloud function");
-		console.log(facultyDetails);
 		createUser({ users: facultyDetails, isFaculty: true })
 			.then((res) => {
-				console.log(res);
-				alert("successfully created faculty");
-				setFacultyInfo({ name: "", email: "" });
-				setBulkFacultyInfo(undefined);
+				if (isMultiple) {
+					setMultiMsg("Successfully created faculties");
+					setMultiErr(null);
+					setMultiCreating(false);
+					setBulkFacultyInfo(undefined);
+				} else {
+					setMsg("Successfully created faculty");
+					setErr(null);
+					setCreating(false);
+					setFacultyInfo({ name: "", email: "" });
+				}
 			})
 			.catch((err) => {
-				console.error(err);
-				alert("can't create faculty");
+				let error = err as FirebaseError;
+
+				if (isMultiple) {
+					setMultiMsg(null);
+					setMultiErr(error.message);
+					setMultiCreating(false);
+				} else {
+					setMsg(null);
+					setErr(error.message);
+					setCreating(false);
+				}
 			});
 	};
 
@@ -59,7 +87,6 @@ export default function CreateFaculty() {
 		const headers = data[0];
 		let len = headers.length;
 		data.pop();
-		console.log(data);
 
 		let arrayOfObject: BulkFacultyInfo = data
 			.slice(1)
@@ -74,7 +101,6 @@ export default function CreateFaculty() {
 				return obj;
 			});
 
-		console.log(arrayOfObject);
 		setBulkFacultyInfo(arrayOfObject);
 	};
 
@@ -102,10 +128,89 @@ export default function CreateFaculty() {
 		deleteFacultyRef.current?.close();
 	};
 
+	const handleMultipleCreateFacultyModalOpen = () => {
+		createMultipleFacultyRef.current?.showModal();
+	};
+
+	const handleMultipleCreateFacultyModalClose = () => {
+		setMultiMsg(null);
+		setMultiErr(null);
+		setMultiCreating(false);
+		setBulkFacultyInfo(undefined);
+		createMultipleFacultyRef.current?.close();
+	};
+
 	return (
 		<>
 			<>
-				<dialog></dialog>
+				<dialog ref={createMultipleFacultyRef}>
+					<div className="multiple-create-faculty">
+						<h3>Create Multiple Faculty</h3>
+
+						<CSVReader
+							onFileLoaded={handleCSVUpload}
+							onError={handleError}
+							inputId="csv-reader"
+							inputStyle={{ color: "red" }}
+							label="Input .csv files "
+						/>
+
+						<div className="csv-info">
+							{bulkFacultyInfo?.map((info) => {
+								return (
+									<ShowInfo
+										key={info.email}
+										name={info.name}
+										email={info.email}
+									/>
+								);
+							})}
+
+							<div>
+								{multiErr && (
+									<p className="error">{multiErr}</p>
+								)}
+
+								{multiMsg && (
+									<p className="message">{multiMsg}</p>
+								)}
+							</div>
+
+							{bulkFacultyInfo?.length &&
+								bulkFacultyInfo.length > 0 && (
+									<div className="csv-info__button">
+										<button
+											onClick={() =>
+												handleCreateFaculty(true)
+											}
+											disabled={multiCreating}
+										>
+											{multiCreating ? (
+												<Loader
+													style={{
+														paddingBlock: "0.8em",
+														paddingInline: "3em",
+														scale: "0.4",
+													}}
+												/>
+											) : (
+												<p>Create all faculties</p>
+											)}
+										</button>
+									</div>
+								)}
+						</div>
+
+						<div className="cancel">
+							<button
+								onClick={handleMultipleCreateFacultyModalClose}
+								disabled={multiCreating}
+							>
+								Cancel
+							</button>
+						</div>
+					</div>
+				</dialog>
 			</>
 
 			<>
@@ -147,7 +252,9 @@ export default function CreateFaculty() {
 
 									<DropDownItem>
 										<button
-											// onClick={handleChangePassword}
+											onClick={
+												handleMultipleCreateFacultyModalOpen
+											}
 											className="password-change"
 										>
 											Create Multiple
@@ -165,55 +272,57 @@ export default function CreateFaculty() {
 						handleCreateFaculty();
 					}}
 				>
-					<label htmlFor="name">Name</label>
-					<input
-						type="text"
-						id="name"
-						name="name"
-						value={facultyInfo.name}
-						onChange={handleChange}
-						placeholder="Name..."
-						required
-					/>
+					<h3>Create Faculty</h3>
 
-					<label htmlFor="email">Email</label>
-					<input
-						type="email"
-						id="email"
-						name="email"
-						value={facultyInfo.email}
-						onChange={handleChange}
-						placeholder="Email..."
-						required
-					/>
+					<div>
+						<label htmlFor="name">Name</label>
+						<input
+							type="text"
+							id="name"
+							name="name"
+							value={facultyInfo.name}
+							onChange={handleChange}
+							placeholder="Name..."
+							required
+							disabled={creating}
+						/>
+					</div>
 
-					<button type="submit">Create Faculty</button>
-				</form>
+					<div>
+						<label htmlFor="email">Email</label>
+						<input
+							type="email"
+							id="email"
+							name="email"
+							value={facultyInfo.email}
+							onChange={handleChange}
+							placeholder="Email..."
+							required
+							disabled={creating}
+						/>
+					</div>
 
-				<CSVReader
-					onFileLoaded={handleCSVUpload}
-					onError={handleError}
-					inputId="csv-reader"
-					inputStyle={{ color: "red" }}
-				/>
+					<div>
+						{err && <p className="error">{err}</p>}
+						{msg && <p className="message">{msg}</p>}
+					</div>
 
-				<div>
-					{bulkFacultyInfo?.map((info) => {
-						return (
-							<ShowInfo
-								key={info.email}
-								name={info.name}
-								email={info.email}
-							/>
-						);
-					})}
-
-					{bulkFacultyInfo?.length && bulkFacultyInfo.length > 0 && (
-						<button onClick={() => handleCreateFaculty(true)}>
-							Create all faculties
+					<div>
+						<button type="submit" disabled={creating}>
+							{creating ? (
+								<Loader
+									style={{
+										paddingBlock: "0.8em",
+										paddingInline: "2em",
+										scale: "0.4",
+									}}
+								/>
+							) : (
+								<p>Create Faculty</p>
+							)}
 						</button>
-					)}
-				</div>
+					</div>
+				</form>
 			</div>
 		</>
 	);

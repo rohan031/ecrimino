@@ -14,7 +14,7 @@ export default function ShowInfo({
 	course,
 }: ShowInfoProps) {
 	return (
-		<div>
+		<div className="csv-info__item">
 			<p>{name}</p> <p>{email}</p> <p>{startYear}</p> <p>{course}</p>
 		</div>
 	);

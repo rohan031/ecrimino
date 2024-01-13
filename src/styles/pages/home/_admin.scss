@@ -138,7 +138,13 @@
 	margin: 1em;
 
 	.faculty-management {
+		text-align: center;
+
 		&__menu {
+			h2 {
+				color: ab.$blue2;
+			}
+
 			display: flex;
 			justify-content: space-between;
 
@@ -158,6 +164,60 @@
 
 				&:hover {
 					--bg: #{ab.$grey3};
+				}
+			}
+		}
+
+		form {
+			margin-block: 2em;
+
+			display: inline-grid;
+			gap: 1em;
+
+			h3 {
+				color: ab.$blue2;
+			}
+
+			padding: 2em;
+			border-radius: 0.4rem;
+			box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+			> div {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				gap: 0.5em;
+
+				&:last-child {
+					justify-content: center;
+				}
+
+				label {
+					color: ab.$blue2;
+				}
+
+				input {
+					width: min(100%, 18rem);
+					padding: 0.3em;
+				}
+
+				button {
+					padding-inline: 1.4em;
+					padding-block: 0.4em;
+					background-color: ab.$blue2;
+					border-radius: 0.3rem;
+					border: 0;
+					color: ab.$white;
+					cursor: pointer;
+
+					&:hover {
+						background-color: lighten(ab.$blue2, 10%);
+					}
+
+					&:disabled {
+						cursor: not-allowed;
+						background-color: lighten(ab.$blue2, 30%);
+					}
 				}
 			}
 		}
@@ -233,6 +293,72 @@
 					cursor: not-allowed;
 					background-color: lighten(ab.$blue2, 30%);
 				}
+			}
+		}
+	}
+}
+
+.multiple-create-faculty {
+	text-align: left;
+	padding: 1em;
+
+	display: grid;
+	gap: 1em;
+
+	.csv-info {
+		display: grid;
+		gap: 1em;
+
+		&__item {
+			padding: 1em;
+			border-radius: 0.3em;
+			box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+		}
+
+		&__button {
+			text-align: center;
+		}
+
+		button {
+			padding-inline: 1.4em;
+			padding-block: 0.4em;
+			background-color: ab.$blue2;
+			border-radius: 0.3rem;
+			border: 0;
+			color: ab.$white;
+			cursor: pointer;
+
+			&:hover {
+				background-color: lighten(ab.$blue2, 10%);
+			}
+
+			&:disabled {
+				cursor: not-allowed;
+				background-color: lighten(ab.$blue2, 30%);
+			}
+		}
+	}
+
+	.cancel {
+		text-align: right;
+
+		button {
+			background-color: transparent;
+			border: none;
+			color: ab.$accent1;
+			font-size: 1.1rem;
+			cursor: pointer;
+			text-decoration: underline transparent;
+
+			transition: text-decoration-color 300ms;
+
+			&:hover {
+				text-decoration-color: ab.$accent1;
+			}
+
+			&:disabled {
+				text-decoration-color: transparent;
+				cursor: not-allowed;
 			}
 		}
 	}
