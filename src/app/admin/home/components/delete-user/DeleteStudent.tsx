@@ -221,9 +221,9 @@ export default function DeleteStudent({ handleClose }: DeleteStudentProps) {
 	};
 
 	const handleUiUpdate = () => {
-		let index = bulkIndexRef.current;
-		if (typeof index !== "number") return;
+		if (typeof bulkIndexRef.current !== "number") return;
 
+		let index = bulkIndexRef.current;
 		bulkIndexRef.current = null;
 
 		setBulkStudents((prev) => {
