@@ -17,7 +17,7 @@ export const links = {
 	faculty: "/faculty",
 	docs: "/documents",
 
-	admissions: "/",
+	admissions: "/admissions",
 
 	library:
 		"https://uclouvain.be/fr/instituts-recherche/juri/cridep/archives.html",
