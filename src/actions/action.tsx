@@ -2,11 +2,15 @@
 import createReport from "docx-templates";
 import fs from "fs";
 
+const capaitalizeFirstLetter = (str: any) => {
+	return str.charAt(0).toUpperCase() + str.slice(1);
+};
+
 export async function createAdmissionPdf(formData: FormData) {
 	const ext = ".pdf";
 
-	const firstName = formData.get("first-name");
-	const lastName = formData.get("last-name");
+	const firstName = capaitalizeFirstLetter(formData.get("first-name"));
+	const lastName = capaitalizeFirstLetter(formData.get("last-name"));
 
 	const name = firstName + " " + lastName;
 	const email = formData.get("email");
@@ -26,6 +30,6 @@ export async function createAdmissionPdf(formData: FormData) {
 	});
 
 	// let pdfBuf = await libre.convertAsync(buffer, ext, undefined);
-	fs.writeFileSync("report.docx", buffer);
+	// fs.writeFileSync("report.docx", buffer);
 	// console.log(pdfBuf);
 }
