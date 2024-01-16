@@ -1,27 +1,27 @@
 export const courses = [
 	{
 		id: "m1",
-		name: "sécurité intérieure",
+		name: "Sécurité Intérieure",
 	},
 	{
 		id: "m2",
-		name: "criminologie économique et environnementale",
+		name: "Criminologie Économique et Environnementale",
 	},
 	{
 		id: "m3",
-		name: "gestion de la paix et des conflits",
+		name: "Pestion de la paix et des Conflits",
 	},
 	{
 		id: "m4",
-		name: "protection de l’enfant",
+		name: "Protection de L’enfant",
 	},
 	{
 		id: "m5",
-		name: "criminalistique",
+		name: "Criminalistique",
 	},
 	{
 		id: "m6",
-		name: "intervention criminologique",
+		name: "Intervention Criminologique",
 	},
 	{
 		id: "phd1",
@@ -30,11 +30,11 @@ export const courses = [
 ];
 
 export const courseMap = {
-	m1: "sécurité intérieure",
-	m2: "criminologie économique et environnementale",
-	m3: "gestion de la paix et des conflits",
-	m4: "protection de l’enfant",
-	m5: "criminalistique",
-	m6: "intervention criminologique",
+	m1: "Sécurité Intérieure",
+	m2: "Criminologie Économique et Environnementale",
+	m3: "Pestion de la paix et des Conflits",
+	m4: "Protection de L’enfant",
+	m5: "Criminalistique",
+	m6: "Intervention Criminologique",
 	phd1: "Recherches et Doctorat",
 };
