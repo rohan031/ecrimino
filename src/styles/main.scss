@@ -17,6 +17,10 @@ body {
 	width: min(96%, 120rem);
 }
 
+select {
+	width: min(100%, 16rem);
+}
+
 .error,
 .message {
 	font-size: 0.9rem;
