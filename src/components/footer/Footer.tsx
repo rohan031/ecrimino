@@ -152,7 +152,7 @@ export default function Footer({ data }: FooterProps) {
 			</div>
 
 			<p className="copyright">
-				Copyright © 2023 , Ecole de Criminologie All rights reserved.
+				Copyright © 2024 , Ecole de Criminologie All rights reserved.
 			</p>
 		</footer>
 	);
