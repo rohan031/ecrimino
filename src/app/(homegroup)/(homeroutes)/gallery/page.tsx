@@ -9,17 +9,16 @@ import Album from "./Album";
 export default function Gallery() {
 	const albums = () => {
 		let elements = [];
-		for (let i = 1; i <= 7; i++) {
-			let key = `album${i}`;
-			let albumName = gallery[key as keyof typeof gallery];
+		let len = gallery.length;
+		for (let i = 1; i <= len; i++) {
 			let galleryRef = ref(storage, `gallery/album${i}`);
 
 			elements.push(
 				<Album
-					key={key}
+					key={gallery[i]}
 					galleryRef={galleryRef}
 					albumCover={`/gallery/album${i}/cover.WebP`}
-					albumName={albumName}
+					albumName={gallery[i - 1]}
 				/>
 			);
 		}
