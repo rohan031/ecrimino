@@ -84,6 +84,13 @@ export const ccps = {
 export const events = [
 	{
 		img: "/events/events1.WebP",
+		heading: "L'école de criminologie est à",
+		date: "03 Feb, 2024",
+		text: "L' est à son troisième criminologue. A. Nkolomoni a défendu son mémoire en criminologie environnementale, intitulé : les discours des acteurs étatiques et non étatiques sur l'abattage des espèces végétales et animales dans le Parc marin des magroves de Muanda.",
+		link: "https://x.com/intudi87106/status/1753540773709230582?t=GCXhdSIpE6gmiIvkEtgFnQ&s=08",
+	},
+	{
+		img: "/events/events5.WebP",
 		heading:
 			"la première édition de la cérémonie de remise des diplômes de l'école de criminologie.",
 		date: "22 December, 2023",
