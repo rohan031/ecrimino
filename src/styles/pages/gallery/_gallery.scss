@@ -25,11 +25,23 @@
 		}
 
 		&-details {
+			border-radius: inherit;
 			position: relative;
 
 			cursor: pointer;
 
+			overflow: hidden;
+
+			img {
+				transition: scale 200ms ease;
+				border-radius: inherit;
+			}
+
 			&:hover {
+				img {
+					scale: 1.1;
+				}
+
 				&::before {
 					background-color: rgba(0, 0, 0, 0.4);
 				}
