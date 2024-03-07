@@ -51,4 +51,19 @@ export const docs = [
 		id: "123wasdad21",
 		link: "https://drive.google.com/file/d/1XYr_Uv6_tflfPzHirkwpfD8PKjletOZl/view?usp=drive_link",
 	},
+	{
+		title: "Décoration du Prof Dr. Raoul Kienge-Kienge Intudi.pdf",
+		id: "a;ewra;;nfads",
+		link: "https://drive.google.com/file/d/1W6T-04QJrUMymOEv-M-AsglFnjEr__-O/view?usp=drive_link",
+	},
+	{
+		title: "Marie-France NGUO.docx",
+		id: "a;ewra;asdf;nfads",
+		link: "https://docs.google.com/document/d/1wFeqK3upnWOQEpF-AS09vmP5CLky3fQ_/edit?usp=drive_link&ouid=106564513176573800492&rtpof=true&sd=true",
+	},
+	{
+		title: "Article 7 - CADHD-DD - N°81 vol 1 - Harris TATY MANTIMA et cie.pdf",
+		id: "a;ewra;sajk;das;nfads",
+		link: "https://drive.google.com/file/d/19OWQNNxifmCyeghfkFexaht9BHDIlovC/view?usp=drive_link",
+	},
 ];

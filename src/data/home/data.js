@@ -84,13 +84,20 @@ export const ccps = {
 export const events = [
 	{
 		img: "/events/events1.WebP",
+		heading: "Décoration du Prof Dr. Raoul Kienge-Kienge Intudi",
+		date: "07 Mar, 2024",
+		text: "Le Directeur de l'École criminologie de l'Université de Kinshasa, le Professeur Raoul Kienge-Kienge Intudi a reçu aujourd'hui 1er mars 2024, la médaille d'or du mérite civique à la Chancellerie des Ordres nationaux de la RDC.",
+		link: "https://drive.google.com/file/d/1THD3NR_AtLnsaFbs8BIgw1rdtpGpegAi/view?usp=drive_link",
+	},
+	{
+		img: "/events/events2.WebP",
 		heading: "L'école de criminologie est à",
 		date: "03 Feb, 2024",
 		text: "L' est à son troisième criminologue. A. Nkolomoni a défendu son mémoire en criminologie environnementale, intitulé : les discours des acteurs étatiques et non étatiques sur l'abattage des espèces végétales et animales dans le Parc marin des magroves de Muanda.",
 		link: "https://x.com/intudi87106/status/1753540773709230582?t=GCXhdSIpE6gmiIvkEtgFnQ&s=08",
 	},
 	{
-		img: "/events/events5.WebP",
+		img: "/events/events3.WebP",
 		heading:
 			"la première édition de la cérémonie de remise des diplômes de l'école de criminologie.",
 		date: "22 December, 2023",
@@ -98,24 +105,17 @@ export const events = [
 		link: "https://youtu.be/L73tl78Niyk",
 	},
 	{
-		img: "/events/events2.WebP",
+		img: "/events/events4.WebP",
 		heading: "Présentation des résultats de l’approche",
 		date: "22 December, 2023",
 		text: "Présentation des résultats de l’approche AHPER pour",
 		link: "https://www.facebook.com/criminologieunikin/posts/874531894677249/",
 	},
 	{
-		img: "/events/events3.WebP",
+		img: "/events/events5.WebP",
 		heading: "Présentation des résultats de l’approchee",
 		date: "22 December, 2023",
 		text: "Présentation des résultats de l’approche AHPER pour",
 		link: "https://twitter.com/DeUnikin/status/1693661443286282337?s=46&t=l4R8MXbtKlTYsfy1xrXujA",
-	},
-	{
-		img: "/events/events4.WebP",
-		heading: "Présentation des résultats de l'approche",
-		date: "22 December, 2023",
-		text: "Présentation des résultats de l’approche AHPER pour",
-		link: "https://twitter.com/intudi87106/status/1700274201276690566",
 	},
 ];
