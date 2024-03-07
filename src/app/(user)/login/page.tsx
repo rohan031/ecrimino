@@ -37,6 +37,7 @@ export default function Page() {
 					await resendEmailVerification();
 					confirmEmailRef.current?.showModal();
 					setIsSigningIn(false);
+					await signoutUser();
 					return;
 				}
 
