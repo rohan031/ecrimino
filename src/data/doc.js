@@ -66,4 +66,34 @@ export const docs = [
 		id: "a;ewra;sajk;das;nfads",
 		link: "https://drive.google.com/file/d/19OWQNNxifmCyeghfkFexaht9BHDIlovC/view?usp=drive_link",
 	},
+	{
+		title: "ARTICLE SEMINAIRE.docx",
+		id: "asdfasdfasdfa123`",
+		link: "https://docs.google.com/document/d/1R52BLeqOv-WZnL7R4HGvsB5KiWyNt4P9/edit?usp=drive_link&ouid=106564513176573800492&rtpof=true&sd=true",
+	},
+	{
+		title: "ARTICLE ECOCRIM 005.docx",
+		id: "asdfasdfasdfa123`asdf",
+		link: "https://docs.google.com/document/d/1OM1Wl-PJ7geuflI57ZtmoL6Ya7ALKBro/edit?usp=drive_link&ouid=106564513176573800492&rtpof=true&sd=true",
+	},
+	{
+		title: "ARTICLE ECOCRIM.docx",
+		id: "asdfasdfasdfa123`asdfasd",
+		link: "https://docs.google.com/document/d/1a95OMhpHcFUuX_g0CC9jZJOhPssb5DQJ/edit?usp=drive_link&ouid=106564513176573800492&rtpof=true&sd=true",
+	},
+	{
+		title: "ARTICLE ECOCRIM2.docx",
+		id: "asdfasdfasdfa123`zcxvads",
+		link: "https://docs.google.com/document/d/1gbhhhOzKJyQmIpzD6hCttkc5VIeCipOP/edit?usp=drive_link&ouid=106564513176573800492&rtpof=true&sd=true",
+	},
+	{
+		title: "ARTICLE ECRIMINO4.docx",
+		id: "asdfasdfasdfa123`qwerf",
+		link: "https://docs.google.com/document/d/1ikg1pQ9Vq6D6iNRg3-_GAzJTBzDo_8is/edit?usp=drive_link&ouid=106564513176573800492&rtpof=true&sd=true",
+	},
+	{
+		title: "ARTICLE ECOCRIM008.docx",
+		id: "asdfasdfasdfa123`asfqfwer",
+		link: "https://docs.google.com/document/d/1pxHNl0gTnxuk3MDTZk5B8xLlw0PIrPa8/edit?usp=drive_link&ouid=106564513176573800492&rtpof=true&sd=true",
+	},
 ];
