@@ -103,7 +103,11 @@ export default function Album({
 
 	return (
 		<div className="album">
-			<div className="album-details" onClick={handleOpenModal}>
+			<div
+				className="album-details"
+				onClick={handleOpenModal}
+				id={albumName}
+			>
 				<Image
 					src={albumCover}
 					alt={albumName}

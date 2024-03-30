@@ -83,6 +83,21 @@ export const ccps = {
 
 export const events = [
 	{
+		img: "/events/events5.WebP",
+		heading: " Defense des memoires de master en criminologie",
+		date: "30 March, 2024",
+		text: "Defense des memoires de master en criminologie",
+		link: "/gallery#Defense des memoires de master en criminologie",
+	},
+	{
+		img: "/events/events4.WebP",
+		heading:
+			"Séminaire de méthodologie, organisé ce mercredi 27 Mars 2024 à l’Institut français de Kinshasa.",
+		date: "30 March, 2024",
+		text: "Séminaire de méthodologie, organisé ce mercredi 27 Mars 2024 à l’Institut français de Kinshasa.",
+		link: "/gallery#Séminaire de méthodologie, organisé ce mercredi 27 Mars 2024 à l’Institut français de Kinshasa.",
+	},
+	{
 		img: "/events/events1.WebP",
 		heading: "Décoration du Prof Dr. Raoul Kienge-Kienge Intudi",
 		date: "07 Mar, 2024",
@@ -103,19 +118,5 @@ export const events = [
 		date: "22 December, 2023",
 		text: "École de criminologie de l’UNIKIN: Remise des certificats en intervention criminologique, 3ème édition du séminaire d'intervention criminologique.",
 		link: "https://youtu.be/L73tl78Niyk",
-	},
-	{
-		img: "/events/events4.WebP",
-		heading: "Présentation des résultats de l’approche",
-		date: "22 December, 2023",
-		text: "Présentation des résultats de l’approche AHPER pour",
-		link: "https://www.facebook.com/criminologieunikin/posts/874531894677249/",
-	},
-	{
-		img: "/events/events5.WebP",
-		heading: "Présentation des résultats de l’approchee",
-		date: "22 December, 2023",
-		text: "Présentation des résultats de l’approche AHPER pour",
-		link: "https://twitter.com/DeUnikin/status/1693661443286282337?s=46&t=l4R8MXbtKlTYsfy1xrXujA",
 	},
 ];
