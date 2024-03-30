@@ -10,7 +10,7 @@ export default function Gallery() {
 	const albums = () => {
 		let elements = [];
 		let len = gallery.length;
-		for (let i = 1; i <= len; i++) {
+		for (let i = len; i >= 1; i--) {
 			let galleryRef = ref(storage, `gallery/album${i}`);
 
 			elements.push(
