@@ -6,7 +6,7 @@ export const faculties = [
 		areaOfStudy:
 			"Criminologie (thème de régulation sociale) - Justice pénale (droit pénal, procédure pénale et pénologie ou droit pénitentiaire) - violence et criminalité urbaines – Réformes institutionnelles du secteur de la justice et de la sécurité,- Justice des mineurs et droits de l’enfant – délinquance juvénile (Droit de la Protection de l’enfant); - Méthodologie de recherche en sciences sociales (recherche qualitative et Méthode d’analyse en groupe - MAG) et méthodologie juridique",
 		departmentName: "Ecole de criminologie de l'Université de Kinshasa",
-		image: "/faculty/RaoulKIENGE-KIENGEIntudi.WebP",
+		image: "/faculty/RaoulKIENGE-KIENGEIntudi.webp",
 		salutation: "Prof. Dr.",
 	},
 
@@ -24,7 +24,7 @@ export const faculties = [
 		qualification: "Ph.D from Paris Nanterre University in",
 		areaOfStudy: "Private Law & Criminal Sciences",
 		departmentName: "Asst. Director of the School of Criminologie",
-		image: "/faculty/sara.WebP",
+		image: "/faculty/sara.webp",
 		salutation: "Dr.",
 	},
 
@@ -33,7 +33,7 @@ export const faculties = [
 		qualification: "Diplômé d'études supérieures",
 		areaOfStudy: "Droit pénal et criminologie",
 		departmentName: "Faculté de droit",
-		image: "/faculty/AlbertMbokolo.WebP",
+		image: "/faculty/AlbertMbokolo.webp",
 		salutation: "Mr.",
 	},
 	{
@@ -41,7 +41,7 @@ export const faculties = [
 		qualification: "DOCTEUR EN PHILOSOPHIE ET MASTER EN CRIMINOLGIE",
 		areaOfStudy: "SECURITE INTERIEURE",
 		departmentName: "ECOLE DE CRIMINOLOGIE DE L'UNIVERSITE DE KINSHASA",
-		image: "/faculty/JeanRenéMabwilo.WebP",
+		image: "/faculty/JeanRenéMabwilo.webp",
 		salutation: "Dr.",
 	},
 	{
@@ -49,7 +49,7 @@ export const faculties = [
 		qualification: "Diplômé d'études supérieures en Droit",
 		areaOfStudy: "Droit et Criminologie",
 		departmentName: "École de criminologie",
-		image: "/faculty/HarrisTatyMantima.WebP",
+		image: "/faculty/HarrisTatyMantima.webp",
 		salutation: "Mr.",
 	},
 
@@ -59,7 +59,7 @@ export const faculties = [
 		areaOfStudy:
 			"Criminologie, Protection de l'enfant, Justice pénale, Prison, Violence urbaine, Sécurité",
 		departmentName: "École de criminologie",
-		image: "/faculty/BienvenuMalanda.WebP",
+		image: "/faculty/BienvenuMalanda.webp",
 		salutation: "Mr.",
 	},
 	{
@@ -67,7 +67,7 @@ export const faculties = [
 		qualification: "Master en communication",
 		areaOfStudy: "Communication et criminologie",
 		departmentName: "École de criminologie",
-		image: "/faculty/JoelNzampungu.WebP",
+		image: "/faculty/JoelNzampungu.webp",
 		salutation: "Mr.",
 	},
 
@@ -76,7 +76,7 @@ export const faculties = [
 		qualification: "Diplômé d'études supérieures",
 		areaOfStudy: "Droit (Innovation, science et technologie)",
 		departmentName: "Ecole de criminologie",
-		image: "/faculty/FélicienKAYOMBO.WebP",
+		image: "/faculty/FélicienKAYOMBO.webp",
 		salutation: "Mr.",
 	},
 	{
@@ -84,7 +84,7 @@ export const faculties = [
 		qualification: "Licence",
 		areaOfStudy: "Psychologie clinique et criminologie",
 		departmentName: "École de criminologie",
-		image: "/faculty/JeanSalumu.WebP",
+		image: "/faculty/JeanSalumu.webp",
 		salutation: "Mrs.",
 	},
 ];
@@ -97,7 +97,7 @@ export const level1 = [
 		areaOfStudy:
 			"Criminologie (thème de régulation sociale) - Justice pénale (droit pénal, procédure pénale et pénologie ou droit pénitentiaire) - violence et criminalité urbaines – Réformes institutionnelles du secteur de la justice et de la sécurité,- Justice des mineurs et droits de l’enfant – délinquance juvénile (Droit de la Protection de l’enfant); - Méthodologie de recherche en sciences sociales (recherche qualitative et Méthode d’analyse en groupe - MAG) et méthodologie juridique",
 		departmentName: "Ecole de criminologie de l'Université de Kinshasa",
-		image: "/faculty/RaoulKIENGE-KIENGEIntudi.WebP",
+		image: "/faculty/RaoulKIENGE-KIENGEIntudi.webp",
 		salutation: "Prof. Dr.",
 	},
 ];
@@ -116,7 +116,7 @@ export const level2 = [
 		qualification: "Ph.D from Paris Nanterre University in",
 		areaOfStudy: "Private Law & Criminal Sciences",
 		departmentName: "Asst. Director of the School of Criminologie",
-		image: "/faculty/sara.WebP",
+		image: "/faculty/sara.webp",
 		salutation: "Dr.",
 	},
 ];
@@ -127,7 +127,7 @@ export const level3 = [
 		qualification: "Diplômé d'études supérieures",
 		areaOfStudy: "Droit pénal et criminologie",
 		departmentName: "Faculté de droit",
-		image: "/faculty/AlbertMbokolo.WebP",
+		image: "/faculty/AlbertMbokolo.webp",
 		salutation: "Mr.",
 	},
 ];
@@ -138,7 +138,7 @@ export const level4 = [
 		qualification: "DOCTEUR EN PHILOSOPHIE ET MASTER EN CRIMINOLGIE",
 		areaOfStudy: "SECURITE INTERIEURE",
 		departmentName: "ECOLE DE CRIMINOLOGIE DE L'UNIVERSITE DE KINSHASA",
-		image: "/faculty/JeanRenéMabwilo.WebP",
+		image: "/faculty/JeanRenéMabwilo.webp",
 		salutation: "Dr.",
 	},
 	{
@@ -146,7 +146,7 @@ export const level4 = [
 		qualification: "Diplômé d'études supérieures en Droit",
 		areaOfStudy: "Droit et Criminologie",
 		departmentName: "École de criminologie",
-		image: "/faculty/HarrisTatyMantima.WebP",
+		image: "/faculty/HarrisTatyMantima.webp",
 		salutation: "Mr.",
 	},
 
@@ -156,7 +156,7 @@ export const level4 = [
 		areaOfStudy:
 			"Criminologie, Protection de l'enfant, Justice pénale, Prison, Violence urbaine, Sécurité",
 		departmentName: "École de criminologie",
-		image: "/faculty/BienvenuMalanda.WebP",
+		image: "/faculty/BienvenuMalanda.webp",
 		salutation: "Mr.",
 	},
 	{
@@ -164,7 +164,7 @@ export const level4 = [
 		qualification: "Master en communication",
 		areaOfStudy: "Communication et criminologie",
 		departmentName: "École de criminologie",
-		image: "/faculty/JoelNzampungu.WebP",
+		image: "/faculty/JoelNzampungu.webp",
 		salutation: "Mr.",
 	},
 
@@ -173,7 +173,7 @@ export const level4 = [
 		qualification: "Diplômé d'études supérieures",
 		areaOfStudy: "Droit (Innovation, science et technologie)",
 		departmentName: "Ecole de criminologie",
-		image: "/faculty/FélicienKAYOMBO.WebP",
+		image: "/faculty/FélicienKAYOMBO.webp",
 		salutation: "Mr.",
 	},
 ];
@@ -184,7 +184,7 @@ export const level5 = [
 		qualification: "Licence",
 		areaOfStudy: "Psychologie clinique et criminologie",
 		departmentName: "École de criminologie",
-		image: "/faculty/JeanSalumu.WebP",
+		image: "/faculty/JeanSalumu.webp",
 		salutation: "Mrs.",
 	},
 ];

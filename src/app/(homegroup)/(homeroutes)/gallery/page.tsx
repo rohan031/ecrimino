@@ -17,7 +17,7 @@ export default function Gallery() {
 				<Album
 					key={gallery[i]}
 					galleryRef={galleryRef}
-					albumCover={`/gallery/album${i}/cover.WebP`}
+					albumCover={`/gallery/album${i}/cover.webp`}
 					albumName={gallery[i - 1]}
 				/>
 			);

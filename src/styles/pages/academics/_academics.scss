@@ -26,7 +26,7 @@
 				rgba(0, 0, 0, 0.8),
 				rgba(0, 0, 0, 0.4)
 			),
-			url("../../../../public/courses/cover.WebP");
+			url("../../../../public/courses/cover.webp");
 	}
 
 	&.phd {
@@ -34,7 +34,7 @@
 				rgba(0, 0, 0, 0.8),
 				rgba(0, 0, 0, 0.4)
 			),
-			url("../../../../public/courses/cover.WebP");
+			url("../../../../public/courses/cover.webp");
 	}
 
 	&.certifications {
@@ -42,7 +42,7 @@
 				rgba(0, 0, 0, 0.8),
 				rgba(0, 0, 0, 0.4)
 			),
-			url("../../../../public/courses/cover.WebP");
+			url("../../../../public/courses/cover.webp");
 	}
 
 	&.about-us {
@@ -50,7 +50,7 @@
 				rgba(0, 0, 0, 0.8),
 				rgba(0, 0, 0, 0.4)
 			),
-			url("../../../../public/about-us/cover.WebP");
+			url("../../../../public/about-us/cover.webp");
 		background-position: center 0em;
 	}
 
@@ -59,7 +59,7 @@
 				rgba(0, 0, 0, 0.8),
 				rgba(0, 0, 0, 0.4)
 			),
-			url("../../../../public/ccps/ccps1.WebP");
+			url("../../../../public/ccps/ccps1.webp");
 		background-position: center, center;
 
 		@include ab.screen-64 {
