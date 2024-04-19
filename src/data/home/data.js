@@ -83,14 +83,22 @@ export const ccps = {
 
 export const events = [
 	{
-		img: "/events/events5.WebP",
+		img: "/events/events3.webp",
+		heading:
+			"Une équipe des Consultants nationaux de l'Ecole de Criminologie de l'Université de Kinshasa.",
+		date: "8 April, 2024",
+		text: "Une équipe des Consultants nationaux de l'Ecole de Criminologie de l'Université de Kinshasa.",
+		link: "https://youtu.be/BSlj1BWsa9U",
+	},
+	{
+		img: "/events/events5.webp",
 		heading: " Defense des memoires de master en criminologie",
 		date: "30 March, 2024",
 		text: "Defense des memoires de master en criminologie",
 		link: "/gallery#Defense des memoires de master en criminologie",
 	},
 	{
-		img: "/events/events4.WebP",
+		img: "/events/events4.webp",
 		heading:
 			"Séminaire de méthodologie, organisé ce mercredi 27 Mars 2024 à l’Institut français de Kinshasa.",
 		date: "30 March, 2024",
@@ -98,25 +106,17 @@ export const events = [
 		link: "/gallery#Séminaire de méthodologie, organisé ce mercredi 27 Mars 2024 à l’Institut français de Kinshasa.",
 	},
 	{
-		img: "/events/events1.WebP",
+		img: "/events/events1.webp",
 		heading: "Décoration du Prof Dr. Raoul Kienge-Kienge Intudi",
 		date: "07 Mar, 2024",
 		text: "Le Directeur de l'École criminologie de l'Université de Kinshasa, le Professeur Raoul Kienge-Kienge Intudi a reçu aujourd'hui 1er mars 2024, la médaille d'or du mérite civique à la Chancellerie des Ordres nationaux de la RDC.",
 		link: "https://drive.google.com/file/d/1THD3NR_AtLnsaFbs8BIgw1rdtpGpegAi/view?usp=drive_link",
 	},
 	{
-		img: "/events/events2.WebP",
+		img: "/events/events2.webp",
 		heading: "L'école de criminologie est à",
 		date: "03 Feb, 2024",
 		text: "L' est à son troisième criminologue. A. Nkolomoni a défendu son mémoire en criminologie environnementale, intitulé : les discours des acteurs étatiques et non étatiques sur l'abattage des espèces végétales et animales dans le Parc marin des magroves de Muanda.",
 		link: "https://x.com/intudi87106/status/1753540773709230582?t=GCXhdSIpE6gmiIvkEtgFnQ&s=08",
-	},
-	{
-		img: "/events/events3.WebP",
-		heading:
-			"la première édition de la cérémonie de remise des diplômes de l'école de criminologie.",
-		date: "22 December, 2023",
-		text: "École de criminologie de l’UNIKIN: Remise des certificats en intervention criminologique, 3ème édition du séminaire d'intervention criminologique.",
-		link: "https://youtu.be/L73tl78Niyk",
 	},
 ];
