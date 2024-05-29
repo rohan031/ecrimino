@@ -5,9 +5,8 @@
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
-		"start": "node .next/standalone/server.js",
-		"lint": "next lint",
-		"postbuild": "node .cyclic/pre-deploy.js"
+		"start": "next start",
+		"lint": "next lint"
 	},
 	"dependencies": {
 		"@fortawesome/fontawesome-svg-core": "^6.4.2",
