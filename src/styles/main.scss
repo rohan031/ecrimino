@@ -44,7 +44,7 @@ dialog {
 	color: ab.$blue1;
 
 	max-height: 75dvh;
-	overflow-x: scroll;
+	overflow-x: auto;
 
 	&::backdrop {
 		background-color: rgba(0, 0, 0, 0.349);

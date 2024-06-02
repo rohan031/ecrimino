@@ -177,7 +177,7 @@
 		margin-block-start: 3em;
 		box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
-		overflow-y: scroll;
+		overflow-y: auto;
 
 		.no-docs {
 			text-wrap: balance;
@@ -201,7 +201,7 @@
 		padding: 1em;
 		background-color: ab.$white;
 		height: 75vh;
-		overflow-x: scroll;
+		overflow-x: auto;
 		margin-block-start: 3em;
 		box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 	}
@@ -380,7 +380,7 @@
 			border-radius: 0.75rem;
 			padding: 1.5em 0.75em;
 
-			overflow: scroll;
+			overflow: auto;
 			width: 100%;
 
 			form {
