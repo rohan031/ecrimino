@@ -1,0 +1,144 @@
+.blog {
+    width: 90%;
+    margin: auto;
+    color: black;
+    padding-top: 2em;
+    .new {
+        padding-block: 1em;
+        h2 {
+            color: rgb(0, 0, 139);
+            font-size: 1.8em;
+        }
+
+        .line {
+            display: block;
+            // outline: 2px solid red;
+            height: 0.2em;
+            width: 2.5em;
+            background-color: rgb(0, 0, 139);
+        }
+    }
+    .main {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 2em;
+        .bloghome {
+            grid-column: 1/5;
+            .img {
+            }
+            .content {
+                padding-block: 2em;
+                display: flex;
+                flex-direction: column;
+                gap: 0.5em;
+                span {
+                    color: gray;
+                }
+                h3 {
+                    font-size: 2em;
+                }
+                p {
+                    font-size: 1.2em;
+                }
+                .links {
+                    display: flex;
+                    gap: 2em;
+
+                    a {
+                        text-decoration: none;
+                        // outline: 2px solid red;
+                        padding-block: 0.5em;
+                        padding-inline: 2em;
+                        font-size: 1.5em;
+                        font-weight: 700;
+                    }
+                    > :nth-child(1) {
+                        color: white;
+                        background-color: rgb(0, 0, 139);
+                        &:hover {
+                            background-color: rgb(220, 220, 220);
+                            color: rgb(0, 0, 139);
+                        }
+                    }
+                    > :nth-child(2) {
+                        background-color: rgb(220, 220, 220);
+                        color: rgb(0, 0, 139);
+                        &:hover {
+                            color: white;
+                            background-color: rgb(0, 0, 139);
+                        }
+                    }
+                }
+            }
+        }
+        .bloghome2 {
+            grid-column: 5/8;
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            .item {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1em;
+                > :nth-child(1) {
+                    img {
+                        height: 12em;
+                    }
+                    // width: 50%;
+                    // aspect-ratio: 1/2;
+                }
+                > :nth-child(2) {
+                    span {
+                        color: gray;
+                    }
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    .content {
+                        font-size: 1.2em;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.2em;
+                    }
+                    .link {
+                        a {
+                            color: rgb(144, 0, 0);
+                            font-size: 1.2em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .moreblog {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 2em;
+        margin-block: 2em;
+        border: 0.1em solid rgb(216, 216, 216);
+        padding: 1em;
+
+        > :nth-child(1) {
+            grid-column: 1/3;
+            img {
+                height: 20em;
+            }
+        }
+        > :nth-child(2) {
+            grid-column: 3/6;
+            padding-right: 3em;
+            display: flex;
+            flex-direction: column;
+            gap: 2em;
+            span {
+                color: rgb(189, 189, 189);
+            }
+            h3 {
+                font-size: 2em;
+            }
+            p {
+                font-size: 1.2em;
+            }
+        }
+    }
+}
