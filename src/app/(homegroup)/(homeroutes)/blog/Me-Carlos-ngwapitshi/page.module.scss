@@ -26,6 +26,12 @@
         text-align: center;
         width: 70%;
         margin: auto;
+        h1 {
+            font-size: 1.5rem;
+        }
+        p {
+            font-size: 0.8rem;
+        }
     }
     .img {
         img {
@@ -34,13 +40,19 @@
             margin: auto;
         }
     }
+    .link {
+        display: flex;
+        padding-block: 2em;
+        gap: 2em;
+        justify-content: center;
+    }
     .content {
         padding-block: 2em;
         display: flex;
         flex-direction: column;
         gap: 1em;
         p {
-            font-size: 1.5em;
+            font-size: 1.2rem;
         }
     }
     .bread2 {

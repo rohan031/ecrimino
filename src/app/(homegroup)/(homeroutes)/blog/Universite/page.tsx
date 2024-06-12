@@ -19,6 +19,32 @@ const Université = () => {
             <div className={style.img}>
                 <img src="/blog/blog3.jpg" />
             </div>
+            <div className={style.link}>
+                <Link href="">
+                    <img src="/facebook.svg" alt="" />
+                </Link>
+                <Link href="">
+                    <img src="/x.svg" alt="" />
+                </Link>
+                <Link href="">
+                    <img src="/whatsapp.svg" alt="" />
+                </Link>
+                <Link href="">
+                    <img src="/reddit.svg" alt="" />
+                </Link>
+                <Link href="">
+                    <img src="/linkedin.svg" alt="" />
+                </Link>
+                <Link href="">
+                    <img src="/email.svg" alt="" />
+                </Link>
+                <Link href="">
+                    <img src="/message.svg" alt="" />
+                </Link>
+                <Link href="">
+                    <img src="/snapchat.svg" alt="" />
+                </Link>
+            </div>
             <div className={style.content}>
                 <p>
                     Sa recherche a porté sur le dispositif préventif de la lutte

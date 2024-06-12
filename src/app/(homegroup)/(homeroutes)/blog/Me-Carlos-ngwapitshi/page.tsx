@@ -22,6 +22,32 @@ const page = () => {
             <div className={style.img}>
                 <img src="/blog/blog2.jpg" />
             </div>
+            <div className={style.link}>
+                <Link href="">
+                    <img src="/facebook.svg" alt="" />
+                </Link>
+                <Link href="">
+                    <img src="/x.svg" alt="" />
+                </Link>
+                <Link href="">
+                    <img src="/whatsapp.svg" alt="" />
+                </Link>
+                <Link href="">
+                    <img src="/reddit.svg" alt="" />
+                </Link>
+                <Link href="">
+                    <img src="/linkedin.svg" alt="" />
+                </Link>
+                <Link href="">
+                    <img src="/email.svg" alt="" />
+                </Link>
+                <Link href="">
+                    <img src="/message.svg" alt="" />
+                </Link>
+                <Link href="">
+                    <img src="/snapchat.svg" alt="" />
+                </Link>
+            </div>
             <div className={style.content}>
                 <p>
                     Me. Carlos Ngwapitshi Ngwamashi, orateur dudit séminaire est
@@ -64,9 +90,6 @@ const page = () => {
                     avait été retenue par la composition », a souhaité Me.
                     Carlos Ngwapitshi.
                 </p>
-            </div>
-
-            <div className={style.content}>
                 <p>
                     Le &apos;visa&apos;, cette pratique instaurée en début des
                     années 2000 par une résolution du Conseil Supérieur de la
@@ -85,6 +108,7 @@ const page = () => {
                     des décisions.
                 </p>
             </div>
+
             <div className={style.bread2}>
                 <div>
                     <Link href="/blog/Kinshasa">
