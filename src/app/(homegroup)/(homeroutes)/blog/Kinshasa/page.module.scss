@@ -45,6 +45,13 @@
         padding-block: 2em;
         gap: 2em;
         justify-content: center;
+        a {
+            img {
+                width: 2em;
+                aspect-ratio: 1/1;
+                // outline: 2px solid red;
+            }
+        }
     }
     .content {
         padding-block: 2em;
