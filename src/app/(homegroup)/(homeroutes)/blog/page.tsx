@@ -28,7 +28,7 @@ const Blog = () => {
                             septembre 2023
                         </p>
                         <div className={style.links}>
-                            <Link href="">Read More</Link>
+                            <Link href="/blog/Universite">Read More</Link>
                             <Link href="">Newsletter</Link>
                         </div>
                     </div>
@@ -50,7 +50,9 @@ const Blog = () => {
                                 <p>La pratique du visa devant les......</p>
                             </div>
                             <div className={style.link}>
-                                <Link href="">Know more &#62;</Link>
+                                <Link href="/blog/Me-Carlos-ngwapitshi">
+                                    Know more &#62;
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -69,7 +71,9 @@ const Blog = () => {
                                 <p>Un séminaire de méthodologie a......</p>
                             </div>
                             <div className={style.link}>
-                                <Link href="">Know more &#62;</Link>
+                                <Link href="/blog/Kinshasa">
+                                    Know more &#62;
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -91,55 +95,61 @@ const Blog = () => {
                                 </p>
                             </div>
                             <div className={style.link}>
-                                <Link href="">Know more &#62;</Link>
+                                <Link href="/blog/Universite">
+                                    Know more &#62;
+                                </Link>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div className={style.moreblog}>
-                <div>
-                    <img src="/blog/blog2.jpg" alt="" />
-                </div>
-                <div>
+                <Link href="/blog/Me-Carlos-ngwapitshi">
                     <div>
-                        <h3>
-                            Me Carlos ngwapitshi: » La pratique du
-                            &quot;Visa&quot; dans les Cours et
-                        </h3>
+                        <img src="/blog/blog2.jpg" alt="" />
+                    </div>
+                    <div>
+                        <div>
+                            <h3>
+                                Me Carlos ngwapitshi: » La pratique du
+                                &quot;Visa&quot; dans les Cours et
+                            </h3>
+                            <p>
+                                <span>4 September, 2023</span>
+                            </p>
+                        </div>
                         <p>
-                            <span>4 September, 2023</span>
+                            La pratique du visa devant les Cours et les
+                            Tribunaux congolais : mécanisme de contrôle ou voile
+                            pudique de la corruption ?{" "}
                         </p>
                     </div>
-                    <p>
-                        La pratique du visa devant les Cours et les Tribunaux
-                        congolais : mécanisme de contrôle ou voile pudique de la
-                        corruption ?{" "}
-                    </p>
-                </div>
+                </Link>
             </div>
             <div className={style.moreblog}>
-                <div>
-                    <img src="/blog/blog3.jpg" alt="" />
-                </div>
-                <div>
+                <Link href="/blog/Kinshasa">
                     <div>
-                        <h3>
-                            Kinshasa : Les criminologues et apprenants en
-                            criminologies outillés par{" "}
-                        </h3>
+                        <img src="/blog/blog3.jpg" alt="" />
+                    </div>
+                    <div>
+                        <div>
+                            <h3>
+                                Kinshasa : Les criminologues et apprenants en
+                                criminologies outillés par{" "}
+                            </h3>
+                            <p>
+                                {" "}
+                                <span>4 September, 2023</span>
+                            </p>
+                        </div>
+
                         <p>
-                            {" "}
-                            <span>4 September, 2023</span>
+                            Un séminaire de méthodologie a été organisé ce
+                            mercredi 27 Mars 2024 à l’Institut français de
+                            Kinshasa. Ce séminaire a
                         </p>
                     </div>
-
-                    <p>
-                        Un séminaire de méthodologie a été organisé ce mercredi
-                        27 Mars 2024 à l’Institut français de Kinshasa. Ce
-                        séminaire a
-                    </p>
-                </div>
+                </Link>
             </div>
         </div>
     );
