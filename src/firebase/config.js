@@ -15,4 +15,8 @@ const firebaseConfig = {
 let firebase_app =
 	getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
 
+const analytics = isSupported().then((yes) =>
+	yes ? getAnalytics(firebase_app) : null
+);
+
 export default firebase_app;
