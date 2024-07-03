@@ -25,6 +25,7 @@ interface NavigationProps {
 		gallery: Links;
 		aboutus: Links;
 		contactus: Links;
+		news: Links;
 	};
 }
 
@@ -176,6 +177,11 @@ export default function Navigation({ data }: NavigationProps) {
 								{data.admissions.text}
 							</Link>
 						</li>
+						<li className="nav-items__elements-child">
+							<Link href={data.news.link ? data.news.link : ""}>
+								{data.news.text}
+							</Link>
+						</li>
 						<li
 							className="hover nav-items__elements-child"
 							tabIndex={0}
@@ -229,6 +235,7 @@ export default function Navigation({ data }: NavigationProps) {
 								{data.gallery.text}
 							</Link>
 						</li>
+
 						<li className="nav-items__elements-child">
 							<input
 								type="checkbox"

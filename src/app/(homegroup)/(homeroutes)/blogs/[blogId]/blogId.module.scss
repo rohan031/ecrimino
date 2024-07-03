@@ -1,0 +1,66 @@
+@use "/src/styles/abstracts" as ab;
+
+.loader {
+	display: grid;
+	height: 60vb;
+	background-color: ab.$blue3;
+	margin-block: 1em 2em;
+
+	place-items: center;
+	color: ab.$dark1;
+
+	p {
+		font-size: 1.5rem;
+		font-weight: 600;
+	}
+}
+
+.blog {
+	padding-block: 3em 6em;
+	display: grid;
+	gap: 2em;
+	color: black;
+
+	.content {
+		font-size: 1rem;
+	}
+
+	.main {
+		margin-block-end: 3em;
+
+		h1 {
+			font-size: clamp(1.25rem, 1.75vi, 1.5rem);
+			text-align: center;
+
+			width: 90%;
+			margin-inline: auto;
+		}
+
+		.meta {
+			margin-block: 1em 3em;
+			text-align: center;
+			display: flex;
+			gap: 1em;
+			font-size: 0.9rem;
+			justify-content: center;
+
+			.author {
+				color: ab.$blue2;
+				font-weight: 500;
+			}
+
+			.date {
+				color: ab.$text1;
+			}
+		}
+
+		.image {
+			max-height: 32em;
+
+			img {
+				max-height: 32em;
+				object-fit: cover;
+			}
+		}
+	}
+}

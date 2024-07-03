@@ -4,6 +4,7 @@ footer {
 	background-color: ab.$dark1;
 	color: ab.$white;
 	padding-inline: clamp(0.5em, 1vw, 1.3em);
+	margin-block-start: auto;
 
 	.footer {
 		padding-block: 3em;

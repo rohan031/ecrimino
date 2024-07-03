@@ -2,6 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 import Cards from "./Cards";
+import Loader from "@/components/loader/Loader";
+import Link from "next/link";
 
 interface NewsData {
 	title: string;
@@ -14,6 +16,7 @@ interface NewsData {
 
 export default function Events() {
 	const [news, setNews] = useState<NewsData[] | null>(null);
+	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		const url = "https://api.adgytec.in/v1/services/news";
@@ -26,14 +29,17 @@ export default function Events() {
 		})
 			.then((res) => res.json())
 			.then((res) => {
-				// if (!res.error) {
-				// 	return;
-				// }
+				if (res.error) {
+					throw new Error(res.message);
+				}
 
 				setNews(res.data);
 			})
 			.catch((err) => {
 				console.log(err);
+			})
+			.finally(() => {
+				setLoading(false);
 			});
 	}, []);
 
@@ -51,11 +57,42 @@ export default function Events() {
 	});
 
 	return (
-		<div className="events" id="events">
+		<div className="events" id="news">
 			<div className="container">
-				<h2 className="events-head">Événement</h2>
+				<h2 className="events-head">Actualite</h2>
 
-				<div className="events-container">{cards}</div>
+				{loading ? (
+					<div
+						style={{
+							height: "25vb",
+						}}
+					>
+						<Loader />
+					</div>
+				) : !news || news?.length === 0 ? (
+					<div
+						style={{
+							height: "25vb",
+							display: "grid",
+							placeItems: "center",
+						}}
+					>
+						<p
+							style={{
+								fontSize: "1.5rem",
+							}}
+						>
+							No news to display
+						</p>
+					</div>
+				) : (
+					<div className="events-items">
+						<div className="events-container">{cards}</div>
+						<div className="events-action">
+							<Link href="/blogs">Voir tout</Link>
+						</div>
+					</div>
+				)}
 			</div>
 		</div>
 	);

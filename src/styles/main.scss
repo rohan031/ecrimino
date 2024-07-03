@@ -1,6 +1,7 @@
 @use "./abstracts" as ab;
 @use "./components";
 @use "./pages";
+@use "./abstracts/reset";
 
 body {
 	font-family: "Inter", sans-serif;
@@ -8,6 +9,9 @@ body {
 	scroll-behavior: smooth;
 	background-color: ab.$white;
 	// color: black;
+	min-height: 100vb;
+	display: flex;
+	flex-direction: column;
 }
 
 select {
@@ -74,5 +78,10 @@ input[type="number"] {
 
 .container {
 	width: min(96%, 120rem);
+	margin-inline: auto;
+}
+
+.container-blog {
+	width: min(90%, 75em);
 	margin-inline: auto;
 }

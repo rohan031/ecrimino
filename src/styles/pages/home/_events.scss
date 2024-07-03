@@ -168,4 +168,37 @@
 			}
 		}
 	}
+
+	&-items {
+		display: grid;
+		gap: 2em;
+	}
+
+	&-action {
+		text-align: center;
+
+		a {
+			font-weight: 600;
+			display: inline-block;
+			color: ab.$white;
+			text-decoration-color: transparent;
+			background-color: ab.$blue1;
+			border: 0.15em solid ab.$blue1;
+
+			padding: 0.5em 2em;
+			font-size: 1.1rem;
+
+			transition: text-decoration-color 200ms, background-color 200ms,
+				color 200ms;
+
+			&:hover {
+				text-decoration-color: ab.$blue1;
+				background-color: ab.$blue3;
+				color: ab.$blue1;
+			}
+			svg {
+				display: none;
+			}
+		}
+	}
 }

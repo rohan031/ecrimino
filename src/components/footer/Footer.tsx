@@ -153,6 +153,16 @@ export default function Footer({ data }: FooterProps) {
 
 			<p className="copyright">
 				Copyright © 2024 , Ecole de Criminologie All rights reserved.
+				<br />
+				Powered by{" "}
+				<a
+					href="https://adgytec.in"
+					target="_blank"
+					style={{ color: "hsl(51, 100%, 50%)", fontWeight: "bold" }}
+				>
+					Adgytec
+				</a>
+				.
 			</p>
 		</footer>
 	);

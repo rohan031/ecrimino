@@ -42,6 +42,10 @@ export const nav = {
 		text: "Gallery",
 		link: links.gallery,
 	},
+	news: {
+		text: "Actualite",
+		link: links.news,
+	},
 
 	aboutus: {
 		text: "A propos de nous",

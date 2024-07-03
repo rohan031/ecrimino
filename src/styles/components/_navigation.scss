@@ -66,11 +66,11 @@ nav {
 			img {
 				width: clamp(12em, 30vw, 18em);
 
-				@include ab.screen-48 {
+				@include ab.screen-64 {
 					width: clamp(10em, 20vw, 18em);
 				}
 
-				@include ab.screen-56 {
+				@include ab.screen-75 {
 					width: clamp(12em, 27vw, 18em);
 				}
 			}
@@ -109,7 +109,7 @@ nav {
 				gap: 0.3em;
 				position: relative;
 
-				@include ab.screen-48 {
+				@include ab.screen-64 {
 					display: none;
 				}
 
@@ -145,7 +145,7 @@ nav {
 
 				transition: clip-path 300ms;
 
-				@include ab.screen-48 {
+				@include ab.screen-64 {
 					display: flex;
 					flex-direction: row;
 					position: static;
@@ -166,7 +166,7 @@ nav {
 						// text-decoration: underline;
 					}
 
-					@include ab.screen-48 {
+					@include ab.screen-64 {
 						font-size: clamp(0.9rem, 1.7vw, 1.2rem);
 					}
 
@@ -179,7 +179,7 @@ nav {
 						}
 					}
 
-					@include ab.screen-48 {
+					@include ab.screen-64 {
 						.nav-hover:hover > .nav-links__sub {
 							display: grid;
 						}
@@ -189,13 +189,13 @@ nav {
 						+ .nav-hover {
 							> .nav-links__sub {
 								display: grid;
-								@include ab.screen-48 {
+								@include ab.screen-64 {
 									display: none;
 								}
 							}
 
 							&:hover > .nav-links__sub {
-								@include ab.screen-48 {
+								@include ab.screen-64 {
 									display: grid;
 								}
 							}
@@ -219,7 +219,7 @@ nav {
 
 							gap: 0.5em;
 
-							@include ab.screen-48 {
+							@include ab.screen-64 {
 								margin-block: 0;
 								padding: 1em 1.6em;
 
@@ -245,7 +245,7 @@ nav {
 				}
 
 				&-logo {
-					@include ab.screen-48 {
+					@include ab.screen-64 {
 						display: none;
 					}
 

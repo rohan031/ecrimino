@@ -1,0 +1,30 @@
+@use "/src/styles/abstracts" as ab;
+
+.loader {
+	display: grid;
+	height: 60vb;
+	background-color: ab.$blue3;
+	margin-block: 1em 2em;
+
+	place-items: center;
+	color: ab.$dark1;
+}
+
+.blogs {
+	padding: 1em 0;
+	display: grid;
+	gap: 1em;
+
+	.search {
+	}
+
+	.empty {
+		color: ab.$dark1;
+	}
+
+	.container {
+		// outline: 2px solid red;
+		display: grid;
+		gap: 1em;
+	}
+}
