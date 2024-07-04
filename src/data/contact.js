@@ -5,6 +5,7 @@ export const contacts = {
 	],
 	email: [
 		"contact@ecrimino.com",
+  "ecole.criminologie@unikin.ac.cd",
 		// "ccps.criminologie@unikin.ac.cd",
 	],
 };
