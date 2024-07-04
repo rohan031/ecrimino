@@ -5,6 +5,7 @@ import styles from "./blogId.module.scss";
 import { useParams } from "next/navigation";
 import Loader from "@/components/loader/Loader";
 import "./blog.scss";
+import SocialShare from "../../../../../components/socialShare/SocialShare";
 
 export interface BlogItem {
 	blogId: string;
@@ -91,12 +92,16 @@ const BlogItem = () => {
 				<div className={styles.image}>
 					<img src={blogItem.cover} alt={blogItem.title} />
 				</div>
+
+				<SocialShare title={blogItem.title} />
 			</div>
 
 			<div
 				className={styles.content}
 				dangerouslySetInnerHTML={blogHTML}
 			></div>
+
+			<SocialShare title={blogItem.title} />
 		</div>
 	);
 };

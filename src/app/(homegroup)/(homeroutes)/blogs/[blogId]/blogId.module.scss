@@ -16,7 +16,8 @@
 }
 
 .blog {
-	padding-block: 3em 6em;
+	padding-block: 3em;
+
 	display: grid;
 	gap: 2em;
 	color: black;
@@ -26,7 +27,7 @@
 	}
 
 	.main {
-		margin-block-end: 3em;
+		margin-block-end: 2em;
 
 		h1 {
 			font-size: clamp(1.25rem, 1.75vi, 1.5rem);
@@ -38,6 +39,7 @@
 
 		.meta {
 			margin-block: 1em 3em;
+
 			text-align: center;
 			display: flex;
 			gap: 1em;
@@ -56,6 +58,7 @@
 
 		.image {
 			max-height: 32em;
+			margin-block-end: 3em;
 
 			img {
 				max-height: 32em;

@@ -1,0 +1,55 @@
+@use "/src/styles/abstracts" as ab;
+
+.social {
+	display: flex;
+	gap: 1.25em;
+	justify-content: center;
+
+	a {
+		--_color: #{ab.$text1};
+		--_bg: #{ab.$grey1};
+
+		font-size: 1.15rem;
+
+		background-color: var(--_bg);
+		aspect-ratio: 1;
+		width: 1.75em;
+		border-radius: 50%;
+
+		color: var(--_color);
+
+		display: grid;
+		place-items: center;
+
+		transition: color 300ms, background-color 300ms;
+
+		&:hover {
+			--_color: #{ab.$white};
+
+			&.facebook {
+				--_bg: var(--facebook);
+			}
+
+			&.twitter {
+				--_bg: var(--twitterx);
+			}
+
+			&.whatsapp {
+				--_bg: var(--whatsapp);
+			}
+
+			&.reddit {
+				--_bg: #{ab.$pink};
+				--_color: var(--reddit);
+			}
+
+			&.linkedin {
+				--_bg: var(--linkedin);
+			}
+
+			&.mail {
+				--_bg: #{ab.$accent1};
+			}
+		}
+	}
+}

@@ -3,6 +3,14 @@
 @use "./pages";
 @use "./abstracts/reset";
 
+:root {
+	--linkedin: #0077b5;
+	--twitterx: #333333;
+	--facebook: #4867aa;
+	--whatsapp: #25d366;
+	--reddit: #ff5700;
+}
+
 body {
 	font-family: "Inter", sans-serif;
 	color: ab.$white;
