@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import styles from "./socialshare.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -14,7 +16,11 @@ interface SocialShareProps {
 	title: string;
 }
 const SocialShare = ({ title }: SocialShareProps) => {
-	const url = window.location.toString();
+	const [url, setUrl] = useState<string>("");
+
+	useEffect(() => {
+		setUrl(window.location.toString());
+	}, []);
 
 	const emailBody = `Hey check this out at: ${url}`;
 	return (

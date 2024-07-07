@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useCallback, useEffect, useState } from "react";
 import styles from "./blogId.module.scss";
 import { useParams } from "next/navigation";
@@ -20,43 +18,49 @@ export interface BlogItem {
 	cover: string;
 }
 
-const BlogItem = () => {
-	const params = useParams<{ blogId: string }>();
-	const [blogItem, setBlogItem] = useState<BlogItem | null>(null);
-	const [loading, setLoading] = useState(true);
+export const revalidate = 604800;
 
-	const getBlogItem = useCallback(async () => {
-		const url = `https://api.adgytec.in/v1/services/blog/${params.blogId}`;
+export const dynamicParams = true;
 
-		fetch(url, {
-			method: "GET",
-			headers: {
-				Authorization: `Bearer ${process.env.NEXT_PUBLIC_TOKEN}`,
-			},
-		})
-			.then((res) => res.json())
-			.then((res) => {
-				if (res.error) throw new Error(res.message);
+export async function generateStaticParams() {
+	const url = "https://api.adgytec.in/v1/services/blogs";
 
-				setBlogItem(res.data);
-			})
-			.catch((err) => {
-				console.error(err.message);
-			})
-			.finally(() => setLoading(false));
-	}, [params]);
+	const blogs = await fetch(url, {
+		method: "GET",
+		headers: {
+			Authorization: `Bearer ${process.env.NEXT_PUBLIC_TOKEN}`,
+		},
+	}).then((res) => res.json());
 
-	useEffect(() => {
-		getBlogItem();
-	}, [getBlogItem]);
-
-	if (loading) {
-		return (
-			<div className={styles.loader}>
-				<Loader />
-			</div>
-		);
+	if (blogs.error) {
+		return [];
 	}
+
+	return blogs.data.map((blog: any) => {
+		return {
+			blogId: blog.blogId,
+		};
+	});
+}
+
+const BlogItem = async ({ params }: { params: { blogId: string } }) => {
+	const url = `https://api.adgytec.in/v1/services/blog/${params.blogId}`;
+
+	const blogItem: BlogItem | null = await fetch(url, {
+		method: "GET",
+		headers: {
+			Authorization: `Bearer ${process.env.NEXT_PUBLIC_TOKEN}`,
+		},
+	})
+		.then((res) => res.json())
+		.then((res) => {
+			if (res.error) throw new Error(res.message);
+			return res.data;
+		})
+		.catch((err) => {
+			console.error(err.message);
+			return null;
+		});
 
 	if (!blogItem) {
 		return (
