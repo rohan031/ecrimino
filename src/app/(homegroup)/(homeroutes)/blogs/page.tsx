@@ -82,13 +82,13 @@ const Blogs = () => {
 						type="text"
 						value={search}
 						onChange={(e) => setSearch(e.target.value)}
-						placeholder="Search blogs..."
+						placeholder="Chercher les blogs..."
 					/>
 				</div>
 
 				{allBlogs.length === 0 || elements.length === 0 ? (
 					<div className={styles.empty}>
-						<p>No blogs to show</p>
+						<p>Aucun blog à afficher</p>
 					</div>
 				) : (
 					<div className={styles.container}>{elements}</div>

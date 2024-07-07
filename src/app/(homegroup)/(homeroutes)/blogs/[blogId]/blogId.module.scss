@@ -22,6 +22,28 @@
 	gap: 2em;
 	color: black;
 
+	.breadcrumb {
+		text-align: center;
+
+		display: flex;
+		gap: 0.5em;
+		justify-content: center;
+		align-items: center;
+
+		a {
+			text-decoration: none;
+			color: ab.$dark1;
+		}
+
+		svg {
+			color: ab.$text1;
+		}
+
+		.home {
+			color: ab.$blue5;
+		}
+	}
+
 	.content {
 		font-size: 1rem;
 	}

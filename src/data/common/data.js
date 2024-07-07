@@ -43,7 +43,7 @@ export const nav = {
 		link: links.gallery,
 	},
 	news: {
-		text: "Actualite",
+		text: "Actualité",
 		link: links.news,
 	},
 

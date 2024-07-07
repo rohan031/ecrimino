@@ -6,6 +6,9 @@ import { useParams } from "next/navigation";
 import Loader from "@/components/loader/Loader";
 import "./blog.scss";
 import SocialShare from "../../../../../components/socialShare/SocialShare";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 export interface BlogItem {
 	blogId: string;
@@ -79,6 +82,13 @@ const BlogItem = () => {
 
 	return (
 		<div className={`container-blog ${styles.blog}`}>
+			<div className={styles.breadcrumb}>
+				<Link href="/" className={styles.home}>
+					Home
+				</Link>
+				<FontAwesomeIcon icon={faAngleRight} />
+				<Link href="/blogs">Blogs</Link>
+			</div>
 			<div className={styles.main}>
 				<h1>{blogItem.title}</h1>
 

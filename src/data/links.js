@@ -12,7 +12,7 @@ export const links = {
 		"https://uclouvain.be/fr/instituts-recherche/juri/cridep/fonds-d-archives-guy-houchon.html",
 
 	gallery: "/gallery",
-	news: "/#news",
+	news: "/blogs",
 
 	aboutus: "/about-us",
 	faculty: "/faculty",

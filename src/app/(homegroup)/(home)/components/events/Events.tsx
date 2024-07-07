@@ -59,7 +59,7 @@ export default function Events() {
 	return (
 		<div className="events" id="news">
 			<div className="container">
-				<h2 className="events-head">Actualite</h2>
+				<h2 className="events-head">Actualité</h2>
 
 				{loading ? (
 					<div

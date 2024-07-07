@@ -30,7 +30,7 @@ const BlogItem = ({ blog }: BlogItemProps) => {
 				)}
 
 				<div className={styles.link}>
-					<Link href={`/blogs/${blog.blogId}`}>Read More</Link>
+					<Link href={`/blogs/${blog.blogId}`}>Lire plus</Link>
 				</div>
 			</div>
 		</div>
