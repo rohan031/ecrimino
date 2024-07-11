@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import React from "react";
 export const metadata: Metadata = {
-    title: "Ecole de Criminologie/Actualité",
+    title: "Ecole de Criminologie - Actualité",
     description: "Aucun blog à afficher",
 };
 
