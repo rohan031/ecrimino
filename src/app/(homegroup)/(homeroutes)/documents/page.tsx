@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from "react";
 import { docs } from "@/data/doc";
 import Cards from "./Cards";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
 interface Item {
 	id: string;
@@ -17,9 +19,21 @@ interface Docs {
 
 export default function Documents() {
 	const [items, setItems] = useState<Docs[]>();
+	const [open, setOpen] = useState("");
+
 	useEffect(() => {
 		setItems(docs);
 	}, []);
+
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const name = e.target.name;
+
+		if (open === name) {
+			setOpen("");
+		} else {
+			setOpen(name);
+		}
+	};
 
 	const sections = items?.map((section, index) => {
 		const { items, heading } = section;
@@ -29,8 +43,23 @@ export default function Documents() {
 
 		return (
 			<div className="doc-section" key={heading}>
-				<h2>{heading}</h2>
-				<div className="info-page__container doc">{cards}</div>
+				<input
+					type="checkbox"
+					id={heading}
+					name={heading}
+					checked={open === heading}
+					onChange={handleChange}
+				/>
+				<h2>
+					<label htmlFor={heading}>
+						{heading}
+
+						<FontAwesomeIcon icon={faAngleDown} />
+					</label>
+				</h2>
+				<div className="doc-section-items">
+					<div className="doc-items">{cards}</div>
+				</div>
 			</div>
 		);
 	});
@@ -41,7 +70,7 @@ export default function Documents() {
 				<h1>Documents</h1>
 			</div>
 
-			<div className="container">{sections}</div>
+			<div className="container doc-container">{sections}</div>
 		</>
 	);
 }

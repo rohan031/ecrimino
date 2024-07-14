@@ -9,6 +9,9 @@
 	--facebook: #4867aa;
 	--whatsapp: #25d366;
 	--reddit: #ff5700;
+
+	--max-width: 75em;
+	--modal-width: 75em;
 }
 
 body {
@@ -86,10 +89,11 @@ input[type="number"] {
 
 .container {
 	width: min(96%, 120rem);
+	width: min(95%, var(--max-width));
 	margin-inline: auto;
 }
 
 .container-blog {
-	width: min(90%, 75em);
+	width: min(90%, var(--max-width));
 	margin-inline: auto;
 }

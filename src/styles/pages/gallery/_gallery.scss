@@ -4,7 +4,7 @@
 	padding-block: 4em;
 
 	.container {
-		width: min(95%, 110rem);
+		// width: min(95%, 110rem);
 	}
 
 	.album-container {
@@ -78,6 +78,56 @@
 }
 
 .album-modal {
+	--_w: var(--modal-width);
+
+	width: min(90%, var(--_w));
+	min-height: 90vb;
+
+	outline: none;
+	border: none;
+
+	border-radius: 0.75em;
+	padding: 0;
+	background-color: ab.$white1;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+		rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+
+	&::backdrop {
+		background-color: hsl(0 0% 0%/ 0.75);
+		backdrop-filter: blur(7.5px);
+	}
+
+	.modal {
+		display: grid;
+		gap: 0em;
+
+		> * {
+			padding: 0.5em clamp(1em, 1.75vi, 1.5em);
+		}
+
+		&-menu {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			background-color: ab.$white1;
+
+			position: sticky;
+			top: 0em;
+			z-index: 2;
+
+			// box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+			// 	rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
+			mask-image: linear-gradient(to bottom, black 75%, rgba(0, 0, 0, 0));
+
+			button {
+				font-size: 1.5rem;
+				border: none;
+			}
+		}
+	}
+
 	button {
 		background-color: transparent;
 		cursor: pointer;
