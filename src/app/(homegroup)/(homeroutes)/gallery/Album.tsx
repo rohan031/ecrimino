@@ -8,7 +8,6 @@ import {
 	ListResult,
 } from "firebase/storage";
 import Loader from "@/components/loader/Loader";
-import Modal from "react-modal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
@@ -27,10 +26,11 @@ export default function Album({
 	const [imageUrls, setImageUrls] = useState<string[]>([]);
 	const [hasMore, setHasMore] = useState(true);
 	const [page, setPage] = useState(1);
-	const [open, setOpen] = useState(false);
 	const onceRef = useRef(false);
 	const imagesRef = useRef<ListResult>();
 	const [loading, setLoading] = useState(true);
+
+	const albumModalRef = useRef<HTMLDialogElement | null>(null);
 
 	const fetchImages = async () => {
 		try {
@@ -82,14 +82,13 @@ export default function Album({
 	}, []);
 
 	const handleCloseModal = () => {
-		setOpen(false);
-		document.body.style.overflow = "auto";
+		albumModalRef.current?.close();
+		return;
 	};
 
 	const handleOpenModal = () => {
-		setOpen(true);
-
-		document.body.style.overflow = "hidden";
+		albumModalRef.current?.showModal();
+		return;
 	};
 
 	const loadMoreImages = () => {
@@ -99,6 +98,14 @@ export default function Album({
 
 	const handleImage = (url: string) => {
 		window.open(url, "_blank");
+	};
+
+	const lightDismiss = ({
+		target: dialog,
+	}: React.MouseEvent<HTMLDialogElement, MouseEvent>) => {
+		if (dialog instanceof HTMLDialogElement) {
+			if (dialog.nodeName === "DIALOG") dialog.close();
+		}
 	};
 
 	return (
@@ -118,63 +125,48 @@ export default function Album({
 				<p>{albumName.toLowerCase()}</p>
 			</div>
 
-			<Modal
-				isOpen={open}
-				contentLabel={`${albumName} images`}
-				onRequestClose={handleCloseModal}
-				shouldCloseOnOverlayClick={true}
-				onAfterClose={() => {
-					document.body.style.overflow = "auto";
-				}}
-				preventScroll={true}
-				style={{
-					overlay: {
-						zIndex: "2",
-						backgroundColor: "rgba(0, 0, 0, 0.5)",
-						backdropFilter: "blur(0.1em)",
-					},
-					content: {
-						borderRadius: "0.75em",
-						backgroundColor: "#fbfcf8",
-						inset: "1rem",
-					},
-				}}
-				ariaHideApp={false}
+			<dialog
+				ref={albumModalRef}
+				className="album-modal"
+				onClick={lightDismiss}
 			>
-				<div className="album-modal">
-					<button
-						onClick={handleCloseModal}
-						className="album-modal__close"
-					>
-						<FontAwesomeIcon icon={faXmark} />
-					</button>
+				<div className="modal">
+					<div className="modal-menu">
+						<h3>{albumName}</h3>
 
-					<div className="album-images">
-						{imageUrls.map((url, index) => (
-							<img
-								key={index}
-								loading="lazy"
-								src={url}
-								onClick={() => handleImage(url)}
-								alt="gallery image"
-								width="607"
-								height="404"
-							/>
-						))}
+						<button onClick={handleCloseModal} title="close">
+							<FontAwesomeIcon icon={faXmark} />
+						</button>
 					</div>
 
-					{loading && <Loader />}
+					<div className="modal-content">
+						<div className="album-images">
+							{imageUrls.map((url, index) => (
+								<img
+									key={index}
+									loading="lazy"
+									src={url}
+									onClick={() => handleImage(url)}
+									alt="gallery image"
+									width="607"
+									height="404"
+								/>
+							))}
+						</div>
 
-					{hasMore && !loading && (
-						<button
-							className="album-modal__load"
-							onClick={loadMoreImages}
-						>
-							Load More
-						</button>
-					)}
+						{loading && <Loader />}
+
+						{hasMore && !loading && (
+							<button
+								className="album-modal__load"
+								onClick={loadMoreImages}
+							>
+								Load More
+							</button>
+						)}
+					</div>
 				</div>
-			</Modal>
+			</dialog>
 		</div>
 	);
 }

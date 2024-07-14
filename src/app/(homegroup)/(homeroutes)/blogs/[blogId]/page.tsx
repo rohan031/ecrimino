@@ -1,7 +1,5 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React from "react";
 import styles from "./blogId.module.scss";
-import { useParams } from "next/navigation";
-import Loader from "@/components/loader/Loader";
 import "./blog.scss";
 import SocialShare from "../../../../../components/socialShare/SocialShare";
 import Link from "next/link";
