@@ -1,4 +1,27 @@
-export const docs = [
+interface Items {
+	id: string;
+	title: string;
+	link: string;
+}
+
+type SortItems = (a: Items, b: Items) => number;
+
+const sortItems: SortItems = (a, b) => {
+	const titleA = a.title.toUpperCase();
+	const titleB = b.title.toUpperCase();
+
+	if (titleA < titleB) {
+		return -1;
+	}
+	if (titleA > titleB) {
+		return 1;
+	}
+
+	// names must be equal
+	return 0;
+};
+
+let docs = [
 	{
 		heading: "Thèses de doctorat en criminologie",
 		items: [
@@ -215,14 +238,14 @@ export const docs = [
 				link: "https://drive.google.com/file/d/1DnTn0IwwVoQ3yS2WZYqPgjOSvkt4F2tC/view?usp=sharing",
 			},
 			{
-				id: "https://drive.google.com/file/d/1vnSU_Hu0o7_rwZTBiae2LmZi3ZOSu-yE/view?usp=sharing",
-				title: "Interactions entre la police nationale congolaise et les faux monnayeurs.pdf",
-				link: "https://drive.google.com/file/d/1vnSU_Hu0o7_rwZTBiae2LmZi3ZOSu-yE/view?usp=sharing",
-			},
-			{
 				id: "https://drive.google.com/file/d/1LEv4wfv8dAhE9791rmlUUQ5DJfGTrBdu/view?usp=sharing",
 				title: "L’ADÉQUATION DE LA SCIENCE ET LA JUSTICE DANS L’AD…DENTIFICATION GÉNÉTIQUE COMME PREUVE JUDICAIRE.pdf",
 				link: "https://drive.google.com/file/d/1LEv4wfv8dAhE9791rmlUUQ5DJfGTrBdu/view?usp=sharing",
+			},
+			{
+				id: "https://drive.google.com/file/d/1vnSU_Hu0o7_rwZTBiae2LmZi3ZOSu-yE/view?usp=sharing",
+				title: "Interactions entre la police nationale congolaise et les faux monnayeurs.pdf",
+				link: "https://drive.google.com/file/d/1vnSU_Hu0o7_rwZTBiae2LmZi3ZOSu-yE/view?usp=sharing",
 			},
 			{
 				id: "https://drive.google.com/file/d/1KB0ZtGDpfJokdtdpK6P9o61273NiG0zT/view?usp=sharing",
@@ -262,3 +285,27 @@ export const docs = [
 		],
 	},
 ];
+
+docs = docs.map((item) => {
+	return {
+		...item,
+		items: item.items.sort(sortItems),
+	};
+});
+
+docs.sort((a, b) => {
+	const headingA = a.heading.toUpperCase();
+	const headingB = b.heading.toUpperCase();
+
+	if (headingA < headingB) {
+		return -1;
+	}
+	if (headingA > headingB) {
+		return 1;
+	}
+
+	// names must be equal
+	return 0;
+});
+
+export default docs;
