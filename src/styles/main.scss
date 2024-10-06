@@ -10,8 +10,8 @@
 	--whatsapp: #25d366;
 	--reddit: #ff5700;
 
-	--max-width: 75em;
-	--modal-width: 75em;
+	--max-width: 75rem;
+	--modal-width: 75rem;
 }
 
 body {
@@ -88,7 +88,6 @@ input[type="number"] {
 }
 
 .container {
-	width: min(96%, 120rem);
 	width: min(95%, var(--max-width));
 	margin-inline: auto;
 }

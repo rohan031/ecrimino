@@ -21,7 +21,7 @@ export const revalidate = 604800;
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-	const url = "https://api.adgytec.in/v1/services/blogs";
+	const url = `${process.env.NEXT_PUBLIC_API}/services/blogs`;
 
 	const blogs = await fetch(url, {
 		method: "GET",
@@ -42,7 +42,7 @@ export async function generateStaticParams() {
 }
 
 const BlogItem = async ({ params }: { params: { blogId: string } }) => {
-	const url = `https://api.adgytec.in/v1/services/blog/${params.blogId}`;
+	const url = `${process.env.NEXT_PUBLIC_API}/services/blog/${params.blogId}`;
 
 	const blogItem: BlogItem | null = await fetch(url, {
 		method: "GET",

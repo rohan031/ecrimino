@@ -19,7 +19,7 @@ export default function Events() {
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		const url = "https://api.adgytec.in/v1/services/news";
+		const url = `${process.env.NEXT_PUBLIC_API}/services/news`;
 
 		fetch(url, {
 			method: "GET",

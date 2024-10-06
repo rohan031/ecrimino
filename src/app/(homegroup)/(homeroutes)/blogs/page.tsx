@@ -20,7 +20,7 @@ const Blogs = () => {
 	const [search, setSearch] = useState<string>("");
 
 	const getAllBlogs = useCallback(() => {
-		const url = "https://api.adgytec.in/v1/services/blogs";
+		const url = `${process.env.NEXT_PUBLIC_API}/services/blogs`;
 
 		fetch(url, {
 			method: "GET",

@@ -1,0 +1,56 @@
+@use "src/styles/abstracts" as ab;
+
+.container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	gap: 2rem;
+
+	.item {
+		--_radius: 0.75rem;
+		--_o: 0.6;
+		--_s: 1;
+
+		position: relative;
+		border-radius: var(--_radius);
+		overflow: hidden;
+
+		&::before {
+			content: "";
+			position: absolute;
+			background-color: hsl(from black h s l/ var(--_o));
+			border-radius: var(--_radius);
+			inset: 0;
+			z-index: 1;
+
+			transition: background-color 300ms;
+		}
+
+		&:hover {
+			--_o: 0.5;
+			--_s: 1.1;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+
+			border-radius: var(--_radius);
+			scale: var(--_s);
+
+			transition: scale 300ms;
+		}
+
+		a {
+			position: absolute;
+			z-index: 1;
+
+			bottom: 1rem;
+			left: 1rem;
+			right: 1rem;
+			color: var(--white);
+
+			text-decoration-color: transparent;
+		}
+	}
+}
