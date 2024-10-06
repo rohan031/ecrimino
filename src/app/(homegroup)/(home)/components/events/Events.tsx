@@ -1,9 +1,9 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Cards from "./Cards";
 import Loader from "@/components/loader/Loader";
 import Link from "next/link";
+
+export const revalidate = 604800;
 
 interface NewsData {
 	title: string;
@@ -14,36 +14,30 @@ interface NewsData {
 	createdAt: string;
 }
 
-export default function Events() {
-	const [news, setNews] = useState<NewsData[] | null>(null);
-	const [loading, setLoading] = useState(true);
+const Events = async () => {
+	const url = `${process.env.NEXT_PUBLIC_API}/services/news`;
 
-	useEffect(() => {
-		const url = `${process.env.NEXT_PUBLIC_API}/services/news`;
-
-		fetch(url, {
-			method: "GET",
-			headers: {
-				Authorization: `Bearer ${process.env.NEXT_PUBLIC_TOKEN}`,
-			},
+	const news: NewsData[] | null = await fetch(url, {
+		method: "GET",
+		headers: {
+			Authorization: `Bearer ${process.env.NEXT_PUBLIC_TOKEN}`,
+		},
+	})
+		.then((res) => res.json())
+		.then((res) => {
+			if (res.error) throw new Error(res.message);
+			return res.data;
 		})
-			.then((res) => res.json())
-			.then((res) => {
-				if (res.error) {
-					throw new Error(res.message);
-				}
+		.catch((err) => {
+			console.error(err.message);
+			return null;
+		});
 
-				setNews(res.data);
-			})
-			.catch((err) => {
-				console.log(err);
-			})
-			.finally(() => {
-				setLoading(false);
-			});
-	}, []);
+	if (!news) {
+		return <></>;
+	}
 
-	const cards = news?.map((item) => {
+	const cards = news.map((item) => {
 		return (
 			<Cards
 				key={item.id}
@@ -61,39 +55,15 @@ export default function Events() {
 			<div className="container">
 				<h2 className="events-head">Actualité</h2>
 
-				{loading ? (
-					<div
-						style={{
-							height: "25vb",
-						}}
-					>
-						<Loader />
+				<div className="events-items">
+					<div className="events-container">{cards}</div>
+					<div className="events-action">
+						<Link href="/blogs">Voir tout</Link>
 					</div>
-				) : !news || news?.length === 0 ? (
-					<div
-						style={{
-							height: "25vb",
-							display: "grid",
-							placeItems: "center",
-						}}
-					>
-						<p
-							style={{
-								fontSize: "1.5rem",
-							}}
-						>
-							No news to display
-						</p>
-					</div>
-				) : (
-					<div className="events-items">
-						<div className="events-container">{cards}</div>
-						<div className="events-action">
-							<Link href="/blogs">Voir tout</Link>
-						</div>
-					</div>
-				)}
+				</div>
 			</div>
 		</div>
 	);
-}
+};
+
+export default Events;
