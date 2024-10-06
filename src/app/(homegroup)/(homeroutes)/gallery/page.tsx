@@ -67,14 +67,6 @@ const page = async () => {
 				<h1>Gallery</h1>
 			</div>
 
-			{/* <div className="gallery-container">
-				<div className="container">
-					<div className="album-container">
-                        {albums()}
-                        </div>
-				</div>
-			</div> */}
-
 			<AlbumList url={url} cursor={cursor} hasMore={hasMore}>
 				{albums.map((item) => {
 					return <AlbumItem key={item.id} details={item} />;
@@ -85,38 +77,3 @@ const page = async () => {
 };
 
 export default page;
-
-// export default function Gallery() {
-// 	const albums = () => {
-// 		let elements = [];
-// 		let len = gallery.length;
-// 		for (let i = len; i >= 1; i--) {
-// 			let galleryRef = ref(storage, `gallery/album${i}`);
-
-// 			elements.push(
-// 				<Album
-// 					key={gallery[i]}
-// 					galleryRef={galleryRef}
-// 					albumCover={`/gallery/album${i}/cover.webp`}
-// 					albumName={gallery[i - 1]}
-// 				/>
-// 			);
-// 		}
-
-// 		return elements;
-// 	};
-
-// 	return (
-// 		<>
-// 			<div className="info-page__heading gallery">
-// 				<h1>Gallery</h1>
-// 			</div>
-
-// 			<div className="gallery-container">
-// 				<div className="container">
-// 					<div className="album-container">{albums()}</div>
-// 				</div>
-// 			</div>
-// 		</>
-// 	);
-// }
