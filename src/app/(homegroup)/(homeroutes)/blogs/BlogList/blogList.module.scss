@@ -1,0 +1,78 @@
+@use "/src/styles/abstracts" as ab;
+
+.container {
+	display: grid;
+	gap: 2rem;
+
+	.item {
+		--_image: 16rem;
+
+		box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+		padding: 1rem;
+		border-radius: 0.5rem;
+
+		display: grid;
+		gap: 1rem;
+
+		grid-template-rows: 1fr auto auto;
+		&[data-cover="true"] {
+			grid-template-rows: var(--_image) 1fr auto auto;
+		}
+
+		.image {
+			display: grid;
+			grid-template-rows: subgrid;
+
+			grid-row: span 1;
+
+			img {
+				width: 100%;
+				height: auto;
+				max-height: var(--_image);
+				object-fit: cover;
+			}
+		}
+
+		.meta {
+			display: grid;
+			gap: 0.5rem;
+
+			grid-template-rows: subgrid;
+
+			grid-row: span 3;
+
+			> * {
+				display: grid;
+				grid-template-rows: subgrid;
+				grid-row: span 1;
+			}
+
+			.title {
+				font-size: 1.125rem;
+				font-weight: 500;
+
+				cursor: context-menu;
+			}
+
+			.info,
+			.action {
+				font-size: 0.875rem;
+			}
+
+			.info {
+				color: var(--accent-secondary);
+				cursor: context-menu;
+
+				.infoItems {
+					display: flex;
+					justify-content: space-between;
+					gap: 1rem;
+				}
+			}
+
+			.action {
+				font-weight: 600;
+			}
+		}
+	}
+}

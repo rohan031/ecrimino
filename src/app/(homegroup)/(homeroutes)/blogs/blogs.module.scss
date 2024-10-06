@@ -15,15 +15,11 @@
 	display: grid;
 	gap: 1em;
 
-	.search {
-	}
-
 	.empty {
 		color: ab.$dark1;
 	}
 
 	.container {
-		// outline: 2px solid red;
 		display: grid;
 		gap: 1em;
 	}

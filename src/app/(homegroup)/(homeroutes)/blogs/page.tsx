@@ -1,9 +1,11 @@
-"use client";
-
-import React, { useCallback, useEffect, useState } from "react";
+import React from "react";
 import styles from "./blogs.module.scss";
 import Loader from "@/components/loader/Loader";
 import BlogItem from "./components/BlogItem/BlogItem";
+import { LIMIT } from "@/data/helper";
+import BlogList from "./BlogList/BlogList";
+
+export const revalidate = 604800;
 
 export interface Blog {
 	title: string;
@@ -14,84 +16,59 @@ export interface Blog {
 	cover: string;
 }
 
-const Blogs = () => {
-	const [loading, setLoading] = useState(true);
-	const [allBlogs, setAllBlogs] = useState<Blog[]>([]);
-	const [search, setSearch] = useState<string>("");
+const Blogs = async () => {
+	const url = `${process.env.NEXT_PUBLIC_API}/services/blogs`;
 
-	const getAllBlogs = useCallback(() => {
-		const url = `${process.env.NEXT_PUBLIC_API}/services/blogs`;
-
-		fetch(url, {
-			method: "GET",
-			headers: {
-				Authorization: `Bearer ${process.env.NEXT_PUBLIC_TOKEN}`,
-			},
+	const blogs: Blog[] | null = await fetch(url, {
+		method: "GET",
+		headers: {
+			Authorization: `Bearer ${process.env.NEXT_PUBLIC_TOKEN}`,
+		},
+	})
+		.then((res) => res.json())
+		.then((res) => {
+			if (res.error) throw new Error(res.message);
+			return res.data;
 		})
-			.then((res) => res.json())
-			.then((res) => {
-				if (res.error) {
-					throw new Error(res.message);
-				}
+		.catch((err) => {
+			console.error(err.message);
+			return null;
+		});
 
-				setAllBlogs(res.data);
-			})
-			.catch((err) => {
-				console.log(err.message);
-			})
-			.finally(() => {
-				setLoading(false);
-			});
-	}, []);
-
-	useEffect(() => {
-		getAllBlogs();
-	}, [getAllBlogs]);
-
-	const elements: JSX.Element[] = [];
-	allBlogs.forEach((blog) => {
-		const { blogId, title, author } = blog;
-		const element = <BlogItem key={blogId} blog={blog} />;
-
-		if (search.length === 0) {
-			elements.push(element);
-			return;
-		}
-
-		if (
-			blogId.toLowerCase().includes(search.toLowerCase()) ||
-			title.toLowerCase().includes(search.toLowerCase()) ||
-			author.toLowerCase().includes(search.toLowerCase())
-		)
-			elements.push(element);
-	});
-
-	if (loading) {
+	if (!blogs) {
 		return (
-			<div className={styles.loader}>
-				<Loader />
-			</div>
+			<>
+				<div
+					style={{
+						height: "20rem",
+						display: "grid",
+						placeItems: "center",
+						color: "black",
+					}}
+				>
+					<h4>Oops! Something went wrong.</h4>
+				</div>
+			</>
 		);
 	}
+
+	const hasMore = blogs.length === LIMIT;
+	let len = blogs.length;
+	const cursor = blogs[len - 1].createdAt;
 
 	return (
 		<div className="container-blog">
 			<div className={styles.blogs}>
-				<div className={styles.search}>
-					<input
-						type="text"
-						value={search}
-						onChange={(e) => setSearch(e.target.value)}
-						placeholder="Chercher les blogs..."
-					/>
-				</div>
-
-				{allBlogs.length === 0 || elements.length === 0 ? (
+				{blogs.length === 0 ? (
 					<div className={styles.empty}>
 						<p>Aucun blog à afficher</p>
 					</div>
 				) : (
-					<div className={styles.container}>{elements}</div>
+					<BlogList hasMore={hasMore} url={url} cursor={cursor}>
+						{blogs.map((item) => {
+							return <BlogItem key={item.blogId} blog={item} />;
+						})}
+					</BlogList>
 				)}
 			</div>
 		</div>
