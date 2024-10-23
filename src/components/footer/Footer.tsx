@@ -59,6 +59,8 @@ export default function Footer({ data }: FooterProps) {
 		);
 	});
 
+	const today = new Date();
+
 	return (
 		<footer id="footer">
 			<div className="container footer">
@@ -152,7 +154,8 @@ export default function Footer({ data }: FooterProps) {
 			</div>
 
 			<p className="copyright">
-				Copyright © 2024 , Ecole de Criminologie All rights reserved.
+				Copyright © {today.getFullYear()} , Ecole de Criminologie All
+				rights reserved.
 				<br />
 				Powered by{" "}
 				<a

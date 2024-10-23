@@ -94,6 +94,26 @@ const page = async ({ params }: { params: { albumId: string } }) => {
 		);
 	}
 
+	if (photos.length === 0) {
+		<>
+			<div className="info-page__heading gallery">
+				<h1 className="container">{name ?? ""}</h1>
+			</div>
+
+			<div
+				className="container"
+				style={{
+					height: "20rem",
+					display: "grid",
+					placeItems: "center",
+					color: "black",
+				}}
+			>
+				<h4>There are no photos present.</h4>
+			</div>
+		</>;
+	}
+
 	const hasMore = photos.length === LIMIT;
 	let len = photos.length;
 	const cursor = photos[len - 1].createdAt;

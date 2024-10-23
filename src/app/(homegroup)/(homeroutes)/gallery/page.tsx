@@ -57,6 +57,28 @@ const page = async () => {
 		);
 	}
 
+	if (albums.length === 0) {
+		return (
+			<>
+				<div className="info-page__heading gallery">
+					<h1>Gallery</h1>
+				</div>
+
+				<div
+					className="container"
+					style={{
+						height: "20rem",
+						display: "grid",
+						placeItems: "center",
+						color: "black",
+					}}
+				>
+					<h4>There are no albums present.</h4>
+				</div>
+			</>
+		);
+	}
+
 	const hasMore = albums.length === LIMIT;
 	let len = albums.length;
 	const cursor = albums[len - 1].createdAt;
