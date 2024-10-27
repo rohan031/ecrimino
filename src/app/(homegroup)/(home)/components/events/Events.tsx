@@ -1,9 +1,8 @@
 import React from "react";
 import Cards from "./Cards";
-import Loader from "@/components/loader/Loader";
 import Link from "next/link";
 
-export const revalidate = 604800;
+const revalidate = 604800 - 3600; // revalidate before image expiry
 
 interface NewsData {
 	title: string;
@@ -21,6 +20,9 @@ const Events = async () => {
 		method: "GET",
 		headers: {
 			Authorization: `Bearer ${process.env.NEXT_PUBLIC_TOKEN}`,
+		},
+		next: {
+			revalidate,
 		},
 	})
 		.then((res) => res.json())
