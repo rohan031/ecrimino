@@ -1,44 +1,13 @@
 import React from "react";
 import Cards from "./Cards";
 import Link from "next/link";
+import { NewsData } from "../../page";
 
-const revalidate = 60 * 60; // revalidate before image expiry
-
-interface NewsData {
-	title: string;
-	link: string;
-	text: string;
-	image: string;
-	id: string;
-	createdAt: string;
+interface EventsProps {
+	news: NewsData[];
 }
 
-const Events = async () => {
-	const url = `${process.env.NEXT_PUBLIC_API}/services/news`;
-
-	const news: NewsData[] | null = await fetch(url, {
-		method: "GET",
-		headers: {
-			Authorization: `Bearer ${process.env.NEXT_PUBLIC_TOKEN}`,
-		},
-		next: {
-			revalidate,
-		},
-	})
-		.then((res) => res.json())
-		.then((res) => {
-			if (res.error) throw new Error(res.message);
-			return res.data;
-		})
-		.catch((err) => {
-			console.error(err.message);
-			return null;
-		});
-
-	if (!news) {
-		return <></>;
-	}
-
+const Events = ({ news }: EventsProps) => {
 	const cards = news.map((item) => {
 		return (
 			<Cards
