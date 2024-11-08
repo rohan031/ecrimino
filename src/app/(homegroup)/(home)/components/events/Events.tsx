@@ -2,7 +2,7 @@ import React from "react";
 import Cards from "./Cards";
 import Link from "next/link";
 
-const revalidate = 604800 - 3600; // revalidate before image expiry
+const revalidate = 60 * 60; // revalidate before image expiry
 
 interface NewsData {
 	title: string;

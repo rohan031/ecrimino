@@ -16,7 +16,7 @@ export interface BlogItem {
 	cover: string;
 }
 
-export const revalidate = 604800;
+export const revalidate = 60 * 60;
 
 export const dynamicParams = true;
 

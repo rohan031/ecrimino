@@ -3,7 +3,7 @@ import { Album } from "../page";
 import { LIMIT } from "@/data/helper";
 import ImageList from "../images/ImageList";
 
-export const revalidate = 604800;
+export const revalidate = 60 * 60;
 
 export const dynamicParams = true;
 

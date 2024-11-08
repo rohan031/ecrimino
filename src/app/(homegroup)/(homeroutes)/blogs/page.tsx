@@ -5,7 +5,7 @@ import BlogItem from "./components/BlogItem/BlogItem";
 import { LIMIT } from "@/data/helper";
 import BlogList from "./BlogList/BlogList";
 
-export const revalidate = 604800;
+export const revalidate = 60 * 60;
 
 export interface Blog {
 	title: string;
