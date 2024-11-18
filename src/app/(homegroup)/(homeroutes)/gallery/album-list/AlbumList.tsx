@@ -6,28 +6,27 @@ import { useIntersection } from "@/hooks/intersetion-observer/intersection-obser
 import styles from "./albumList.module.scss";
 import AlbumItem from "./AlbumItem";
 import { Album } from "../page";
-import { LIMIT } from "@/data/helper";
+import { LIMIT, PageInfo } from "@/data/helper";
 import Loader from "@/components/loader/Loader";
 
 interface AlbumListProps {
 	children: React.ReactNode;
-	hasMore: boolean;
 	url: string;
-	cursor: string;
+	pageInfo: PageInfo;
 }
 
-const AlbumList = ({ children, hasMore, url, cursor }: AlbumListProps) => {
+const AlbumList = ({ children, url, pageInfo }: AlbumListProps) => {
 	const [moreAlbums, setMoreAlbums] = useState<Album[]>([]);
-	const hasMoreRef = useRef<boolean>(hasMore);
-	const cursorRef = useRef<string>(cursor);
+	const pageInfoRef = useRef<PageInfo>(pageInfo);
 	const [loading, setLoading] = useState<boolean>(false);
 
 	const fetchMoreAlbums = async () => {
-		if (!hasMoreRef.current || loading) return;
+		if (loading) return;
+		if (!pageInfoRef.current.nextPage) return;
 
 		setLoading(true);
 
-		let cursor = cursorRef.current;
+		let cursor = pageInfoRef.current.cursor;
 		let token = process.env.NEXT_PUBLIC_TOKEN;
 		const headers = {
 			Authorization: `Bearer ${token}`,
@@ -41,16 +40,9 @@ const AlbumList = ({ children, hasMore, url, cursor }: AlbumListProps) => {
 			.then((res) => res.json())
 			.then((res) => {
 				if (res.error) throw new Error(res.message);
-				let len = res.data.length;
-				if (len < LIMIT) {
-					hasMoreRef.current = false;
-				}
-
-				if (len <= 0) return;
-
-				cursorRef.current = res.data[len - 1].createdAt;
+				pageInfoRef.current = res.data.pageInfo;
 				setMoreAlbums((prev) => {
-					const newAlbums = res.data.filter(
+					const newAlbums = res.data.albums.filter(
 						(album: Album) =>
 							!prev.some(
 								(exitingAlbum) => exitingAlbum.id === album.id

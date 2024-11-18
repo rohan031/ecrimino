@@ -3,7 +3,7 @@ import React from "react";
 // import { storage } from "@/firebase/auth/auth";
 // import { ref } from "firebase/storage";
 import Album from "./Album";
-import { LIMIT } from "@/data/helper";
+import { LIMIT, PageInfo } from "@/data/helper";
 import AlbumItem from "./album-list/AlbumItem";
 import AlbumList from "./album-list/AlbumList";
 
@@ -18,6 +18,10 @@ export interface Album {
 
 const page = async () => {
 	const url = `${process.env.NEXT_PUBLIC_API}/services/gallery/albums`;
+	let pageInfo: PageInfo = {
+		nextPage: false,
+		cursor: "",
+	};
 
 	const albums: Album[] | null = await fetch(url, {
 		method: "GET",
@@ -28,7 +32,8 @@ const page = async () => {
 		.then((res) => res.json())
 		.then((res) => {
 			if (res.error) throw new Error(res.message);
-			return res.data;
+			pageInfo = res.data.pageInfo;
+			return res.data.albums;
 		})
 		.catch((err) => {
 			console.error(err.message);
@@ -80,8 +85,6 @@ const page = async () => {
 	}
 
 	const hasMore = albums.length === LIMIT;
-	let len = albums.length;
-	const cursor = albums[len - 1].createdAt;
 
 	return (
 		<>
@@ -89,7 +92,7 @@ const page = async () => {
 				<h1>Gallery</h1>
 			</div>
 
-			<AlbumList url={url} cursor={cursor} hasMore={hasMore}>
+			<AlbumList url={url} pageInfo={pageInfo}>
 				{albums.map((item) => {
 					return <AlbumItem key={item.id} details={item} />;
 				})}

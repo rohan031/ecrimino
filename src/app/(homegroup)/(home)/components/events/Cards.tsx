@@ -9,7 +9,7 @@ interface CardsProps {
 	img: string;
 	heading: string;
 	date: string;
-	text: string;
+	text?: string;
 	link: string;
 }
 
@@ -35,7 +35,7 @@ export default function Cards({ img, heading, date, text, link }: CardsProps) {
 				<p>{d.toDateString()}</p>
 
 				<p title={text}>
-					{text.substring(0, 50).toLowerCase() + "..."}
+					{text?.substring(0, 50).toLowerCase() + "..."}
 				</p>
 
 				<div>

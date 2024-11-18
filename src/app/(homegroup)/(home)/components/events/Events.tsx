@@ -1,22 +1,22 @@
 import React from "react";
 import Cards from "./Cards";
 import Link from "next/link";
-import { NewsData } from "../../page";
+import { Blog } from "@/app/(homegroup)/(homeroutes)/blogs/page";
 
 interface EventsProps {
-	news: NewsData[];
+	blogs: Blog[];
 }
 
-const Events = ({ news }: EventsProps) => {
-	const cards = news.map((item) => {
+const Events = ({ blogs }: EventsProps) => {
+	const cards = blogs.map((item) => {
 		return (
 			<Cards
-				key={item.id}
-				img={item.image}
+				key={item.blogId}
+				img={item.cover}
 				heading={item.title}
 				date={item.createdAt}
-				text={item.text}
-				link={item.link}
+				text={item.summary}
+				link={`/blogs/${item.blogId}`}
 			/>
 		);
 	});

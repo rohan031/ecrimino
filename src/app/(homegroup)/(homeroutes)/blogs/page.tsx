@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./blogs.module.scss";
 import Loader from "@/components/loader/Loader";
 import BlogItem from "./components/BlogItem/BlogItem";
-import { LIMIT } from "@/data/helper";
+import { LIMIT, PageInfo } from "@/data/helper";
 import BlogList from "./BlogList/BlogList";
 
 export const revalidate = 60 * 60;
@@ -18,6 +18,10 @@ export interface Blog {
 
 const Blogs = async () => {
 	const url = `${process.env.NEXT_PUBLIC_API}/services/blogs`;
+	let pageInfo: PageInfo = {
+		nextPage: false,
+		cursor: "",
+	};
 
 	const blogs: Blog[] | null = await fetch(url, {
 		method: "GET",
@@ -28,7 +32,8 @@ const Blogs = async () => {
 		.then((res) => res.json())
 		.then((res) => {
 			if (res.error) throw new Error(res.message);
-			return res.data;
+			pageInfo = res.data.pageInfo;
+			return res.data.blogs;
 		})
 		.catch((err) => {
 			console.error(err.message);
@@ -52,10 +57,6 @@ const Blogs = async () => {
 		);
 	}
 
-	const hasMore = blogs.length === LIMIT;
-	let len = blogs.length;
-	const cursor = blogs[len - 1].createdAt;
-
 	return (
 		<div className="container-blog">
 			<div className={styles.blogs}>
@@ -64,7 +65,7 @@ const Blogs = async () => {
 						<p>Aucun blog à afficher</p>
 					</div>
 				) : (
-					<BlogList hasMore={hasMore} url={url} cursor={cursor}>
+					<BlogList url={url} pageInfo={pageInfo}>
 						{blogs.map((item) => {
 							return <BlogItem key={item.blogId} blog={item} />;
 						})}

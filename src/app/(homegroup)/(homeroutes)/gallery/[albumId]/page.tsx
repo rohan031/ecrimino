@@ -1,6 +1,6 @@
 import React from "react";
 import { Album } from "../page";
-import { LIMIT } from "@/data/helper";
+import { LIMIT, PageInfo } from "@/data/helper";
 import ImageList from "../images/ImageList";
 
 export const revalidate = 60 * 60;
@@ -21,7 +21,7 @@ export async function generateStaticParams() {
 		return [];
 	}
 
-	return albums.data.map((album: Album) => {
+	return albums.data.albums.map((album: Album) => {
 		return {
 			albumId: album.id,
 		};
@@ -38,6 +38,10 @@ const page = async ({ params }: { params: { albumId: string } }) => {
 	const url = `${process.env.NEXT_PUBLIC_API}/services/gallery/album/${params.albumId}`;
 	const nameUrl = `${process.env.NEXT_PUBLIC_API}/services/gallery/album/${params.albumId}/name`;
 
+	let pageInfo: PageInfo = {
+		nextPage: false,
+		cursor: "",
+	};
 	const photosPromise = fetch(url, {
 		method: "GET",
 		headers: {
@@ -47,7 +51,8 @@ const page = async ({ params }: { params: { albumId: string } }) => {
 		.then((res) => res.json())
 		.then((res) => {
 			if (res.error) throw new Error(res.message);
-			return res.data;
+			pageInfo = res.data.pageInfo;
+			return res.data.photos;
 		});
 	const namePromise = fetch(nameUrl, {
 		method: "GET",
@@ -114,10 +119,6 @@ const page = async ({ params }: { params: { albumId: string } }) => {
 		</>;
 	}
 
-	const hasMore = photos.length === LIMIT;
-	let len = photos.length;
-	const cursor = photos[len - 1].createdAt;
-
 	return (
 		<>
 			<div
@@ -134,7 +135,7 @@ const page = async ({ params }: { params: { albumId: string } }) => {
 				<h1 className="container">{name ?? ""}</h1>
 			</div>
 
-			<ImageList hasMore={hasMore} cursor={cursor} url={url}>
+			<ImageList pageInfo={pageInfo} url={url}>
 				<div>
 					{photos.map((item) => {
 						return (

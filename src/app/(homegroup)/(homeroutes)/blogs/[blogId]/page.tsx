@@ -34,7 +34,7 @@ export async function generateStaticParams() {
 		return [];
 	}
 
-	return blogs.data.map((blog: any) => {
+	return blogs.data.blogs.map((blog: any) => {
 		return {
 			blogId: blog.blogId,
 		};
