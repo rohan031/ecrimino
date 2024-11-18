@@ -30,7 +30,7 @@ export async function generateStaticParams() {
 		},
 	}).then((res) => res.json());
 
-	if (blogs.error) {
+	if (blogs.error || !blogs) {
 		return [];
 	}
 
@@ -101,9 +101,11 @@ const BlogItem = async ({ params }: { params: { blogId: string } }) => {
 					</span>
 				</p>
 
-				<div className={styles.image}>
-					<img src={blogItem.cover} alt={blogItem.title} />
-				</div>
+				{blogItem.cover && (
+					<div className={styles.image}>
+						<img src={blogItem.cover} alt={blogItem.title} />
+					</div>
+				)}
 
 				<SocialShare title={blogItem.title} />
 			</div>

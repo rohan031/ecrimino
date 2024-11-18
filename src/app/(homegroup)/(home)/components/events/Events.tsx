@@ -8,14 +8,15 @@ interface EventsProps {
 }
 
 const Events = ({ blogs }: EventsProps) => {
-	const cards = blogs.map((item) => {
+	const cards = blogs.map((item, index) => {
+		let lim = index != 0 ? 50 : 150;
 		return (
 			<Cards
 				key={item.blogId}
 				img={item.cover}
 				heading={item.title}
 				date={item.createdAt}
-				text={item.summary}
+				text={item.summary?.substring(0, lim).toLowerCase() + "..."}
 				link={`/blogs/${item.blogId}`}
 			/>
 		);

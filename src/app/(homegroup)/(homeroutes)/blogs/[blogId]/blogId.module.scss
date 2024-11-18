@@ -79,12 +79,10 @@
 		}
 
 		.image {
-			max-height: 32em;
 			margin-block-end: 3em;
 
 			img {
-				max-height: 32em;
-				object-fit: cover;
+				width: 100%;
 			}
 		}
 	}

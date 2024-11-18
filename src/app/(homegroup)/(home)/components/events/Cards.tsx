@@ -34,9 +34,7 @@ export default function Cards({ img, heading, date, text, link }: CardsProps) {
 
 				<p>{d.toDateString()}</p>
 
-				<p title={text}>
-					{text?.substring(0, 50).toLowerCase() + "..."}
-				</p>
+				<p title={text}>{text}</p>
 
 				<div>
 					<a href={link} target="_blank">
