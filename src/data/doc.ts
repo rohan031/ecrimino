@@ -1,3 +1,6 @@
+import { time } from "console";
+import { link } from "fs";
+
 interface Items {
 	id: string;
 	title: string;
@@ -167,6 +170,11 @@ let docs = [
 				title: "SEMINAIRE EN INTERVENTION CRIMINOLOGIQUE 2023_230921_150638.pdf",
 				link: "https://drive.google.com/file/d/1f6tJdQHbjwQMREjebgZAnPpjwoFeIVaF/view?usp=sharing",
 			},
+			{
+				id: "https://drive.google.com/file/d/1K3cnKNVZwbqc1UvDbwk2lF3gP4kLEXDX/view?usp=sharing",
+				title: "Comm._Etats_Gx Pr. Sara Liwerant.pdf",
+				link: "https://drive.google.com/file/d/1K3cnKNVZwbqc1UvDbwk2lF3gP4kLEXDX/view?usp=sharing",
+			},
 		],
 	},
 	{
@@ -281,6 +289,11 @@ let docs = [
 				id: "https://drive.google.com/file/d/1QilKrqBML58ET7QkUmurhubTVkCGzuTc/view?usp=drive_link",
 				title: "Une rétropective de la justice pénale rendue par les juridictions coutumières.pdf",
 				link: "https://drive.google.com/file/d/1QilKrqBML58ET7QkUmurhubTVkCGzuTc/view?usp=drive_link",
+			},
+			{
+				id: "https://drive.google.com/file/d/1gqMtLlYExcG2xmpt4hCDa8tV0UUJ1RY4/view?usp=sharing",
+				title: "Quelle politique criminelle pour une justice pénale congolaise malade.pdf",
+				link: "https://drive.google.com/file/d/1gqMtLlYExcG2xmpt4hCDa8tV0UUJ1RY4/view?usp=sharing",
 			},
 		],
 	},
