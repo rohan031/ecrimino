@@ -37,7 +37,11 @@ export default function Cards({
 
 				<div>
 					{qualification.map((item) => {
-						return <p title={item}>{item.toLowerCase()}</p>;
+						return (
+							<p key={item + name} title={item}>
+								{item.toLowerCase()}
+							</p>
+						);
 					})}
 				</div>
 
