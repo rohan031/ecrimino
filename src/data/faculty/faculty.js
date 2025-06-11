@@ -1,8 +1,9 @@
 export const faculties = [
 	{
 		name: "Raoul-Nicodème KIENGE-KIENGE INTUDI",
-		qualification:
+		qualification: [
 			"Docteur en criminologie (Université catholique de Louvain, Louvain-la-Neuve,2005)",
+		],
 		areaOfStudy:
 			"Criminologie (thème de régulation sociale) - Justice pénale (droit pénal, procédure pénale et pénologie ou droit pénitentiaire) - violence et criminalité urbaines – Réformes institutionnelles du secteur de la justice et de la sécurité,- Justice des mineurs et droits de l’enfant – délinquance juvénile (Droit de la Protection de l’enfant); - Méthodologie de recherche en sciences sociales (recherche qualitative et Méthode d’analyse en groupe - MAG) et méthodologie juridique",
 		departmentName: "Ecole de criminologie de l'Université de Kinshasa",
@@ -12,7 +13,7 @@ export const faculties = [
 
 	{
 		name: "J.E. NZUNDU NZALALEMBA",
-		qualification: "Ph.d",
+		qualification: ["Ph.d"],
 		areaOfStudy: "Criminologie",
 		departmentName: "Asst. Director Of The School Of Criminologie",
 		image: "/faculty/nuzu.jpg",
@@ -21,7 +22,7 @@ export const faculties = [
 
 	{
 		name: "Sara Liwerant",
-		qualification: "Ph.D from Paris Nanterre University in",
+		qualification: ["Ph.D from Paris Nanterre University in"],
 		areaOfStudy: "Private Law & Criminal Sciences",
 		departmentName: "Asst. Director of the School of Criminologie",
 		image: "/faculty/sara.webp",
@@ -30,7 +31,7 @@ export const faculties = [
 
 	{
 		name: "Mbokolo Ntikala Albert",
-		qualification: "Diplômé d'études supérieures",
+		qualification: ["Diplômé d'études supérieures"],
 		areaOfStudy: "Droit pénal et criminologie",
 		departmentName: "Faculté de droit",
 		image: "/faculty/AlbertMbokolo.webp",
@@ -38,7 +39,7 @@ export const faculties = [
 	},
 	{
 		name: "MABWILO KABUYA JEAN RENE",
-		qualification: "DOCTEUR EN PHILOSOPHIE ET MASTER EN CRIMINOLGIE",
+		qualification: ["DOCTEUR EN PHILOSOPHIE ET MASTER EN CRIMINOLGIE"],
 		areaOfStudy: "SECURITE INTERIEURE",
 		departmentName: "ECOLE DE CRIMINOLOGIE DE L'UNIVERSITE DE KINSHASA",
 		image: "/faculty/JeanRenéMabwilo.webp",
@@ -46,7 +47,7 @@ export const faculties = [
 	},
 	{
 		name: "Taty Mantima Harris",
-		qualification: "Diplômé d'études supérieures en Droit",
+		qualification: ["Diplômé d'études supérieures en Droit"],
 		areaOfStudy: "Droit et Criminologie",
 		departmentName: "École de criminologie",
 		image: "/faculty/HarrisTatyMantima.webp",
@@ -55,7 +56,7 @@ export const faculties = [
 
 	{
 		name: "MALANDA MVIBIDULU BIENVENU DOUDOU",
-		qualification: "Diplômé d'études supérieures",
+		qualification: ["Diplômé d'études supérieures"],
 		areaOfStudy:
 			"Criminologie, Protection de l'enfant, Justice pénale, Prison, Violence urbaine, Sécurité",
 		departmentName: "École de criminologie",
@@ -64,7 +65,7 @@ export const faculties = [
 	},
 	{
 		name: "Nzampungu imbole Joël",
-		qualification: "Master en communication",
+		qualification: ["Master en communication"],
 		areaOfStudy: "Communication et criminologie",
 		departmentName: "École de criminologie",
 		image: "/faculty/JoelNzampungu.webp",
@@ -73,7 +74,7 @@ export const faculties = [
 
 	{
 		name: "Félicien KAYOMBO KAYOMBO",
-		qualification: "Diplômé d'études supérieures",
+		qualification: ["Diplômé d'études supérieures"],
 		areaOfStudy: "Droit (Innovation, science et technologie)",
 		departmentName: "Ecole de criminologie",
 		image: "/faculty/FélicienKAYOMBO.webp",
@@ -81,7 +82,7 @@ export const faculties = [
 	},
 	{
 		name: "Mambiko Nyabita Catherine",
-		qualification: "Licence",
+		qualification: ["Licence"],
 		areaOfStudy: "Psychologie clinique et criminologie",
 		departmentName: "École de criminologie",
 		image: "/faculty/JeanSalumu.webp",
@@ -92,8 +93,9 @@ export const faculties = [
 export const level1 = [
 	{
 		name: "Raoul-Nicodème KIENGE-KIENGE INTUDI",
-		qualification:
+		qualification: [
 			"Docteur en criminologie (Université catholique de Louvain, Louvain-la-Neuve,2005)",
+		],
 		areaOfStudy:
 			"Criminologie (thème de régulation sociale) - Justice pénale (droit pénal, procédure pénale et pénologie ou droit pénitentiaire) - violence et criminalité urbaines – Réformes institutionnelles du secteur de la justice et de la sécurité,- Justice des mineurs et droits de l’enfant – délinquance juvénile (Droit de la Protection de l’enfant); - Méthodologie de recherche en sciences sociales (recherche qualitative et Méthode d’analyse en groupe - MAG) et méthodologie juridique",
 		departmentName: "Ecole de criminologie de l'Université de Kinshasa",
@@ -105,7 +107,7 @@ export const level1 = [
 export const level2 = [
 	{
 		name: "J.E. NZUNDU NZALALEMBA",
-		qualification: "Ph.d",
+		qualification: ["Ph.d"],
 		areaOfStudy: "Criminologie",
 		departmentName: "Asst. Director Of The School Of Criminologie",
 		image: "/faculty/nuzu.jpg",
@@ -113,7 +115,7 @@ export const level2 = [
 	},
 	{
 		name: "Sara Liwerant",
-		qualification: "Ph.D from Paris Nanterre University in",
+		qualification: ["Ph.D from Paris Nanterre University in"],
 		areaOfStudy: "Private Law & Criminal Sciences",
 		departmentName: "Asst. Director of the School of Criminologie",
 		image: "/faculty/sara.webp",
@@ -124,18 +126,18 @@ export const level2 = [
 export const level3 = [
 	{
 		name: "Mbokolo Ntikala Albert",
-		qualification: "Diplômé d'études supérieures",
+		qualification: ["Docteur en droit"],
 		areaOfStudy: "Droit pénal et criminologie",
 		departmentName: "Faculté de droit",
 		image: "/faculty/AlbertMbokolo.webp",
-		salutation: "Mr.",
+		salutation: "Prof.",
 	},
 ];
 
 export const level4 = [
 	{
 		name: "MABWILO KABUYA JEAN RENE",
-		qualification: "DOCTEUR EN PHILOSOPHIE ET MASTER EN CRIMINOLGIE",
+		qualification: ["DOCTEUR EN PHILOSOPHIE", "master specialise"],
 		areaOfStudy: "SECURITE INTERIEURE",
 		departmentName: "ECOLE DE CRIMINOLOGIE DE L'UNIVERSITE DE KINSHASA",
 		image: "/faculty/JeanRenéMabwilo.webp",
@@ -143,16 +145,16 @@ export const level4 = [
 	},
 	{
 		name: "Taty Mantima Harris",
-		qualification: "Diplômé d'études supérieures en Droit",
+		qualification: ["Docteur en droit"],
 		areaOfStudy: "Droit et Criminologie",
 		departmentName: "École de criminologie",
 		image: "/faculty/HarrisTatyMantima.webp",
-		salutation: "Mr.",
+		salutation: "Prof.",
 	},
 
 	{
 		name: "MALANDA MVIBIDULU BIENVENU DOUDOU",
-		qualification: "Diplômé d'études supérieures",
+		qualification: ["Diplômé d'études supérieures"],
 		areaOfStudy:
 			"Criminologie, Protection de l'enfant, Justice pénale, Prison, Violence urbaine, Sécurité",
 		departmentName: "École de criminologie",
@@ -161,16 +163,16 @@ export const level4 = [
 	},
 	{
 		name: "Nzampungu imbole Joël",
-		qualification: "Master en communication",
-		areaOfStudy: "Communication et criminologie",
+		qualification: ["Dr en communication"],
+		areaOfStudy: "Master specialise en criminologie (securite interieure)",
 		departmentName: "École de criminologie",
 		image: "/faculty/JoelNzampungu.webp",
-		salutation: "Mr.",
+		salutation: "Prof.",
 	},
 
 	{
 		name: "Félicien KAYOMBO KAYOMBO",
-		qualification: "Diplômé d'études supérieures",
+		qualification: ["Diplômé d'études supérieures"],
 		areaOfStudy: "Droit (Innovation, science et technologie)",
 		departmentName: "Ecole de criminologie",
 		image: "/faculty/FélicienKAYOMBO.webp",
@@ -181,7 +183,7 @@ export const level4 = [
 export const level5 = [
 	{
 		name: "Mambiko Nyabita Catherine",
-		qualification: "Licence",
+		qualification: ["Licence"],
 		areaOfStudy: "Psychologie clinique et criminologie",
 		departmentName: "École de criminologie",
 		image: "/faculty/JeanSalumu.webp",

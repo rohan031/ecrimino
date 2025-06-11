@@ -15,7 +15,7 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 interface Items {
 	name: string;
-	qualification: string;
+	qualification: string[];
 	areaOfStudy: string;
 	departmentName: string;
 	image: string;
